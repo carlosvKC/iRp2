@@ -1,0 +1,105 @@
+ 
+<Surveys>
+    <SurveyDefinition title="Building Survey #1" description="Do a survey of all the buildings">
+        <text title="this is just used as a separator between section" />
+        <separator />
+        <checkbox title="simple check box" default="on" help="if there is a help!" pos="60"/>
+        <input title="numeric input only" default="1234" filter="0123456789" />
+        <input title="alphabetical inout only" default="abcd" />
+        <date title="select a date" default="01/01/2005"/>
+        <multichoice title="select a reason" default="old,yound,later, etc." />
+        <text title="this is just used as a separator between section" />
+        <separator />
+        <checkbox title="simple check box" default="on" help="if there is a help!" pos="60"/>
+        <input title="numeric input only" default="1234" filter="0123456789" />
+        <input title="alphabetical inout only" default="abcd" />
+        <date title="select a date" default="01/01/2005"/>
+        <multichoice title="select a reason" default="old,yound,later, etc." />
+        <text title="this is just used as a separator between section" />
+        <separator />
+        <checkbox title="simple check box" default="on" help="if there is a help!" pos="60"/>
+        <input title="numeric input only" default="1234" filter="0123456789" />
+        <input title="alphabetical inout only" default="abcd" />
+        <date title="select a date" default="01/01/2005"/>
+        <multichoice title="select a reason" default="old,yound,later, etc." />
+        <text title="this is just used as a separator between section" />
+        <separator />
+        <checkbox title="simple check box" default="on" help="if there is a help!" pos="60"/>
+        <input title="numeric input only" default="1234" filter="0123456789" />
+        <input title="alphabetical inout only" default="abcd" />
+        <date title="select a date" default="01/01/2005"/>
+        <multichoice title="select a reason" default="old,yound,later, etc." />
+        <text title="this is just used as a separator between section" />
+        <separator />
+        <checkbox title="simple check box" default="on" help="if there is a help!" pos="60"/>
+        <input title="numeric input only" default="1234" filter="0123456789" />
+        <input title="alphabetical inout only" default="abcd" />
+        <date title="select a date" default="01/01/2005"/>
+        <multichoice title="select a reason" default="old,yound,later, etc." />
+        <text title="this is just used as a separator between section" />
+        <separator />
+        <checkbox title="simple check box" default="on" help="if there is a help!" pos="60"/>
+        <input title="numeric input only" default="1234" filter="0123456789" />
+        <input title="alphabetical inout only" default="abcd" />
+        <date title="select a date" default="01/01/2005"/>
+        <multichoice title="select a reason" default="old,yound,later, etc." />
+                <text title="this is just used as a separator between section" />
+        <separator />
+        <checkbox title="simple check box" default="on" help="if there is a help!" pos="60"/>
+        <input title="numeric input only" default="1234" filter="0123456789" />
+        <input title="alphabetical inout only" default="abcd" />
+        <date title="select a date" default="01/01/2005"/>
+        <multichoice title="select a reason" default="old,yound,later, etc." />
+                <text title="this is just used as a separator between section" />
+        <separator />
+        <checkbox title="simple check box" default="on" help="if there is a help!" pos="60"/>
+        <input title="numeric input only" default="1234" filter="0123456789" />
+        <input title="alphabetical inout only" default="abcd" />
+        <date title="select a date" default="01/01/2005"/>
+        <multichoice title="select a reason" default="old,yound,later, etc." />
+                <text title="this is just used as a separator between section" />
+        <separator />
+        <checkbox title="simple check box" default="on" help="if there is a help!" pos="60"/>
+        <input title="numeric input only" default="1234" filter="0123456789" />
+        <input title="alphabetical inout only" default="abcd" />
+        <date title="select a date" default="01/01/2005"/>
+        <multichoice title="select a reason" default="old,yound,later, etc." />
+    
+    </SurveyDefinition>
+        <SurveyDefinition title="Building Survey #2" description="Do a survey of all the buildings">
+        <text title="this is just used as a separator between section" />
+        <separator />
+        <checkbox title="simple check box" default="on" help="if there is a help!" pos="60"/>
+        <input title="numeric input only" default="1234" filter="0123456789" />
+        <input title="alphabetical inout only" default="abcd" />
+        <date title="select a date" default="01/01/2005"/>
+        <multichoice title="select a reason" default="old,yound,later, etc." />
+    </SurveyDefinition>
+    <SurveyDefinition title="Building Survey #3" description="Do a survey of all the buildings">
+        <text title="this is just used as a separator between section" />
+        <separator />
+        <checkbox title="simple check box" default="on" help="if there is a help!" pos="60"/>
+        <input title="numeric input only" default="1234" filter="0123456789" />
+        <input title="alphabetical inout only" default="abcd" />
+        <date title="select a date" default="01/01/2005"/>
+        <multichoice title="select a reason" default="old,yound,later, etc." />
+    </SurveyDefinition>
+    <SurveyDefinition title="Building Survey #4" description="Do a survey of all the buildings">
+        <text title="this is just used as a separator between section" />
+        <separator />
+        <checkbox title="simple check box" default="on" help="if there is a help!" pos="60"/>
+        <input title="numeric input only" default="1234" filter="0123456789" />
+        <input title="alphabetical inout only" default="abcd" />
+        <date title="select a date" default="01/01/2005"/>
+        <multichoice title="select a reason" default="old,yound,later, etc." />
+    </SurveyDefinition>
+    <SurveyDefinition title="Building Survey #5" description="Do a survey of all the buildings">
+        <text title="this is just used as a separator between section" />
+        <separator />
+        <checkbox title="simple check box" default="on" help="if there is a help!" pos="60"/>
+        <input title="numeric input only" default="1234" filter="0123456789" />
+        <input title="alphabetical inout only" default="abcd" />
+        <date title="select a date" default="01/01/2005"/>
+        <multichoice title="select a reason" default="old,yound,later, etc." />
+    </SurveyDefinition>
+</Surveys>

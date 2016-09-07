@@ -1,0 +1,32 @@
+<!-- List of all physical layers for the area 91 -->
+<PhysicalLayers>
+    <!-- Information for the SID files. Add as many lines as SID files -->
+    <layer fileName="Area91_1.sid" friendlyName="Aerial 91 (.5ft/px)" visible="yes"/>
+    <!-- Information for each layer -->
+    <layer tableName="Parcel" friendlyName="All Parcels" isParcel="yes" visible="no" clipping="yes"> <!-- isParcel & isRoad are 2 required definitions -->
+        <shape fillColor="0,128,128,128" lineColor="255,240,0,0" style="solid"/>
+        <label show="no" annotation="no" removeDuplicate="no" scale="no" fontSize="12.0" color="255,0,0,0"/>
+        <cutoff maxScale="200" minScale="10000" />
+    </layer>
+    <layer tableName="st_address_clipped" friendlyName="Street Address" isStreet="yes" visible="no" clipping="yes" isPolygon="no">
+        <shape fillColor="128,0,0,128" lineColor="255,0,0,255" style="solid" lineWidth="2.0"/>
+        <label columnName="FULLNAME" show="yes" annotation="no" removeDuplicate="yes" scale="no" fontSize="20.0" color="255,255,0,0"/>
+        <cutoff minScale="10000" />
+    </layer>
+        <layer tableName="BellevueBldgs" friendlyName="Buildings"  visible="no" clipping="yes">
+        <shape fillColor="#e78d2bee" lineColor="#0000ffff" style="solid"/>
+        <label show="no" annotation="no" removeDuplicate="no" scale="no" fontSize="12.0" color="0,0,0,255"/>
+        <cutoff minScale="10000" />
+    </layer>
+     <layer tableName="Area091KnownSlideAreas" friendlyName="Kwown Slide Areas" visible="no" clipping="yes">
+        <shape fillColor="#31d9d7ff" lineColor="#0000ffff" style="solid"/>
+        <label show="no" annotation="no" removeDuplicate="no" scale="no" fontSize="12.0" color="0,0,0,255"/>
+        <cutoff minScale="100000" />
+    </layer>
+     <layer tableName="Bellevue_10_Ft_Contours" friendlyName="10ft Contours" visible="no" clipping="yes" isPolygon="no">
+        <shape fillColor="128,0,0,128" lineColor="255,0,0,255" style="solid" lineWidth="1.0"/>
+        <label show="no" annotation="no" removeDuplicate="no" scale="no" fontSize="12.0" color="0,0,0,255"/>
+        <cutoff minScale="10000" />
+    </layer>
+</PhysicalLayers>
+

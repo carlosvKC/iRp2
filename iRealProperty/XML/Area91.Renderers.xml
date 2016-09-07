@@ -1,0 +1,178 @@
+<AllRenderers>
+  <UniqueValueRenderers>
+    <UniqueValueRenderer RendererName="DEFAULT MAP (NO RENDERINGS)">
+      <Entity></Entity>
+      <LuTypeId>0</LuTypeId>
+      <FieldName>PropType</FieldName>
+      <WhereClause></WhereClause>
+      <Renderers>
+        <RI>
+          <Val>R</Val>
+          <Lbl>Parcel</Lbl>
+          <Color>255,255,0,255</Color>
+        </RI>
+      </Renderers>
+      <Renderers>
+        <RI>
+          <Val>C</Val>
+          <Lbl>Parcel</Lbl>
+          <Color>255,204,204,204</Color>
+        </RI>
+      </Renderers>
+      <Renderers>
+        <RI>
+          <Val>K</Val>
+          <Lbl>Parcel</Lbl>
+          <Color>255,204,204,204</Color>
+        </RI>
+      </Renderers>
+      <LabelSets>
+        <LabelSet name="ResGenericMid"></LabelSet>
+        <LabelSet name="ResGenericImpNear"></LabelSet>
+      </LabelSets>
+    </UniqueValueRenderer>
+
+    <UniqueValueRenderer RendererName="Inspection">
+      <Entity>inspection</Entity>
+      <LuTypeId>0</LuTypeId>
+      <FieldName>inspectionTypeItemId</FieldName>
+      <WhereClause>inspectionTypeItemId &gt; 0</WhereClause>
+      <Renderers>
+        <RI>
+          <Val>0</Val>
+          <Lbl></Lbl>
+          <Color>255,255,255,255</Color>
+        </RI>
+      </Renderers>
+      <Renderers>
+        <RI>
+          <Val>1</Val>
+          <Lbl>Land</Lbl>
+          <Color>255,0,204,204</Color>
+        </RI>
+      </Renderers>
+      <Renderers>
+        <RI>
+          <Val>2</Val>
+          <Lbl>Imps</Lbl>
+          <Color>255,204,204,0</Color>
+        </RI>
+      </Renderers>
+      <Renderers>
+        <RI>
+          <Val>3</Val>
+          <Lbl>Both</Lbl>
+          <Color>255,204,0,204</Color>
+        </RI>
+      </Renderers>
+      <LabelSets>
+        <!-- <LabelSet name="ResGenericImpNear"></LabelSet> -->
+      </LabelSets>
+    </UniqueValueRenderer>
+    
+    <UniqueValueRenderer RendererName="Bldg Grade">
+       <Entity>land.resBldg[$bldgNbr=1]</Entity>
+      <FieldName>bldgGrade</FieldName>
+      <WhereClause>bldgGrade &gt;0 </WhereClause>
+      <Renderers>
+        <RI>
+          <Val>0</Val>
+          <Lbl>0</Lbl>
+          <FillStyle>0</FillStyle>
+          <Color>255,255,255,255</Color>
+        </RI>
+        <RI>
+          <Val>1</Val>
+          <Lbl>1</Lbl>
+          <FillStyle>0</FillStyle>
+          <Color>255,0,0,255</Color>
+        </RI>
+        <RI>
+          <Val>2</Val>
+          <Lbl>2</Lbl>
+          <FillStyle>0</FillStyle>
+          <Color>255,0,0,255</Color>
+        </RI>
+        <RI>
+          <Val>3</Val>
+          <Lbl>3</Lbl>
+          <FillStyle>0</FillStyle>
+          <Color>255,0,0,255</Color>
+        </RI>
+        <RI>
+          <Val>4</Val>
+          <Lbl>4</Lbl>
+          <FillStyle>0</FillStyle>
+          <Color>255,0,0,255</Color>
+        </RI>
+        <RI>
+          <Val>5</Val>
+          <Lbl>5</Lbl>
+          <FillStyle>0</FillStyle>
+          <Color>255,0,115,255</Color>
+        </RI>
+        <RI>
+          <Val>6</Val>
+          <Lbl>6</Lbl>
+          <FillStyle>0</FillStyle>
+          <Color>255,0,229,255</Color>
+        </RI>
+        <RI>
+          <Val>7</Val>
+          <Lbl>7</Lbl>
+          <FillStyle>0</FillStyle>
+          <Color>255,19,236,187</Color>
+        </RI>
+        <RI>
+          <Val>8</Val>
+          <Lbl>8</Lbl>
+          <FillStyle>0</FillStyle>
+          <Color>255,0,255,55</Color>
+        </RI>
+        <RI>
+          <Val>9</Val>
+          <Lbl>9</Lbl>
+          <FillStyle>0</FillStyle>
+          <Color>255,189,250,5</Color>
+        </RI>
+        <RI>
+          <Val>10</Val>
+          <Lbl>10</Lbl>
+          <FillStyle>0</FillStyle>
+          <Color>255,255,255,128</Color>
+        </RI>
+        <RI>
+          <Val>11</Val>
+          <Lbl>11</Lbl>
+          <FillStyle>0</FillStyle>
+          <Color>255,250,194,5</Color>
+        </RI>
+        <RI>
+          <Val>12</Val>
+          <Lbl>12</Lbl>
+          <FillStyle>0</FillStyle>
+          <Color>255,255,111,0</Color>
+        </RI>
+        <RI>
+          <Val>13</Val>
+          <Lbl>13</Lbl>
+          <FillStyle>0</FillStyle>
+          <Color>255,255,0,0</Color>
+        </RI>
+        <RI>
+          <Val>20</Val>
+          <Lbl>20</Lbl>
+          <FillStyle>0</FillStyle>
+          <Color>255,255,0,255</Color>
+        </RI>
+      </Renderers>
+      <LabelSets>
+        <LabelSet name="ResGenericImpNear"></LabelSet>
+      </LabelSets>
+    </UniqueValueRenderer>
+    
+
+    
+    
+  </UniqueValueRenderers>
+</AllRenderers>

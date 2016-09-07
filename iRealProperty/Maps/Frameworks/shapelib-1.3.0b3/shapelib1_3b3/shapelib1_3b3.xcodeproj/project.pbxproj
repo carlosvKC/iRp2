@@ -1,0 +1,308 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		89BFB43C141FBE06005EABA2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89BFB43B141FBE06005EABA2 /* Foundation.framework */; };
+		89BFB47A141FBE54005EABA2 /* my_nan.h in Headers */ = {isa = PBXBuildFile; fileRef = 89BFB451141FBE54005EABA2 /* my_nan.h */; };
+		89BFB482141FBE54005EABA2 /* shpgeo.c in Sources */ = {isa = PBXBuildFile; fileRef = 89BFB45B141FBE54005EABA2 /* shpgeo.c */; };
+		89BFB483141FBE54005EABA2 /* shpgeo.h in Headers */ = {isa = PBXBuildFile; fileRef = 89BFB45C141FBE54005EABA2 /* shpgeo.h */; };
+		89BFB48B141FBE54005EABA2 /* dbfopen.c in Sources */ = {isa = PBXBuildFile; fileRef = 89BFB468141FBE54005EABA2 /* dbfopen.c */; };
+		89BFB48C141FBE54005EABA2 /* safileio.c in Sources */ = {isa = PBXBuildFile; fileRef = 89BFB46B141FBE54005EABA2 /* safileio.c */; };
+		89BFB48D141FBE54005EABA2 /* shapefil.h in Headers */ = {isa = PBXBuildFile; fileRef = 89BFB46C141FBE54005EABA2 /* shapefil.h */; };
+		89BFB491141FBE54005EABA2 /* shpopen.c in Sources */ = {isa = PBXBuildFile; fileRef = 89BFB470141FBE54005EABA2 /* shpopen.c */; };
+		89BFB494141FBE54005EABA2 /* shptree.c in Sources */ = {isa = PBXBuildFile; fileRef = 89BFB473141FBE54005EABA2 /* shptree.c */; };
+		89EDD54E142014060028C869 /* prjopen.c in Sources */ = {isa = PBXBuildFile; fileRef = 89EDD54C142014060028C869 /* prjopen.c */; };
+		89EDD54F142014060028C869 /* prjopen.h in Headers */ = {isa = PBXBuildFile; fileRef = 89EDD54D142014060028C869 /* prjopen.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		89BFB438141FBE06005EABA2 /* libshapelib1_3b3.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libshapelib1_3b3.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		89BFB43B141FBE06005EABA2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		89BFB43F141FBE06005EABA2 /* shapelib1_3b3-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "shapelib1_3b3-Prefix.pch"; sourceTree = "<group>"; };
+		89BFB451141FBE54005EABA2 /* my_nan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = my_nan.h; sourceTree = "<group>"; };
+		89BFB45B141FBE54005EABA2 /* shpgeo.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shpgeo.c; sourceTree = "<group>"; };
+		89BFB45C141FBE54005EABA2 /* shpgeo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shpgeo.h; sourceTree = "<group>"; };
+		89BFB468141FBE54005EABA2 /* dbfopen.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = dbfopen.c; sourceTree = "<group>"; };
+		89BFB469141FBE54005EABA2 /* LICENSE.LGPL */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.LGPL; sourceTree = "<group>"; };
+		89BFB46A141FBE54005EABA2 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		89BFB46B141FBE54005EABA2 /* safileio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = safileio.c; sourceTree = "<group>"; };
+		89BFB46C141FBE54005EABA2 /* shapefil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shapefil.h; sourceTree = "<group>"; };
+		89BFB470141FBE54005EABA2 /* shpopen.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shpopen.c; sourceTree = "<group>"; };
+		89BFB473141FBE54005EABA2 /* shptree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shptree.c; sourceTree = "<group>"; };
+		89EDD54C142014060028C869 /* prjopen.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = prjopen.c; sourceTree = "<group>"; };
+		89EDD54D142014060028C869 /* prjopen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prjopen.h; sourceTree = "<group>"; };
+		89EDD6C7142131C70028C869 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		89BFB435141FBE06005EABA2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89BFB43C141FBE06005EABA2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		89BFB42D141FBE06005EABA2 = {
+			isa = PBXGroup;
+			children = (
+				89EDD6C7142131C70028C869 /* MobileCoreServices.framework */,
+				89BFB43D141FBE06005EABA2 /* shapelib1_3b3 */,
+				89BFB43A141FBE06005EABA2 /* Frameworks */,
+				89BFB439141FBE06005EABA2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		89BFB439141FBE06005EABA2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				89BFB438141FBE06005EABA2 /* libshapelib1_3b3.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		89BFB43A141FBE06005EABA2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				89BFB43B141FBE06005EABA2 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		89BFB43D141FBE06005EABA2 /* shapelib1_3b3 */ = {
+			isa = PBXGroup;
+			children = (
+				89BFB448141FBE54005EABA2 /* contrib */,
+				89BFB468141FBE54005EABA2 /* dbfopen.c */,
+				89BFB469141FBE54005EABA2 /* LICENSE.LGPL */,
+				89BFB46A141FBE54005EABA2 /* README */,
+				89BFB46B141FBE54005EABA2 /* safileio.c */,
+				89BFB46C141FBE54005EABA2 /* shapefil.h */,
+				89BFB470141FBE54005EABA2 /* shpopen.c */,
+				89BFB473141FBE54005EABA2 /* shptree.c */,
+				89BFB43E141FBE06005EABA2 /* Supporting Files */,
+			);
+			path = shapelib1_3b3;
+			sourceTree = "<group>";
+		};
+		89BFB43E141FBE06005EABA2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				89BFB43F141FBE06005EABA2 /* shapelib1_3b3-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		89BFB448141FBE54005EABA2 /* contrib */ = {
+			isa = PBXGroup;
+			children = (
+				89BFB451141FBE54005EABA2 /* my_nan.h */,
+				89BFB45B141FBE54005EABA2 /* shpgeo.c */,
+				89BFB45C141FBE54005EABA2 /* shpgeo.h */,
+				89EDD54C142014060028C869 /* prjopen.c */,
+				89EDD54D142014060028C869 /* prjopen.h */,
+			);
+			path = contrib;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		89BFB436141FBE06005EABA2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89BFB47A141FBE54005EABA2 /* my_nan.h in Headers */,
+				89BFB483141FBE54005EABA2 /* shpgeo.h in Headers */,
+				89BFB48D141FBE54005EABA2 /* shapefil.h in Headers */,
+				89EDD54F142014060028C869 /* prjopen.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		89BFB437141FBE06005EABA2 /* shapelib1_3b3 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89BFB442141FBE06005EABA2 /* Build configuration list for PBXNativeTarget "shapelib1_3b3" */;
+			buildPhases = (
+				89BFB434141FBE06005EABA2 /* Sources */,
+				89BFB435141FBE06005EABA2 /* Frameworks */,
+				89BFB436141FBE06005EABA2 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = shapelib1_3b3;
+			productName = shapelib1_3b3;
+			productReference = 89BFB438141FBE06005EABA2 /* libshapelib1_3b3.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		89BFB42F141FBE06005EABA2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 89BFB432141FBE06005EABA2 /* Build configuration list for PBXProject "shapelib1_3b3" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 89BFB42D141FBE06005EABA2;
+			productRefGroup = 89BFB439141FBE06005EABA2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				89BFB437141FBE06005EABA2 /* shapelib1_3b3 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		89BFB434141FBE06005EABA2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89BFB482141FBE54005EABA2 /* shpgeo.c in Sources */,
+				89BFB48B141FBE54005EABA2 /* dbfopen.c in Sources */,
+				89BFB48C141FBE54005EABA2 /* safileio.c in Sources */,
+				89BFB491141FBE54005EABA2 /* shpopen.c in Sources */,
+				89BFB494141FBE54005EABA2 /* shptree.c in Sources */,
+				89EDD54E142014060028C869 /* prjopen.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		8906612C142D4771003CD154 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				SDKROOT = iphoneos4.3;
+			};
+			name = "Ad Hoc";
+		};
+		8906612D142D4771003CD154 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				DSTROOT = /tmp/shapelib1_3b3.dst;
+				FRAMEWORK_SEARCH_PATHS = "../../Proj.4/**";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "shapelib1_3b3/shapelib1_3b3-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = "../../Proj.4/**";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = "Ad Hoc";
+		};
+		89BFB440141FBE06005EABA2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				SDKROOT = iphoneos4.3;
+			};
+			name = Debug;
+		};
+		89BFB441141FBE06005EABA2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				SDKROOT = iphoneos4.3;
+			};
+			name = Release;
+		};
+		89BFB443141FBE06005EABA2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				DSTROOT = /tmp/shapelib1_3b3.dst;
+				FRAMEWORK_SEARCH_PATHS = "../../Proj.4/**";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "shapelib1_3b3/shapelib1_3b3-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = "../../Proj.4/**";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		89BFB444141FBE06005EABA2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				DSTROOT = /tmp/shapelib1_3b3.dst;
+				FRAMEWORK_SEARCH_PATHS = "../../Proj.4/**";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "shapelib1_3b3/shapelib1_3b3-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = "../../Proj.4/**";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		89BFB432141FBE06005EABA2 /* Build configuration list for PBXProject "shapelib1_3b3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89BFB440141FBE06005EABA2 /* Debug */,
+				89BFB441141FBE06005EABA2 /* Release */,
+				8906612C142D4771003CD154 /* Ad Hoc */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Ad Hoc";
+		};
+		89BFB442141FBE06005EABA2 /* Build configuration list for PBXNativeTarget "shapelib1_3b3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89BFB443141FBE06005EABA2 /* Debug */,
+				89BFB444141FBE06005EABA2 /* Release */,
+				8906612D142D4771003CD154 /* Ad Hoc */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Ad Hoc";
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 89BFB42F141FBE06005EABA2 /* Project object */;
+}

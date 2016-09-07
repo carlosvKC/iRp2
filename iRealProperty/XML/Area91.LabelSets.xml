@@ -1,0 +1,12 @@
+<LabelSets>
+  <LabelSet name="ResGenericImpNear">
+    <LabelSpecs>200,2500,True,False,0,0,2</LabelSpecs>
+    <Entity>land.resBldg[$bldgNbr=1]</Entity>
+    <WhereClause>land.realPropInfo.propType = 'R' AND bldgGrade > 0 </WhereClause>
+    <Expr>bldgGrade.lookup</Expr>
+    <Font>
+      <FontSpecs>Geneva,17,True,False,0,0</FontSpecs>
+      <Color>0,0,0,0</Color>
+    </Font>
+  </LabelSet>
+</LabelSets>

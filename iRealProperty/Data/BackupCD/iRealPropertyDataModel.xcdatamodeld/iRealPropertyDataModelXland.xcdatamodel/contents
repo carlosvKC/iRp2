@@ -1,0 +1,921 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2057" systemVersion="13E28" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Account" representedClassName="Account" syncable="YES">
+        <attribute name="acct" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="area" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="rowStatus" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="rpGuid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="serverUpdateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="stagingGUID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <relationship name="realPropInfo" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="RealPropInfo" inverseName="account" inverseEntity="RealPropInfo" syncable="YES"/>
+    </entity>
+    <entity name="Accy" representedClassName="Accy" syncable="YES">
+        <attribute name="accyDescr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="accyType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="accyValue" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="area" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="bldgGuid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="createDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dateValued" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="effYr" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="grade" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="nbrThisType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="pcntNetCondition" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="rowStatus" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="rpGuid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="serverUpdateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="size" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="stagingGUID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="unitOfMeasure" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="updateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="updatedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="mediaAccy" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="MediaAccy" inverseName="accy" inverseEntity="MediaAccy" syncable="YES"/>
+        <relationship name="realPropInfo" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="RealPropInfo" inverseName="accy" inverseEntity="RealPropInfo" syncable="YES"/>
+    </entity>
+    <entity name="ApplHist" representedClassName="ApplHist" syncable="YES">
+        <attribute name="area" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="impsVal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="landVal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="mFInterfaceDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="mFInterfaceFlag" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="newConstrVal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="post_Code" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="revalOrMaint" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rollYr" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="rowStatus" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="rpGuid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="selectAppr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="selectDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="selectMethod" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="selectReason" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="serverUpdateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="stagingGUID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="totalVal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="updateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="updatedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="realPropInfo" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="RealPropInfo" inverseName="applHist" inverseEntity="RealPropInfo" syncable="YES"/>
+    </entity>
+    <entity name="Bookmark" representedClassName="Bookmark" syncable="YES">
+        <attribute name="addedDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="descr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hasError" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="rowStatus" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rpGuid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="serverUpdateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="stagingGUID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="statusitemid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="typeItemId" optional="YES" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="updateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="updatedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="realpropinfo" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="RealPropInfo" inverseName="bookmark" inverseEntity="RealPropInfo" syncable="YES"/>
+    </entity>
+    <entity name="ChngHist" representedClassName="ChngHist" syncable="YES">
+        <attribute name="area" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="docId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eventDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="eventPerson" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="propStatus" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="rowStatus" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="rpGuid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="serverUpdateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="stagingGUID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="typeItemId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="unit" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="updatedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="chngHistDtl" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ChngHistDtl" inverseName="chngHist" inverseEntity="ChngHistDtl" syncable="YES"/>
+        <relationship name="realPropInfo" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="RealPropInfo" inverseName="chngHist" inverseEntity="RealPropInfo" syncable="YES"/>
+    </entity>
+    <entity name="ChngHistDtl" representedClassName="ChngHistDtl" syncable="YES">
+        <attribute name="area" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="attribute" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="attributeValue" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="chngGuid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="rowStatus" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="serverUpdateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="src" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="stagingGUID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="updateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="updatedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="chngHist" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="ChngHist" inverseName="chngHistDtl" inverseEntity="ChngHist" syncable="YES"/>
+    </entity>
+    <entity name="DatabaseDate" representedClassName="DatabaseDate" syncable="YES">
+        <attribute name="lastUpdateDate" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <entity name="EnvRes" representedClassName="EnvRes" syncable="YES">
+        <attribute name="area" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="attributeId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="delineationStudy" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="lndGuid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="lUSourceItem" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="pcntAffected" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="rowStatus" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="serverUpdateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="stagingGUID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="updateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="updatedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="valPct" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="land" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Land" inverseName="envRes" inverseEntity="Land" syncable="YES"/>
+    </entity>
+    <entity name="HIExmpt" representedClassName="HIExmpt" syncable="YES">
+        <attribute name="appMobile" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="appOwnLand" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="approved" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="approvedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="approvedDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="appSigned" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="area" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="bldgGuid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="destroyedProperty" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="estCompletionDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="estCost" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="firstBillYr" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="homeImpVal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="lastBillYr" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="lateApplication" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="maintOrReplace" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="multipleDwellings" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="newConstr" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="newDwellingUnit" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="nonDwellingUnit" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="permitDistrictId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="personalProperty" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="priorExemption" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="receivedDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="rowStatus" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="rpGuid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="serverUpdateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="stagingGUID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="updateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="updatedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="valueDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="valuedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="noteHIExmpt" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NoteHIExmpt" inverseName="hIExmpt" inverseEntity="NoteHIExmpt" syncable="YES"/>
+        <relationship name="realPropInfo" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="RealPropInfo" inverseName="hIExempt" inverseEntity="RealPropInfo" syncable="YES"/>
+    </entity>
+    <entity name="Inspection" representedClassName="Inspection" syncable="YES">
+        <attribute name="area" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="assmtYr" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="completedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="completedDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="inspectionId" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="inspectionTypeId" optional="YES" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="inspectionTypeItemId" optional="YES" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="rowStatus" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="rpGuid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="serverUpdateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="stagingGUID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="updateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="updatedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="realPropInfo" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="RealPropInfo" inverseName="inspection" inverseEntity="RealPropInfo" syncable="YES"/>
+    </entity>
+    <entity name="Land" representedClassName="Land" syncable="YES">
+        <attribute name="access" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="area" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="baseLandVal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="baseLandValDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="baseLandValSqFt" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="baseLandValTaxYr" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="baseLandValUnit" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="currentZoning" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="hBUAsIfVacant" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="hBUAsImproved" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="inadequateParking" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="pcntBaseLandValImpacted" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="pcntUnusable" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="presentUse" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="restrictiveSzShape" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="rowStatus" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="serverUpdateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="sewerSystem" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="stagingGUID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="streetSurface" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="unbuildable" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="updateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="updatedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="waterSystem" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="zoningChgDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="envRes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="EnvRes" inverseName="land" inverseEntity="EnvRes" syncable="YES"/>
+        <relationship name="landFootage" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="LandFootage" inverseName="land" inverseEntity="LandFootage" syncable="YES"/>
+        <relationship name="mediaLand" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="MediaLand" inverseName="land" inverseEntity="MediaLand" syncable="YES"/>
+        <relationship name="realPropInfo" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="RealPropInfo" inverseName="land" inverseEntity="RealPropInfo" syncable="YES"/>
+    </entity>
+    <entity name="LandFootage" syncable="YES">
+        <attribute name="guid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="rowStatus" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="serverUpdateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="sqFtLot" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="sqFtLotDry" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="sqFtLotSubmerged" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="stagingGUID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="updateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="updatedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="land" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Land" inverseName="landFootage" inverseEntity="Land" syncable="YES"/>
+    </entity>
+    <entity name="MediaAccy" representedClassName="MediaAccy" syncable="YES">
+        <attribute name="accyGuid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="active" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="area" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="imageType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="mediaDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="mediaType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="postToWeb" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="primary" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="rowStatus" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="serverUpdateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="stagingGUID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="updateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="updatedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="accy" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Accy" inverseName="mediaAccy" inverseEntity="Accy" syncable="YES"/>
+    </entity>
+    <entity name="MediaBldg" representedClassName="MediaBldg" syncable="YES">
+        <attribute name="active" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="area" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="bldgGuid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="imageType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="mediaDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="mediaType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="postToWeb" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="primary" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="rowStatus" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="serverUpdateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="stagingGUID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="updateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="updatedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="resBldg" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="ResBldg" inverseName="mediaBldg" inverseEntity="ResBldg" syncable="YES"/>
+    </entity>
+    <entity name="MediaLand" representedClassName="MediaLand" syncable="YES">
+        <attribute name="active" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="area" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="imageType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="lndGuid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="mediaDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="mediaType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="postToWeb" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="primary" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="rowStatus" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="serverUpdateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="stagingGUID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="updateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="updatedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="land" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Land" inverseName="mediaLand" inverseEntity="Land" syncable="YES"/>
+    </entity>
+    <entity name="MediaMobile" representedClassName="MediaMobile" syncable="YES">
+        <attribute name="active" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="area" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="imageType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="mediaDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="mediaType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="mhGuid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="postToWeb" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="primary" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="rowStatus" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="serverUpdateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="stagingGUID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="updateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="updatedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="mHAccount" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="MHAccount" inverseName="mediaMobile" inverseEntity="MHAccount" syncable="YES"/>
+    </entity>
+    <entity name="MediaNote" representedClassName="MediaNote" syncable="YES">
+        <attribute name="active" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="area" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="imageType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="mediaDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="mediaType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="noteGuid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="postToWeb" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="primary" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="rowStatus" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="serverUpdateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="stagingGUID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="updateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="updatedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="noteInstance" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="NoteInstance" inverseName="mediaNote" inverseEntity="NoteInstance" syncable="YES"/>
+    </entity>
+    <entity name="MHAccount" representedClassName="MHAccount" syncable="YES">
+        <attribute name="acctStatus" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="area" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="bldgNbr" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="createDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="mhType" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rowStatus" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="rpGuid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="serverUpdateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="stagingGUID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="taxAcctNbr" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="taxPayerName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="txExempt" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="updateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="updatedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="mediaMobile" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="MediaMobile" inverseName="mHAccount" inverseEntity="MediaMobile" syncable="YES"/>
+        <relationship name="mHCharacteristic" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="MHCharacteristic" inverseName="mHAccount" inverseEntity="MHCharacteristic" syncable="YES"/>
+        <relationship name="mHLocation" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="MHLocation" inverseName="mHAccount" inverseEntity="MHLocation" syncable="YES"/>
+        <relationship name="realPropInfo" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="RealPropInfo" inverseName="mHAccount" inverseEntity="RealPropInfo" syncable="YES"/>
+    </entity>
+    <entity name="MHCharacteristic" representedClassName="MHCharacteristic" syncable="YES">
+        <attribute name="area" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="class_" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="condition" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="length" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="livingArea" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="makeModel" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mhGuid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pcntNetCondition" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="roomAddSqft" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="rowStatus" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="serialNbrVin" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="serverUpdateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="size" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="stagingGUID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="tipOutArea" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="updateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="updatedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="width" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="yrBuilt" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="mHAccount" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="MHAccount" inverseName="mHCharacteristic" inverseEntity="MHAccount" syncable="YES"/>
+    </entity>
+    <entity name="MHLocation" representedClassName="MHLocation" syncable="YES">
+        <attribute name="addrUsage" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="area" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dirPrefix" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dirSuffix" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="mhGuid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="nbrFraction" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="parkId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="rowStatus" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="serverUpdateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="spaceNbr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="stagingGUID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="streetName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="streetNbr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="streetType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="updatedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="mHAccount" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="MHAccount" inverseName="mHLocation" inverseEntity="MHAccount" syncable="YES"/>
+    </entity>
+    <entity name="NoteHIExmpt" representedClassName="NoteHIExmpt" parentEntity="NoteInstance" syncable="YES">
+        <relationship name="hIExmpt" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="HIExmpt" inverseName="noteHIExmpt" inverseEntity="HIExmpt" syncable="YES"/>
+    </entity>
+    <entity name="NoteInstance" representedClassName="NoteInstance" syncable="YES">
+        <attribute name="area" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rowStatus" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="serverUpdateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="src" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="srcGuid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="stagingGUID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="unit" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="updatedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="mediaNote" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="MediaNote" inverseName="noteInstance" inverseEntity="MediaNote" syncable="YES"/>
+    </entity>
+    <entity name="NoteRealPropInfo" representedClassName="NoteRealPropInfo" parentEntity="NoteInstance" syncable="YES">
+        <relationship name="realPropInfo" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="RealPropInfo" inverseName="noteRealPropInfo" inverseEntity="RealPropInfo" syncable="YES"/>
+    </entity>
+    <entity name="NoteReview" representedClassName="NoteReview" parentEntity="NoteInstance" syncable="YES">
+        <relationship name="review" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Review" inverseName="noteReview" inverseEntity="Review" syncable="YES"/>
+    </entity>
+    <entity name="NoteSale" representedClassName="NoteSale" parentEntity="NoteInstance" syncable="YES">
+        <relationship name="sale" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Sale" inverseName="noteSale" inverseEntity="Sale" syncable="YES"/>
+    </entity>
+    <entity name="ParcelAssignment" representedClassName="ParcelAssignment" syncable="YES">
+        <attribute name="assignedTo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="assignmenttypeid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="assignmenttypeitemid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="assmtYr" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rowStatus" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rpGuid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="serverUpdateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="stagingGUID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="updatedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="realpropinfo" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="RealPropInfo" inverseName="parcelAssignment" inverseEntity="RealPropInfo" syncable="YES"/>
+    </entity>
+    <entity name="Permit" representedClassName="Permit" syncable="YES">
+        <attribute name="area" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="issuedDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="issuingJurisdiction" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="jurisInspectDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="jurisInspectStat" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pcntComplete" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="permitDescr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="permitNbr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="permitStatus" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="permitType" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="permitVal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="reviewedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reviewedDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="rowStatus" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="rpGuid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="serverUpdateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="stagingGUID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="unit" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="updatedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="permitDtl" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PermitDtl" inverseName="permit" inverseEntity="PermitDtl" syncable="YES"/>
+        <relationship name="realPropInfo" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="RealPropInfo" inverseName="permit" inverseEntity="RealPropInfo" syncable="YES"/>
+    </entity>
+    <entity name="PermitDtl" representedClassName="PermitDtl" syncable="YES">
+        <attribute name="area" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="itemValue" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="permitGuid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="permitItem" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="rowStatus" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="serverUpdateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="stagingGUID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="updateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="updatedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="permit" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Permit" inverseName="permitDtl" inverseEntity="Permit" syncable="YES"/>
+    </entity>
+    <entity name="RealPropInfo" representedClassName="RealPropInfo" syncable="YES">
+        <attribute name="applGroup" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="area" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="assignedUser" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="changeSource" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="districtId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="folio" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="geoArea" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="geoNbrhd" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="legalDesc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="levyCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lndGuid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="major" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="minor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nbrFraction" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="neighborhood" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="parcelNbr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="platBlock" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="platLot" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="propName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="propType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="quarterSection" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="range" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="realPropId" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="resArea" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="resSubArea" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rowStatus" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="section" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="serverUpdateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="specArea" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="specNbrhd" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="stagingGUID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="street" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="streetId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="streetNbr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="township" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="unitDescr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="updatedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="zipCode" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="account" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Account" inverseName="realPropInfo" inverseEntity="Account" syncable="YES"/>
+        <relationship name="accy" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Accy" inverseName="realPropInfo" inverseEntity="Accy" syncable="YES"/>
+        <relationship name="applHist" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ApplHist" inverseName="realPropInfo" inverseEntity="ApplHist" syncable="YES"/>
+        <relationship name="bookmark" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Bookmark" inverseName="realpropinfo" inverseEntity="Bookmark" syncable="YES"/>
+        <relationship name="chngHist" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ChngHist" inverseName="realPropInfo" inverseEntity="ChngHist" syncable="YES"/>
+        <relationship name="hIExempt" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="HIExmpt" inverseName="realPropInfo" inverseEntity="HIExmpt" syncable="YES"/>
+        <relationship name="inspection" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Inspection" inverseName="realPropInfo" inverseEntity="Inspection" syncable="YES"/>
+        <relationship name="land" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Land" inverseName="realPropInfo" inverseEntity="Land" syncable="YES"/>
+        <relationship name="mHAccount" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="MHAccount" inverseName="realPropInfo" inverseEntity="MHAccount" syncable="YES"/>
+        <relationship name="noteRealPropInfo" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NoteRealPropInfo" inverseName="realPropInfo" inverseEntity="NoteRealPropInfo" syncable="YES"/>
+        <relationship name="parcelAssignment" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="ParcelAssignment" inverseName="realpropinfo" inverseEntity="ParcelAssignment" syncable="YES"/>
+        <relationship name="permit" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Permit" inverseName="realPropInfo" inverseEntity="Permit" syncable="YES"/>
+        <relationship name="resBldg" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ResBldg" inverseName="realPropInfo" inverseEntity="ResBldg" syncable="YES"/>
+        <relationship name="review" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Review" inverseName="realPropInfo" inverseEntity="Review" syncable="YES"/>
+        <relationship name="saleParcel" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SaleParcel" inverseName="realPropInfo" inverseEntity="SaleParcel" syncable="YES"/>
+        <relationship name="taxRoll" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TaxRoll" inverseName="realPropInfo" inverseEntity="TaxRoll" syncable="YES"/>
+        <relationship name="undividedInt" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UndividedInt" inverseName="realPropInfo" inverseEntity="UndividedInt" syncable="YES"/>
+        <relationship name="valEst" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ValEst" inverseName="realPropInfo" inverseEntity="ValEst" syncable="YES"/>
+        <relationship name="valHist" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ValHist" inverseName="realPropInfo" inverseEntity="ValHist" syncable="YES"/>
+        <relationship name="xland" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="XLand" inverseName="realPropInfo" inverseEntity="XLand" syncable="YES"/>
+    </entity>
+    <entity name="ResBldg" representedClassName="ResBldg" syncable="YES">
+        <attribute name="active" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="addnlCost" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="area" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="bath3qtrCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="bathFullCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="bathHalfCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="bedrooms" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="bldgGrade" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="bldgGradeVar" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="bldgNbr" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="brickStone" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="condition" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="createDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="daylightBasement" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="finBasementGrade" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="fpAdditional" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="fpFreeStanding" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="fpMultiStory" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="fpSingleStory" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="heatSource" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="heatSystem" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="nbrFraction" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nbrLivingUnits" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="obsolescence" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="pcntComplete" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="pcntNetCondition" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="rowStatus" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="rpGuid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="serverUpdateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="sqFt1stFloor" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="sqFt2ndFloor" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="sqFtDeck" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="sqFtEnclosedPorch" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="sqFtFinBasement" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="sqFtGarageAttached" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="sqFtGarageBasement" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="sqFtHalfFloor" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="sqFtOpenPorch" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="sqFtTotBasement" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="sqFtTotLiving" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="sqFtUnFinFull" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="sqFtUnFinHalf" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="sqFtUpperFloor" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="stagingGUID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="stories" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
+        <attribute name="street" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="streetId" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="streetNbr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="unitDesc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="updatedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="viewUtilization" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="yrBuilt" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="yrRenovated" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="zipCode" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="mediaBldg" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="MediaBldg" inverseName="resBldg" inverseEntity="MediaBldg" syncable="YES"/>
+        <relationship name="realPropInfo" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="RealPropInfo" inverseName="resBldg" inverseEntity="RealPropInfo" syncable="YES"/>
+    </entity>
+    <entity name="Review" representedClassName="Review" syncable="YES">
+        <attribute name="agent" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="appealedValue" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="appealNbr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="area" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="billYr" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="hearingDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="hearingInfo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hearingLoc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hearingResult" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="orderDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="relatedAppealNbr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="respAppr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reviewSource" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reviewType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="rowStatus" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="rpGuid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="serverUpdateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="settlementValue" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="stagingGUID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="statusAssessor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="statusAssmtReview" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="statusBoard" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="statusStipulation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="taxpayername" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="unit" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="updatedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="noteReview" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NoteReview" inverseName="review" inverseEntity="NoteReview" syncable="YES"/>
+        <relationship name="realPropInfo" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="RealPropInfo" inverseName="review" inverseEntity="RealPropInfo" syncable="YES"/>
+        <relationship name="reviewJrnl" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ReviewJrnl" inverseName="review" inverseEntity="ReviewJrnl" syncable="YES"/>
+    </entity>
+    <entity name="ReviewJrnl" representedClassName="ReviewJrnl" syncable="YES">
+        <attribute name="apprImpsVal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="apprLandVal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="apprTotalVal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="area" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="entryDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="entryType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="entryTypeItemId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="rowStatus" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="rtGuid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="serverUpdateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="sourcePerson" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="stagingGUID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="targetPerson" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="updatedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="review" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Review" inverseName="reviewJrnl" inverseEntity="Review" syncable="YES"/>
+    </entity>
+    <entity name="Sale" representedClassName="Sale" syncable="YES">
+        <attribute name="aFCurrentUseLand" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="aFForestLand" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="aFHistoricProperty" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="aFNonProfitUse" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="area" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="buyerAddr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="buyerName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="exciseTaxNbr" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="identifiedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="identifiedDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="instrument" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="principalUse" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="propCnt" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="propertyClass" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="propertyType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rERecordingNbr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rowStatus" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="saleDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="salePrice" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="saleProcess" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="saleReason" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sellerAddr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sellerName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="serverUpdateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="stagingGUID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="updateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="updatedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="noteSale" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NoteSale" inverseName="sale" inverseEntity="NoteSale" syncable="YES"/>
+        <relationship name="saleParcel" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SaleParcel" inverseName="sale" inverseEntity="SaleParcel" syncable="YES"/>
+        <relationship name="saleVerif" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="SaleVerif" inverseName="sale" inverseEntity="SaleVerif" syncable="YES"/>
+        <relationship name="saleWarning" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SaleWarning" inverseName="sale" inverseEntity="SaleWarning" syncable="YES"/>
+    </entity>
+    <entity name="SaleParcel" representedClassName="SaleParcel" syncable="YES">
+        <attribute name="area" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="parcel" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rowStatus" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="rpGuid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="saleGuid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="serverUpdateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="stagingGUID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <relationship name="realPropInfo" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="RealPropInfo" inverseName="saleParcel" inverseEntity="RealPropInfo" syncable="YES"/>
+        <relationship name="sale" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Sale" inverseName="saleParcel" inverseEntity="Sale" syncable="YES"/>
+    </entity>
+    <entity name="SaleVerif" syncable="YES">
+        <attribute name="guid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="nonRepComp1" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="nonRepComp2" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="rowStatus" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="saleGuid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="serverUpdateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="stagingGUID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="updateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="updatedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="verificationLevel" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="vYVerifDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="vYVerifiedAtMarket" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="vYVerifiedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="sale" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Sale" inverseName="saleVerif" inverseEntity="Sale" syncable="YES"/>
+    </entity>
+    <entity name="SaleWarning" representedClassName="SaleWarning" syncable="YES">
+        <attribute name="area" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="rowStatus" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="saleGuid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="serverUpdateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="stagingGUID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="updateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="updatedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="warning" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="sale" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Sale" inverseName="saleWarning" inverseEntity="Sale" syncable="YES"/>
+    </entity>
+    <entity name="TaxRoll" representedClassName="TaxRoll" syncable="YES">
+        <attribute name="acctNbr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="acctStat" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="apprImpIncrease" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="apprImpsVal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="apprLandVal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="apprTotalVal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="area" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="billYr" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="impsVal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="landVal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="levyCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="omitYr" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="receivableType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rowStatus" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="rpGuid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="serverUpdateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="stagingGUID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="taxStat" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="taxValReason" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="totalVal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="realPropInfo" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="RealPropInfo" inverseName="taxRoll" inverseEntity="RealPropInfo" syncable="YES"/>
+    </entity>
+    <entity name="UndividedInt" representedClassName="UndividedInt" syncable="YES">
+        <attribute name="applgroup" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="area" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="interests" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="intParcel" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="parcel" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="proptype" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rowStatus" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="rpGuid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="serverUpdateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="stagingGUID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <relationship name="realPropInfo" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="RealPropInfo" inverseName="undividedInt" inverseEntity="RealPropInfo" syncable="YES"/>
+    </entity>
+    <entity name="ValEst" representedClassName="ValEst" syncable="YES">
+        <attribute name="area" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="bldgGuid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bldgNbr" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="estDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="estType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="impsVal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="landVal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="rollYr" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="rowStatus" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="rpGuid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="serverUpdateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="stagingGUID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="totalVal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="updateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="updatedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="versionNbr" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="realPropInfo" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="RealPropInfo" inverseName="valEst" inverseEntity="RealPropInfo" syncable="YES"/>
+    </entity>
+    <entity name="ValHist" representedClassName="ValHist" syncable="YES">
+        <attribute name="apprImpIncrease" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="apprImpsVal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="apprLandVal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="area" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="billYr" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="changeDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="changeDocId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="impsVal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="landVal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="levyCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="omitYr" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="reason" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rowStatus" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="rpGuid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="serverUpdateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="splitCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="stagingGUID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="taxStatus" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="taxValReason" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="totalApprVal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="totalVal" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="unit" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="realPropInfo" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="RealPropInfo" inverseName="valHist" inverseEntity="RealPropInfo" syncable="YES"/>
+    </entity>
+    <entity name="XLand" representedClassName="XLand" syncable="YES">
+        <attribute name="adjacentGolfFairway" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="adjacentGreenbelt" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="adjacGolfdollars" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="adjacGolfvalpct" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="adjacGreenbeltvaldollars" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="adjacGreenbeltvalpct" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="airportNoise" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="airportValdollars" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="airportValpct" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="area" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="cascades" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="currentUseDesignation" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="deedRestrictions" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="deedRestrictvalpct" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="developmentRightsPurchased" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="devRightsvalpct" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="dNRLease" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="dnrLeasevalpct" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="easements" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="easementsValpct" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="economicUnit" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="economicUnitname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="economicUnitparcellist" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="excessLand" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="historicSite" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="lakeSammamish" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="lakeWashington" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="lotDepthFactor" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="mtRainier" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="nativeGrowthProtEsmt" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="nativeGrowthValpct" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="nbrBldgSites" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="olympics" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="otherDesignation" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="otherDesigvalpct" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="otherNuisances" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="otherNuisvalpct" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="otherProblems" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="otherProblemsvalpct" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="otherView" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="powerLines" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="powerLinesvalpct" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="pugetSound" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="roadAccessvalpct" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="rowStatus" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="seattleSkyline" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="serverUpdateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="smallLakeRiverCreek" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="splitZoning" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="stagingGUID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="territorial" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="tidelandShoreland" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="topography" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="topoValpct" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="trafficNoise" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="trafficValdollars" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="trafficValpct" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="transportationConcurrency" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="updateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="updatedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="waterProblems" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="waterProblemsvalpct" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="wetlandValpct" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="wfntAccessRights" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="wfntBank" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="wfntFootage" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="wfntLocation" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="wfntPoorQuality" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="wfntProximityInfluence" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="wfntRestrictedAccess" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="realPropInfo" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="RealPropInfo" inverseName="xland" inverseEntity="RealPropInfo" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Account" positionX="27" positionY="81" width="128" height="165"/>
+        <element name="Accy" positionX="495" positionY="-351" width="128" height="375"/>
+        <element name="ApplHist" positionX="367" positionY="63" width="128" height="375"/>
+        <element name="Bookmark" positionX="160" positionY="192" width="128" height="240"/>
+        <element name="ChngHist" positionX="-234" positionY="297" width="128" height="300"/>
+        <element name="ChngHistDtl" positionX="-191" positionY="-396" width="128" height="225"/>
+        <element name="DatabaseDate" positionX="160" positionY="192" width="128" height="60"/>
+        <element name="EnvRes" positionX="702" positionY="-414" width="128" height="255"/>
+        <element name="HIExmpt" positionX="583" positionY="456" width="128" height="570"/>
+        <element name="Inspection" positionX="-540" positionY="-27" width="128" height="270"/>
+        <element name="Land" positionX="898" positionY="-414" width="128" height="495"/>
+        <element name="LandFootage" positionX="160" positionY="192" width="128" height="195"/>
+        <element name="MediaAccy" positionX="-891" positionY="-69" width="128" height="315"/>
+        <element name="MediaBldg" positionX="-36" positionY="-225" width="128" height="315"/>
+        <element name="MediaLand" positionX="306" positionY="-441" width="128" height="315"/>
+        <element name="MediaMobile" positionX="-441" positionY="-432" width="128" height="315"/>
+        <element name="MediaNote" positionX="-272" positionY="-189" width="128" height="315"/>
+        <element name="MHAccount" positionX="-774" positionY="-441" width="128" height="345"/>
+        <element name="MHCharacteristic" positionX="-603" positionY="-441" width="128" height="360"/>
+        <element name="MHLocation" positionX="-945" positionY="-441" width="128" height="330"/>
+        <element name="NoteHIExmpt" positionX="160" positionY="192" width="128" height="60"/>
+        <element name="NoteInstance" positionX="187" positionY="783" width="128" height="225"/>
+        <element name="NoteRealPropInfo" positionX="160" positionY="192" width="128" height="60"/>
+        <element name="NoteReview" positionX="160" positionY="192" width="128" height="60"/>
+        <element name="NoteSale" positionX="160" positionY="192" width="128" height="60"/>
+        <element name="ParcelAssignment" positionX="160" positionY="192" width="128" height="225"/>
+        <element name="Permit" positionX="-522" positionY="882" width="128" height="390"/>
+        <element name="PermitDtl" positionX="160" positionY="192" width="128" height="210"/>
+        <element name="RealPropInfo" positionX="196" positionY="369" width="128" height="975"/>
+        <element name="ResBldg" positionX="603" positionY="-36" width="128" height="915"/>
+        <element name="Review" positionX="484" positionY="525" width="128" height="510"/>
+        <element name="ReviewJrnl" positionX="718" positionY="117" width="128" height="300"/>
+        <element name="Sale" positionX="-54" positionY="741" width="128" height="525"/>
+        <element name="SaleParcel" positionX="-549" positionY="378" width="128" height="195"/>
+        <element name="SaleVerif" positionX="160" positionY="192" width="128" height="255"/>
+        <element name="SaleWarning" positionX="-171" positionY="162" width="128" height="195"/>
+        <element name="TaxRoll" positionX="-396" positionY="783" width="128" height="375"/>
+        <element name="UndividedInt" positionX="-549" positionY="207" width="128" height="225"/>
+        <element name="ValEst" positionX="205" positionY="-135" width="128" height="315"/>
+        <element name="ValHist" positionX="-738" positionY="513" width="128" height="405"/>
+        <element name="XLand" positionX="736" positionY="450" width="128" height="1125"/>
+    </elements>
+</model>

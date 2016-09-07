@@ -1,0 +1,431 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<irealpropertySearch>
+    <SearchGroup title="AREA-WIDE SEARCHES">
+        <!-- SearchDefinition marks the beginning of the search test 3 - Reviewed by Regis-->
+        <SearchDefinition title="By Parcel" mode="ByParcel">
+            <query entity="RealPropInfo" sortby="parcelNbr" ascending="yes" predicate="parcelNbr IN %@" grid="GridSearchResultForPI" />
+        </SearchDefinition>
+        <SearchDefinition title="By Street" mode="ByStreet">
+            <query entity="RealPropInfo" sortby="streetNbr" ascending="yes" predicate="streetId=%d" grid="GridSearchResultForPI" />
+        </SearchDefinition>
+        <SearchDefinition title="Taxpayers Name" description="Enter the name (or a partial name) of the taxpayers">
+            <SearchItem reference="$name" title="Names" maxchar="15" required="yes" help="Help on names. It can be a very long help to describe this item or others" default="" />
+            <!--            <SearchItem reference="$sqftlot" title="Lot Sq Ft" maxchar="7"  filter="num"/>-->
+            <!--            <query entity="Account" sortby="acct" root="RealPropInfo" predicate="acct CONTAINS[c] $name AND RealPropInfo.land.sqFtLot >= $sqftlot" grid="GridSearchResultForPI"/>-->
+            <query entity="Account" sortby="acct" predicate="acct CONTAINS[c] $name" grid="GridSearchResultForPI" />
+        </SearchDefinition>
+        <SearchDefinition title="Area" description="Lists Pcls in Area" defaultmap="yes">
+            <query entity="RealPropInfo" sortby="parcelNbr" ascending="yes" predicate="realPropId &gt; 0" grid="GridSearchResultForPI"/>
+            <!-- <query entity="RealPropInfo" sortby="parcelNbr" ascending="yes" predicate="assignedUser LIKE[c] $User" grid="GridSearchResultForPI"/>-->
+        </SearchDefinition>
+        
+        
+        <SearchDefinition title="Sub Area" description="Lists Pcls in a ResSubArea" defaultmap="yes">
+            <SearchItem reference="$resSubArea" title="SubArea" maxchar="3" required="yes" help="Enter ResSubArea" default="" choice="RealPropInfo.resSubArea" />
+            <query entity="RealPropInfo" sortby="parcelNbr" ascending="yes" predicate="resSubArea LIKE[c] $resSubArea" grid="GridSearchResultForPI" />
+        </SearchDefinition>
+
+        <!--
+          <SearchDefinition title="Sub Area" description="Lists Pcls in a ResSubArea" defaultmap="yes">
+            <SearchItem reference="$resSubArea" title="SubArea" maxchar="3" required="yes" help="Enter ResSubArea" default="" choice="RealPropInfo.resSubArea" />
+            <query entity="RealPropInfo" sortby="parcelNbr" ascending="yes" predicate="resSubArea LIKE[c] $resSubArea AND realPropInfo.area LIKE[c] $CURAREA" grid="GridSearchResultForPI" />
+        </SearchDefinition>
+          -->
+
+        
+        <SearchDefinition title="Folio" description="Lists Pcls in a Folio" defaultmap="yes">
+            <SearchItem reference="$folio" title="Folio" maxchar="7" required="yes" help="Enter 7-digit Folio" default="" choice="RealPropInfo.folio" />
+            <query entity="RealPropInfo" sortby="parcelNbr" ascending="yes" predicate="folio LIKE[c] $folio" grid="GridSearchResultForPI" />
+        </SearchDefinition>
+        <SearchDefinition title="Major" description="Lists Pcls in a Major Number (Plat)" defaultmap="yes">
+            <SearchItem reference="$major" title="Major" maxchar="6" required="yes" help="Enter 6-digit major number" default="" choice="RealPropInfo.major" />
+            <query entity="RealPropInfo" sortby="parcelNbr" ascending="yes" predicate="major = $major" grid="GridSearchResultForPI" />
+        </SearchDefinition>
+        <SearchDefinition title="Manufactured Homes" description="Search for Mobile Home">
+            <!-- <query entity="MHAccount" sortby="mobileHomeId" predicate="mobileHomeId!=0" grid="GridSearchResultForPI" />-->
+            <query entity="MHAccount" sortby="mhlocation" predicate="serverupdatedate &gt; #DATE(10/09/2015)" grid="GridSearchResultForPI" />
+            
+            
+        </SearchDefinition>
+        <SearchDefinition title="All Sales Area Wide" description="Search for All Sales Area Wide">
+            <SearchItem reference="$Date" default="1/1/2013" title="minimum sale date" required="yes" filter="date" />
+            <query entity="Sale" root="SaleParcel[0].realPropInfo" sortby="saleDate" predicate="salePrice &gt; 0 AND saleDate &gt; $Date" grid="GridSearchResultWithSalesAndBldgsAreaWide" />
+        </SearchDefinition>
+        
+        
+        <SearchDefinition title="All Maintenance Area Wide" description="Area Wide Compl. and Incompl. Permits And Segs, Reviews, etc.">
+            <SearchItem reference="$permitVal" default="0" title="minimum permit value" required="yes" filter="num" />
+            <query entity="Permit" sortby="permitVal" ascending="yes" predicate="(permitVal &gt;= $permitVal and updateDate &gt; #DATE(10/09/2015) and permitStatus &gt; 1) or (permitVal &gt;= $permitVal and permitStatus = 1) " grid="GridSearchResultWithSegsAndPermitsAreaWide" />
+            <joinquery entity="ChngHist" sortby="type" predicate="((type='Seg Merge' or type='New Plat' or type='New Parcel' or type='Transfer' or type='Unkill') 
+            and (updateDate &gt; #DATE(10/09/2015) or propStatus = 0 or propStatus = 2))" />
+            <!-- <joinquery entity="ChngHist" sortby="type" predicate="(type='Seg Merge')" />
+             <joinquery entity="ChngHist" sortby="type" /> -->
+            <joinquery entity="Review" sortby="assmtReviewId" predicate="reviewType &gt;= 4 AND (statusAssmtReview &lt; 9 or  updateDate  &gt; #DATE(10/09/2015) ) " />
+        </SearchDefinition>
+        
+        
+    </SearchGroup>
+    <SearchGroup title="ASSIGNED PARCEL SEARCHES"></SearchGroup>
+    <SearchGroup title="Physical Inspection">
+        <SearchDefinition title="All Assigned Parcels" description="Lists all assigned parcels and status of various field tasks." defaultmap="yes">
+            <!-- <query entity="RealPropInfo" sortby="parcelNbr" ascending="yes" predicate="realPropId &gt; 0 AND assignedUser LIKE[c] $User" grid="GridSearchResultForPI"/>-->
+            <query entity="RealPropInfo" sortby="parcelNbr" ascending="yes" predicate="assignedUser LIKE[c] $User" grid="GridSearchResultForPI"/>
+        </SearchDefinition>
+        <!--	TODO, Want < 3, but even = 0 does not work for this one.  Mesa SQL shows 0 and 3 values for inspectionTypeItemId  in my database-->
+        <SearchDefinition title="Need Physical Inspection" description="Lists parcels needing inspection - includes status of various field tasks.">
+            <query entity="Inspection" sortby="realPropInfo.parcelNbr" ascending="yes" predicate="inspectionTypeItemId &lt;3 AND realPropInfo.assignedUser LIKE[c] $User" grid="GridSearchResultForPI" />
+        </SearchDefinition>
+        
+        <!--	THIS WORKS JUST FINE WITH = 3-->
+        <SearchDefinition title="Physical Inspection Complete" description="Lists inspected parcels - includes status of various field tasks.">
+            <query entity="Inspection" sortby="realPropInfo.parcelNbr" ascending="yes" predicate="inspectionTypeItemId = 3 AND realPropInfo.assignedUser LIKE[c] $User AND completedDate &gt; #DATE(09/14/2014)" grid="GridSearchResultForPI" />
+        </SearchDefinition>
+    </SearchGroup>
+    <SearchGroup title="Sales Searches">
+        <SearchDefinition title="All Sales" description="Search for All Sales">
+            <SearchItem reference="$Date" default="1/1/2013" title="minimum sale date" required="yes" filter="date" />
+            <query entity="Sale" root="SaleParcel[0].realPropInfo" sortby="saleDate" predicate="salePrice &gt; 0 AND saleDate &gt; $Date         AND ANY saleParcel.realPropInfo.assignedUser LIKE[c] $User" grid="GridSearchResultWithSalesAndBldgs" />
+        </SearchDefinition>
+        
+        <SearchDefinition title="Unverified Sales" description="Search for Unverified Sales">
+            <SearchItem reference="$Date" default="1/1/2013" title="minimum sale date" required="yes" filter="date" />
+            <query entity="Sale" root="SaleParcel[0].realPropInfo" sortby="saleDate" predicate="salePrice &gt; 0 AND saleDate &gt; $Date         AND saleVerif.vYVerifiedAtMarket = 0 AND ANY saleParcel.realPropInfo.assignedUser LIKE[c] $User" grid="GridSearchResultWithSalesAndBldgs"/>
+        </SearchDefinition>
+        
+        <SearchDefinition title="Verified Sales" description="Search for sales verified this revalue cycle">
+            <SearchItem reference="$Date" default="1/1/2013" title="minimum sale date" required="yes" filter="date" />
+            <query entity="Sale" sortby="saleDate" root="SaleParcel[0].realPropInfo" predicate="salePrice &gt; 0 AND saleDate &gt; $Date AND saleVerif.vYVerifDate &gt; #DATE(9/14/2014) AND saleVerif.vYVerifiedAtMarket &gt; 0 AND ANY saleParcel.realPropInfo.assignedUser LIKE[c] $User" grid="GridSearchResultWithSalesAndBldgs"/>
+            <!--  from ZSale s
+             inner join ZSaleParcel sp on sp.ZSaleId = s.ZSaleId
+             inner join ZRealPropInfo r on r.ZRealPropId = sp.ZRealPropId
+             where ZSalePrice &gt; 0 and ZVYVerifiedAtMarket &gt;= 1 and ZVYVerifDate &gt; $VERIFDATE
+             and ZSaleDate &gt; $SALEDATE and r.ZAssignedUser LIKE $USER</string>
+             -->
+        </SearchDefinition>
+    </SearchGroup>
+    <SearchGroup title="Maintenance (Bldg Permits, New Plats, Assessment Reviews, etc.)">
+        
+        <SearchDefinition title="All Maintenance" description="Compl. and Incompl. Permits And Segs, Reviews, etc.">
+            <SearchItem reference="$permitVal" default="0" title="minimum permit value" required="yes" filter="num" />
+            <query entity="Permit" sortby="permitVal" ascending="yes" predicate="(permitVal &gt;= $permitVal and updateDate &gt; #DATE(10/09/2015) and permitStatus &gt; 1 AND realPropInfo.assignedUser LIKE[c] $User) or (permitVal &gt;= $permitVal and permitStatus = 1 AND realPropInfo.assignedUser CONTAINS $User) " grid="GridSearchResultWithSegsAndPermits" />
+            <joinquery entity="ChngHist" sortby="type" predicate="((type='Seg Merge' or type='New Plat' or type='New Parcel' or type='Transfer' or type='Unkill') and (updateDate &gt; #DATE(10/09/2015) or propStatus = 0 or propStatus = 2) AND realPropInfo.assignedUser LIKE[c] $User)" />
+            <joinquery entity="Review" sortby="assmtReviewId" predicate="reviewType &gt;= 4 AND (statusAssmtReview &lt; 9 or  updateDate  &gt; #DATE(10/09/2015) ) AND realPropInfo.assignedUser LIKE[c] $User" />
+        </SearchDefinition>
+        
+        
+        <SearchDefinition title="Incomplete Maintenance" description="Incomplete Permits And Segs, Reviews, etc.">
+            <SearchItem reference="$permitVal" default="0" title="minimum permit value" required="yes" filter="num" />
+            <query entity="Permit" sortby="permitVal" ascending="yes" predicate="permitVal &gt;= $permitVal and permitStatus = 1 AND realPropInfo.assignedUser LIKE[c] $User" grid="GridSearchResultWithSegsAndPermits" />
+            <joinquery entity="ChngHist" sortby="type" predicate="((type='Seg Merge' or type='New Plat' or type='New Parcel' or type='Transfer' or type='Unkill') and (propStatus = 0 or propStatus = 2) AND realPropInfo.assignedUser LIKE[c] $User)" />
+            <joinquery entity="Review" sortby="assmtReviewId" predicate="statusAssmtReview &lt; 9 and reviewType &gt;= 4 AND realPropInfo.assignedUser LIKE[c] $User" />
+        </SearchDefinition>
+        
+        
+        <SearchDefinition title="Complete Maintenance" description="Complete Permits And Segs, Reviews, etc.">
+            <SearchItem reference="$permitVal" default="0" title="minimum permit value" required="yes" filter="num" />
+            <query entity="Permit" sortby="permitVal" ascending="yes" predicate="permitVal &gt;= $permitVal and updateDate &gt; #DATE(10/04/2013) and permitStatus &gt; 1 AND realPropInfo.assignedUser LIKE[c] $User" grid="GridSearchResultWithSegsAndPermits" />
+            <joinquery entity="ChngHist" sortby="type" predicate="((type='Seg Merge' or type='New Plat' or type='New Parcel' or type='Transfer' or type='Unkill')          and updateDate &gt; #DATE(10/09/2015) and (propStatus = 1 or propStatus = 3)          AND realPropInfo.assignedUser LIKE[c] $User)" />
+            <joinquery entity="Review" sortby="assmtReviewId" predicate="statusAssmtReview = 9 and reviewType &gt;= 4 AND updateDate  &gt; #DATE(10/09/2015) and realPropInfo.assignedUser LIKE[c] $User" />
+        </SearchDefinition>
+        
+    </SearchGroup>
+    <SearchGroup title="Field Reviews and Appeals">
+        <SearchDefinition title="Field Reviews" description="Compl. and Incompl. Field Reviews (assessment and characteristics reviews, destroyed property)">
+           <!--  <query entity="Review" sortby="orderDate" predicate="statusAssmtReview &lt; 9 and reviewType &gt;= 4 AND realPropInfo.assignedUser LIKE[c] $User" grid="GridSearchResultReviews" />  -->
+            <query entity="Review" sortby="orderDate" predicate="statusAssmtReview &lt; 9 and reviewType &gt;= 4" grid="GridSearchResultReviews" />  
+
+        </SearchDefinition>
+        <SearchDefinition title="Active Appeals" description="Active Appeals">
+           <!--  <query entity="Review" sortby="orderDate" predicate="statusAssmtReview &lt; 9 and reviewType &lt; 4 AND realPropInfo.assignedUser LIKE[c] $User" grid="GridSearchResultReviews" />   -->
+            <query entity="Review" sortby="orderDate" predicate="statusAssmtReview &lt; 9 and reviewType &lt; 4" grid="GridSearchResultReviewsNoRT" />  
+
+        </SearchDefinition>
+        <SearchDefinition title="Appeals by Bill Year" description="Appeals by Bill Year (note that Bill Year = Assessment Year + 1)">
+            <SearchItem reference="$BillYr" default="2016" title="Bill Year" required="yes" filter="num" />
+          <!--   <query entity="Review" sortby="orderDate" predicate="billYr = $BillYr and reviewType &lt; 4 AND realPropInfo.assignedUser LIKE[c] $User" grid="GridSearchResultReviews" />  -->
+            <query entity="Review" sortby="orderDate" predicate="billYr = $BillYr and reviewType &lt; 4" grid="GridSearchResultReviewsNoRT" /> 
+
+        </SearchDefinition>
+    </SearchGroup>
+    <!-- DEFAULT SEARCH FROM THE MAP -->
+    <GridDefinition name="GridDefaultFromMap" tag="40" height="30" auto="yes" object="RealPropInfo">
+        <!-- <col label="landId" width="80" path="land.landId"/> -->
+        <col label="Account" width="250" path="account.acct" />
+        <col label="Address" width="80" path="streetNbr" />
+        <col label="Street " width="120" path="street" />
+        <col label="Zip" width="100" path="zipCode" />
+        <col label="City" width="120" path="city" />
+        <col label="PT" width="50" path="propType" />
+        <col label="Major" width="80" path="major" />
+        <col label="Minor" width="60" path="minor" />
+        <col label="Area" width="60" path="resArea" />
+        <col label="Sub" width="60" path="resSubArea" />
+        <col label="QSTR" width="60" path="quarterSection" />
+        <col label="Section" width="60" path="section" />
+        <col label="Township" width="60" path="township" />
+        <col label="Range" width="60" path="range" />
+        <col label="Levy" width="60" path="levyCode" />
+        <col label="Block" width="60" path="platBlock" />
+        <col label="Lot" width="60" path="platLot" />
+    </GridDefinition>
+    <!-- GridSearchResultWithName: result of the search -->
+    <GridDefinition name="GridSearchResultWithName" tag="40" height="30" auto="yes" object="RealPropInfo">
+        <!-- <col label="landId" width="80" path="landlandId"/> -->
+        <col label="Account" width="250" path="Account.acct" />
+        <col label="Address" width="80" path="streetNbr" />
+        <col label="Street " width="120" path="street" />
+        <col label="Zip" width="100" path="zipCode" />
+        <col label="City" width="120" path="city" />
+        <col label="PT" width="50" path="propType" />
+        <col label="Major" width="80" path="major" />
+        <col label="Minor" width="60" path="minor" />
+        <col label="Area" width="60" path="resArea" />
+        <col label="Sub" width="60" path="resSubArea" />
+        <col label="QSTR" width="60" path="quarterSection" />
+        <col label="Section" width="60" path="section" />
+        <col label="Township" width="60" path="township" />
+        <col label="Range" width="60" path="range" />
+        <col label="Levy" width="60" path="levyCode" />
+        <col label="Block" width="60" path="platBlock" />
+        <col label="Lot" width="60" path="platLot" />
+    </GridDefinition>
+    <GridDefinition name="GridSearchResultWithParcel" tag="40" height="30" auto="yes">
+        <!-- <col label="land.landId" width="80" path="RealPropInfo.land.landId"/>  -->
+        <col label="Account" width="80" path="RealPropInfo.account.acct" />
+        <col label="Major" width="80" path="RealPropInfo.major" />
+        <col label="Minor" width="60" path="RealPropInfo.minor" />
+        <col label="Address" width="80" path="RealPropInfo.streetNbr" />
+        <col label="Street " width="120" path="RealPropInfo.street" />
+        <col label="Zip" width="100" path="RealPropInfo.zipCode" />
+        <col label="city" width="120" path="RealPropInfo.city" />
+    </GridDefinition>
+    <GridDefinition name="GridSearchResultForStreet" tag="40" height="30" auto="yes" object="RealPropInfo">
+        <col label="Account" width="80" path="account.acct" />
+        <col label="Address" width="80" path="streetNbr" />
+        <col label="Street " width="120" path="street" />
+        <col label="Zip" width="100" path="zipCode" />
+        <col label="City" width="120" path="city" />
+    </GridDefinition>
+    <GridDefinition name="GridSearchResultForPI" tag="40" height="50" auto="yes" object="RealPropInfo">
+        <col label="Parcel" width="140" path="{major}-{minor}" />
+        <!--        <col label="Major" width="80" path="major" />
+         <col label="Minor" width="80" path="minor" />-->
+        <col label="Assigned" width="80" path="assignedUser" />
+        <col label="Land Inspect" width="80" path="inspection.inspectionTypeItemId" result="@if($result=1 ;DONE;)" type="TEXT" />
+        <col label="Imps Inspect" width="80" path="inspection.inspectionTypeItemId" result="@if($result=2 ;DONE;)" type="TEXT" />
+        <col label="Both Inspect" width="80" path="inspection.inspectionTypeItemId" result="@if($result=3;DONE;)" type="TEXT" />
+        <!-- <col label="Unver Sale Count" width="130" path="saleParcel[sale-&gt;salePrice &gt; 0 AND sale-&gt;saleDate &gt; #DATE(1/1/2013)  AND sale-&gt;vYVerifiedAtMarket = 0].@count" type="INT" /> -->
+        <col label="Incompl Seg or Plat Count" width="160" path="chngHist[(type='Seg Merge' or type='New Plat' or type='New Parcel' or type='Transfer' or type='Unkill') AND (propStatus = 0 or propStatus = 2)].@count" type="INT" />
+        <col label="Incompl Permit Count" width="160" path="permit[permitStatus=1].@count" type="INT" />
+        <col label="Incompl Review Count" width="140" path="review[statusAssmtReview=1 and reviewType &gt;= 4].@count" type="INT" />
+        <col label="Incompl Appeal Count" width="140" path="review[statusAssmtReview=1 and reviewType &lt; 4].@count" type="INT" />
+        <col label="Base Land" width="110" path="land.baseLandValTaxYr" result="@if($result=2013;DONE;)" type="TEXT" />
+        <col label="Tot Val" width="90" path="applHist.rollYr" result="@if($result=2013;DONE;)" type="TEXT" />
+        <col label="Address" width="80" path="streetNbr" type="TEXT" />
+        <col label="Street " width="200" path="street" />
+        <col label="Zip" width="100" path="zipCode" type="TEXT" />
+        <col label="City" width="120" path="city" />
+        <col label="SubArea" width="120" path="resSubArea" type="TEXT" />
+        <col label="Folio" width="120" path="folio" />
+        <col label="Account" width="250" path="RealPropInfo.Account.acct" />
+        <col label="Accy Count" width="60" path="accy.@count" type="INT" />
+        <col label="Res Bldg Count" width="60" path="resBldg.@count" type="INT" />
+        <!-- <col label="Bldg Grade" width="60" path="resBldg[bldgNbr=1].bldgGrade" type="INT" />  -->
+        <col label="Bldg Grade" width="60" path="resBldg.bldgGrade" type="INT" />
+    </GridDefinition>
+    
+    <!--   <GridDefinition name="GridSearchResultWithSalesAndBldgsAreaWide" tag="40" height="50" auto="yes" root="SaleParcel[0].realPropInfo"> -->
+    <!-- Principal object is sale -->
+    <GridDefinition name="GridSearchResultWithSalesAndBldgsAreaWide" tag="40" height="50" auto="yes" object="Sale">
+        <col label="Parcel" width="140" path="{major}-{minor}" />
+        <col label="Assigned" width="80" path="saleParcel.realPropInfo.assignedUser" />
+        <col label="Sale Price" width="100" object="sale" path="salePrice" />
+        <col label="Sale Date" width="100" object="sale" path="saleDate" />
+        <col label="Excise Tax Nbr" width="110" object="sale" path="exciseTaxNbr" type="INT" />
+        <col label="Verified at Market " width="100" object="sale" path="saleVerif.vYVerifiedAtMarket" />
+        <col label="VerifBy" width="80" object="sale" path="saleVerif.vYVerifiedBy"/>
+        <col label="VerifDate" width="100" object="sale" path="saleVerif.vYVerifDate"/>
+        <col label="Nbr Pcls in Sale" width="120" object="sale" path="propCnt" />
+        <col label="Buyer Name" width="200" object="sale" path="buyerName" />
+        <col label="Seller Name" width="200" object="sale" path="sellerName" />
+        <col label="Major" width="80" path="{major}" />
+        <col label="Minor" width="80" path="{minor}" />
+        <col label="Address" object="sale" width="80" path="saleParcel.realPropInfo.streetNbr" />
+        <col label="Street " object="sale" width="200" path="saleParcel.realPropInfo.street" />
+        <col label="Zip" object="sale" width="80" path="saleParcel.realPropInfo.zipCode" />
+        <col label="City" width="120" object="sale" path="saleParcel.realPropInfo.city" />
+        
+        <col label="Folio" width="100" object="sale" path="saleParcel.realPropInfo.folio" />
+        <col label="Account" width="300" object="sale" path="saleParcel.realPropInfo.account.acct" />
+        <col label="Accy Count" width="60" path="accy.@count" type="INT" />
+        <col label="Res Bldg Count" width="60" path="resBldg.@count" type="INT" />
+        <col label="Bldg Grade" width="60" path="resBldg[bldgNbr=1].bldgGrade" type="INT" />
+        
+        
+        <!-- <col label="YrBuilt" width="80" path="RealPropInfo.land.resBldg[$bldgNbr=1].yrBuilt" type= "INT" />
+         
+         <col label="Sub Area" width="60" object="sale" path="saleParcel.realPropInfo.resSubArea" type="TEXT" />
+         
+         <col label="YrRenovated" width="80" path="RealPropInfo.land.resBldg[$bldgNbr=1].yrRenovated" type= "INT" />
+         <col label="Condition" width="80" path="RealPropInfo.land.resBldg[$bldgNbr=1].condition" type= "INT" />
+         <col label="Stories" width="80" path="RealPropInfo.land.resBldg[$bldgNbr=1].stories" type= "INT" />
+         <col label="SqFtTotLiving" width="100" path="RealPropInfo.land.resBldg[$bldgNbr=1].sqFtTotLiving" type= "INT" />
+         <col label="SqFt1stFloor" width="100" path="RealPropInfo.land.resBldg[$bldgNbr=1].sqFt1stFloor" type= "INT" />
+         <col label="SqFtHalfFloor" width="100" path="RealPropInfo.land.resBldg[$bldgNbr=1].sqFtHalfFloor" type= "INT" />
+         <col label="SqFt2ndFloor" width="100" path="RealPropInfo.land.resBldg[$bldgNbr=1].sqFt2ndFloor" type= "INT" />
+         <col label="SqFtUpperFloor" width="100" path="RealPropInfo.land.resBldg[$bldgNbr=1].sqFtUpperFloor" type= "INT" />
+         <col label="SqFtFinBasement" width="100" path="RealPropInfo.land.resBldg[$bldgNbr=1].sqFtFinBasement" type= "INT" />
+         <col label="SqFtTotBasement" width="100" path="RealPropInfo.land.resBldg[$bldgNbr=1].sqFtTotBasement" type= "INT" />
+         <col label="Bedrooms" width="80" path="RealPropInfo.land.resBldg[$bldgNbr=1].bedrooms" type= "INT" />
+         <col label="NbrLivingUnits" width="100" path="RealPropInfo.land.resBldg[$bldgNbr=1].nbrLivingUnits" type= "INT" />-->
+    </GridDefinition>
+    <!-- Principal object is sale -->
+    <GridDefinition name="GridSearchResultWithSalesAndBldgs" tag="40" height="50" auto="yes" object="Sale">
+        <col label="Parcel" width="140" path="{major}-{minor}" />
+        <col label="Sale Price" width="100" object="sale" path="salePrice" />
+        <col label="Sale Date" width="100" object="sale" path="saleDate" />
+        <col label="Excise Tax Nbr" width="110" object="sale" path="exciseTaxNbr" type="INT" />
+        <col label="Verified at Market " width="100" object="sale" path="saleVerif.vYVerifiedAtMarket"/>
+        <col label="VerifBy" width="80" object="sale" path="saleVerif.vYVerifiedBy"/>
+        <col label="VerifDate" width="100" object="sale" path="saleVerif.vYVerifDate"/>
+        <col label="Nbr Pcls in Sale" width="120" object="sale" path="propCnt" />
+        <col label="Buyer Name" width="200" object="sale" path="buyerName" />
+        <col label="Seller Name" width="200" object="sale" path="sellerName" />
+        <col label="Major" width="80" path="RealPropInfo.major" />
+        <col label="Minor" width="80" path="RealPropInfo.minor" />
+        <col label="Address" object="sale" width="80" path="saleParcel.realPropInfo.streetNbr" />
+        <col label="Street " object="sale" width="200" path="saleParcel.realPropInfo.street" />
+        <col label="Zip" object="sale" width="80" path="saleParcel.realPropInfo.zipCode" />
+        <col label="City" width="120" object="sale" path="saleParcel.realPropInfo.city" />
+        <col label="Sub Area" width="60" object="sale" path="saleParcel.realPropInfo.resSubArea" type="TEXT" />
+        <col label="Folio" width="100" object="sale" path="saleParcel.realPropInfo.folio" />
+        <col label="Account" width="300" object="sale" path="saleParcel.realPropInfo.account.acct" />
+        <col label="Accy Count" width="60" path="accy.@count" type="INT" />
+        <col label="Res Bldg Count" width="60" path="resBldg.@count" type="INT" />
+        <col label="Bldg Grade" width="60" path="resBldg[bldgNbr=1].bldgGrade" type="INT" />
+        
+        
+        <!--        <col label="YrBuilt" width="80" path="RealPropInfo.land.resBldg[$bldgNbr=1].yrBuilt" type= "INT" />
+         <col label="YrRenovated" width="80" path="RealPropInfo.land.resBldg[$bldgNbr=1].yrRenovated" type= "INT" />
+         <col label="Condition" width="80" path="RealPropInfo.land.resBldg[$bldgNbr=1].condition" type= "INT" />
+         <col label="Stories" width="80" path="RealPropInfo.land.resBldg[$bldgNbr=1].stories" type= "INT" />
+         <col label="SqFtTotLiving" width="100" path="RealPropInfo.land.resBldg[$bldgNbr=1].sqFtTotLiving" type= "INT" />
+         <col label="SqFt1stFloor" width="100" path="RealPropInfo.land.resBldg[$bldgNbr=1].sqFt1stFloor" type= "INT" />
+         <col label="SqFtHalfFloor" width="100" path="RealPropInfo.land.resBldg[$bldgNbr=1].sqFtHalfFloor" type= "INT" />
+         <col label="SqFt2ndFloor" width="100" path="RealPropInfo.land.resBldg[$bldgNbr=1].sqFt2ndFloor" type= "INT" />
+         <col label="SqFtUpperFloor" width="100" path="RealPropInfo.land.resBldg[$bldgNbr=1].sqFtUpperFloor" type= "INT" />
+         <col label="SqFtFinBasement" width="100" path="RealPropInfo.land.resBldg[$bldgNbr=1].sqFtFinBasement" type= "INT" />
+         <col label="SqFtTotBasement" width="100" path="RealPropInfo.land.resBldg[$bldgNbr=1].sqFtTotBasement" type= "INT" />
+         <col label="Bedrooms" width="80" path="RealPropInfo.land.resBldg[$bldgNbr=1].bedrooms" type= "INT" />
+         <col label="NbrLivingUnits" width="100" path="RealPropInfo.land.resBldg[$bldgNbr=1].nbrLivingUnits" type= "INT" />
+         
+         All Sales Area Wide      -->
+    </GridDefinition>
+    <GridDefinition name="GridSearchResultWithSegsAndPermitsAreaWide" tag="40" height="90" auto="yes" sort="ParcelNbr">
+        <col label="Parcel" width="140" path="{major}-{minor}" />
+        <col label="Assigned" width="80" path="assignedUser" />
+        <col label="Incomplete Field Review" width="200" path="review[statusAssmtReview = 1 and reviewType &gt;= 4].reviewType" />
+        <col label="Permit Description" width="450" object="Permit" path="permitDescr" />
+        <col label="Permitting Jurisdiction" width="120" object="Permit" path="issuingJurisdiction" />
+        <col label="Permit Issue Date" width="130" object="Permit" path="issueDate" type="DATE" />
+        <col label="Permit Nbr" width="80" object="Permit" path="permitNbr" />
+        <col label="Permit Status" width="80" object="Permit" path="permitStatus" />
+        <col label="Permit Type" width="90" object="Permit" path="permitType" />
+        <col label="Permit Val" width="90" object="Permit" path="permitVal" />
+        <col label="Permit Reviewed By" width="110" object="Permit" path="reviewedBy" />
+        <col label="Permit Reviewed Date" width="120" object="Permit" path="reviewedDate" type="DATE" />
+        
+        <col label="Seg/NewPlat/Transfer Event" width="210" object="ChngHist" path="type" />   <!--  field looks good     -->
+        
+        
+        <col label="Event Status (Complete?)" width="190" object="ChngHist" path="propStatus" />  <!--  field looks good     -->
+        
+        
+        <col label="Event Date" width="140" object="ChngHist" path="eventDate" />    <!--  field looks good     -->
+        
+        
+        <col label="Event Updated By" width="140" object="ChngHist" path="updatedBy" />  <!--  field looks good     -->
+        
+        
+        <col label="Event Update Date" width="140" object="ChngHist" path="updateDate" />   <!--  field looks good     -->
+        
+        <col label="PT" width="50" path="propType" />
+        <col label="Address" width="80" path="streetNbr" />
+        <col label="Street " width="120" path="street" />
+        <col label="Zip" width="100" path="zipCode" />
+        <col label="City" width="120" path="city" />
+        <col label="SubArea" width="120" path="resSubArea" type="TEXT" />
+        <col label="Folio" width="120" path="folio" />
+        <col label="Account" width="250" path="Account.acct" />
+        <col label="Bldg Count" width="90" path="resBldg.@count" type="INT" />
+        <col label="Bldg Grade" width="80" path="resBldg[$bldgNbr=1].bldgGrade" type="INT" />
+    </GridDefinition>
+    
+    <GridDefinition name="GridSearchResultWithSegsAndPermits" tag="40" height="90" auto="yes" sort="ParcelNbr">
+        <col label="Parcel" width="140" path="{major}-{minor}" />
+        <col label="Incomplete Field Review" width="200" path="review[statusAssmtReview =1 and reviewType &gt;= 4].reviewType" />
+        <col label="Permit Description" width="450" object="Permit" path="permitDescr" />
+        <col label="Permitting Jurisdiction" width="120" object="Permit" path="issuingJurisdiction" />
+        <col label="Permit Issue Date" width="130" object="Permit" path="issueDate" />
+        <col label="Permit Nbr" width="80" object="Permit" path="permitNbr" />
+        <col label="Permit Status" width="80" object="Permit" path="permitStatus" />
+        <col label="Permit Type" width="90" object="Permit" path="permitType" />
+        <col label="Permit Val" width="90" object="Permit" path="permitVal" />
+        <col label="Permit Reviewed By" width="110" object="Permit" path="reviewedBy" />
+        <col label="Permit Reviewed Date" width="120" object="Permit" path="reviewedDate" type="DATE" />
+        <col label="Seg/NewPlat/Transfer Event" width="210" object="ChngHist" path="type" />
+        <col label="Event Status (Complete?)" width="190" object="ChngHist" path="propStatus" />
+        <col label="Event Date" width="140" object="ChngHist" path="eventDate" />
+        <col label="Event Updated By" width="140" object="ChngHist" path="updatedBy" />
+        <col label="Event Update Date" width="140" object="ChngHist" path="updateDate" />
+        <col label="PT" width="50" path="propType" />
+        <col label="Address" width="80" path="streetNbr" />
+        <col label="Street " width="120" path="street" />
+        <col label="Zip" width="100" path="zipCode" />
+        <col label="City" width="120" path="city" />
+        <col label="SubArea" width="120" path="resSubArea" type="TEXT" />
+        <col label="Folio" width="120" path="folio" />
+        <col label="Account" width="250" path="Account.acct" />
+        <col label="Bldg Count" width="90" path="resBldg.@count" type="INT" />
+        <col label="Bldg Grade" width="80" path="resBldg[$bldgNbr=1].bldgGrade" type="INT" />
+    </GridDefinition>
+    
+    <GridDefinition name="GridSearchResultReviews" tag="40" height="90" auto="yes" sort="Parcel">
+        <col label="Parcel" width="140" path="{major}-{minor}" />
+        <col label="Field Review Type" width="200" path="review[statusAssmtReview=1 and reviewType &gt;= 4].reviewType" />
+        <col label="Appeal Type " width="120" path="review[reviewType &lt; 4].reviewType" />
+        <col label="Appeal Bill Year" width="120" path="review[reviewType &lt; 4].billYr" />
+        <col label="Appeal Status Assessor" width="120" path="review[reviewType &lt; 4].statusAssessor" />
+        <col label="Appeal Status Board" width="120" path="review[reviewType &lt; 4].statusBoard" />
+        <col label="PT" width="50" path="realPropInfo.propType" />
+       <col label="Address" width="80" path="resBldg.streetNbr" />
+        <col label="Street " width="120" path="resBldg.street" />
+        <col label="Zip" width="100" path="resBldg.zipCode" />
+        <col label="City" width="120" path="realpropInfo.city" />
+        <col label="SubArea" width="120" path="resSubArea" type="TEXT" />
+        <col label="Folio" width="120" path="folio" />  -->
+        <col label="Account" width="250" path="Account.acct" />
+        <col label="Bldg Count" width="90" path="resBldg.@count" type="INT" />
+        <col label="Bldg Grade" width="80" path="resBldg[$bldgNbr=1].bldgGrade" type="INT" />
+    </GridDefinition>
+
+    <GridDefinition name="GridSearchResultReviewsNoRT" tag="40" height="90" auto="yes" sort="billYr">
+        <col label="Parcel" width="140" path="{major}-{minor}" />
+        <col label="Appeal Type " width="120" path="review[reviewType &lt; 4].reviewType" />
+        <col label="Appeal Bill Year" width="120" path="review[reviewType &lt; 4].billYr" />
+        <col label="Appeal Status Assessor" width="120" path="review[reviewType &lt; 4].statusAssessor" />
+        <col label="Appeal Status Board" width="120" path="review[reviewType &lt; 4].statusBoard" />
+        <col label="PT" width="50" path="realPropInfo.propType" />
+        <col label="Address" width="80" path="resBldg.streetNbr" />
+        <col label="Street " width="120" path="resBldg.street" />
+        <col label="Zip" width="100" path="resBldg.zipCode" />
+        <col label="City" width="120" path="realpropInfo.city" />
+        <col label="SubArea" width="120" path="resSubArea" type="TEXT" />
+        <col label="Folio" width="120" path="folio" />  -->
+        <col label="Account" width="250" path="Account.acct" />
+        <col label="Bldg Count" width="90" path="resBldg.@count" type="INT" />
+        <col label="Bldg Grade" width="80" path="resBldg[$bldgNbr=1].bldgGrade" type="INT" />
+    </GridDefinition>
+
+
+</irealpropertySearch>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2057" systemVersion="13E28" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Blob" representedClassName="Blob" syncable="YES">
+        <attribute name="contentType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="downloaded" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="eTag" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastModifiedDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="leaseStatus" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="length" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="container" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Container" inverseName="blobs" inverseEntity="Container" syncable="YES"/>
+    </entity>
+    <entity name="Container" representedClassName="Container" syncable="YES">
+        <attribute name="eTag" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastModifiedDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="blobs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Blob" inverseName="container" inverseEntity="Blob" syncable="YES"/>
+        <userInfo>
+            <entry key="key" value="value"/>
+        </userInfo>
+    </entity>
+    <entity name="FilesSync" representedClassName="FilesSync" syncable="YES">
+        <attribute name="area" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eTag" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="length" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updateDate" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <entity name="IRDaily" representedClassName="IRDaily" syncable="YES">
+        <attribute name="addedDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="major" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="minor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="realPropId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="rpGuid" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="IRLine" representedClassName="IRLine" syncable="YES">
+        <attribute name="color" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="line" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="width" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
+        <relationship name="iRNote" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="IRNote" inverseName="iRLine" inverseEntity="IRNote" syncable="YES"/>
+    </entity>
+    <entity name="IRNote" representedClassName="IRNote" syncable="YES">
+        <attribute name="major" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="minor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="parcelNbr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="realPropId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="rpGuid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="updateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="iRLine" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="IRLine" inverseName="iRNote" inverseEntity="IRLine" syncable="YES"/>
+    </entity>
+    <entity name="Version" representedClassName="Version" syncable="YES">
+        <attribute name="installed" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="version" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Blob" positionX="-81" positionY="-36" width="128" height="195"/>
+        <element name="Container" positionX="216" positionY="60" width="128" height="120"/>
+        <element name="FilesSync" positionX="187" positionY="-99" width="128" height="120"/>
+        <element name="IRDaily" positionX="-173" positionY="-216" width="128" height="120"/>
+        <element name="IRLine" positionX="-441" positionY="-0" width="128" height="105"/>
+        <element name="IRNote" positionX="-288" positionY="-36" width="128" height="180"/>
+        <element name="Version" positionX="-443" positionY="-126" width="128" height="75"/>
+    </elements>
+</model>

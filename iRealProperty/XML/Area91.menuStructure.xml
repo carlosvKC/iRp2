@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <MenuStructure>
+    <ParcelMenu>
+      <Parent menucaption="Common">
+        <Click menucaption="DEFAULT MAP (NO RENDERINGS)" rendname="DEFAULT MAP (NO RENDERINGS)" />
+      </Parent>
+      <Parent menucaption="Sale"></Parent>
+      <Parent menucaption="Appeal"></Parent>
+      <Parent menucaption="Maintenance"></Parent>
+      <Parent menucaption="Inspection">
+        <Click menucaption="Inspection" rendname="Inspection" /> 
+      </Parent>
+              
+      
+      <Parent menucaption="Land">
+        <Parent menucaption="Designations">
+          <Click menucaption="Major" rendname="Major" />
+        </Parent>
+      </Parent>
+      <Parent menucaption="Res">
+        <Click menucaption="Bldg Grade" rendname="Bldg Grade" />
+      </Parent>
+      <Parent menucaption="Mobile"></Parent>
+    </ParcelMenu>
+  </MenuStructure>

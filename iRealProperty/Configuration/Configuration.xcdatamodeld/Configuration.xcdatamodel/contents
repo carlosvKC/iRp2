@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1171" systemVersion="11D50" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="BreakerConfig" representedClassName="BreakerConfig" syncable="YES">
+        <attribute name="color" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fill" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="label" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="rendererConfig" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="RendererConfig" inverseName="breakerConfig" inverseEntity="RendererConfig" syncable="YES"/>
+    </entity>
+    <entity name="Configuration" representedClassName="Configuration" syncable="YES">
+        <attribute name="currentArea" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="lockingCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="menuAtBottom" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="rendererUpdateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="requiredAfter" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="userLevel" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="MapLayerConfig" representedClassName="MapLayerConfig" syncable="YES">
+        <attribute name="area" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="clipping" optional="YES" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <attribute name="columnLabel" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="descriptionColumn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fillColor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fillStyle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="friendlyName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="geoColumnName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isParcel" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isPolygon" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isSID" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isStreet" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isVisible" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="isWtrBdy" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="labelColor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="labelColumnName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="labelFontSize" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="layerName" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="lineColor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lineWidth" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="maxScale" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="minScale" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="removeLabelDuplicates" optional="YES" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <attribute name="scaleLabel" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="shapeType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="showAnnotationPolygons" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="showLabels" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="showShapes" optional="YES" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <attribute name="tableName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="titleColumn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uid" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES" isSyncIdentityProperty="YES"/>
+    </entity>
+    <entity name="RendererConfig" representedClassName="RendererConfig" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="breakerConfig" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="BreakerConfig" inverseName="rendererConfig" inverseEntity="BreakerConfig" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Configuration" positionX="160" positionY="192" width="128" height="150"/>
+        <element name="MapLayerConfig" positionX="160" positionY="192" width="128" height="510"/>
+        <element name="BreakerConfig" positionX="160" positionY="192" width="128" height="120"/>
+        <element name="RendererConfig" positionX="160" positionY="192" width="128" height="105"/>
+    </elements>
+</model>

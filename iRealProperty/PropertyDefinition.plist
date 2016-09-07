@@ -1,0 +1,830 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+
+	<key>TabDetailsInMap</key>
+	<array>
+		<string>1, Parcel, TEXT, ,HEADER.Parcel</string>
+		<string>2, Address, NUM(5), ,HEADER.StreetNbr</string>
+		<string>3, Fraction, TEXT(L),38,HEADER.NbrFraction</string>
+		<string>4, Street , TEXT(L), -1,HEADER.StreetId</string>
+		<string>5, Zip Code, TEXT(5), ,HEADER.ZipCode</string>
+		<string>6, Acct, TEXT, , ACCOUNT.acct</string>
+		<string>7,City, TEXT, ,HEADER.City</string>
+		<string>8,Property Name, TEXT, ,HEADER.PropName</string>
+		<string>9,Type, TEXT(1), ,HEADER.PropType</string>
+		<string>10,Resp, TEXT(1), ,HEADER.ApplGroup</string>
+		<string>11,Area, NUM(3), ,HEADER.ResArea</string>
+		<string>12,Sub, NUM(3), ,HEADER.ResSubArea</string>
+		<string>13,Nbh, NUM(3), ,HEADER.Neighborhood</string>
+		<string>14,Folio, NUM(8), ,HEADER.Folio</string>
+		<string>15,QSTR , TEXT(2), ,HEADER.QuarterSection</string>
+		<string>16,Section, NUM(2), ,HEADER.Section</string>
+		<string>17,Township, NUM(2), ,HEADER.Township</string>
+		<string>18,Range, NUM(2), ,HEADER.Range</string>
+		<string>19,Levy, NUM(4), ,HEADER.LevyCode</string>
+		<string>20,Block, NUM(4), ,HEADER.PlatBlock</string>
+		<string>21,Lot, NUM(4), ,HEADER.PlatLot</string>
+		<string>22,Chng, TEXT(8), ,HEADER.ChangeSource</string>
+	</array>    
+    
+	<key>TabDetails</key>
+	<array>
+		<string>1, Parcel, TEXT, , HEADER.Parcel</string>
+		<string>2, Address, NUM(5), , HEADER.StreetNbr</string>
+		<string>3, Fraction, TEXT(L),38, HEADER.NbrFraction</string>
+		<string>4, Street , TEXT(L), -1, HEADER.StreetId</string>
+		<string>5, Zip Code, TEXT(5), , HEADER.ZipCode</string>
+		<string>6, Acct, TEXT, , ACCOUNT.acct</string>
+		<string>7,City, TEXT, , HEADER.City</string>
+		<string>8,Property Name, TEXT, , HEADER.PropName</string>
+		<string>9,Type, TEXT(1), , HEADER.PropType</string>
+		<string>10,Resp, TEXT(1), , HEADER.ApplGroup</string>
+		<string>11,Area, NUM(3), , HEADER.ResArea</string>
+		<string>12,Sub, NUM(3), , HEADER.ResSubArea</string>
+		<string>13,Nbh, NUM(3), , HEADER.Neighborhood</string>
+		<string>14,Folio, NUM(8), , HEADER.Folio</string>
+		<string>15,QSTR , TEXT(2), , HEADER.QuarterSection</string>
+		<string>16,Section, NUM(2), , HEADER.Section</string>
+		<string>17,Township, NUM(2), , HEADER.Township</string>
+		<string>18,Range, NUM(2), , HEADER.Range</string>
+		<string>19,Levy, NUM(4), , HEADER.LevyCode</string>
+		<string>20,Block, NUM(4), , HEADER.PlatBlock</string>
+		<string>21,Lot, NUM(4), , HEADER.PlatLot</string>
+		<string>22,Chng, TEXT(8), , HEADER.ChangeSource</string>
+		<string>23,Legal Desc, TEXTL,,HEADER.LegalDesc</string>
+		<string>24,Land,BOOL,,</string>
+		<string>25,Imps,BOOL,,</string>
+		<string>26,Both,BOOL,,</string>
+	</array>
+	<key>TabLand</key>
+	<array>
+		<string>1,HBU if Vacant, TEXT(L), 121, Land.HBUAsIfVacant</string>
+		<string>2,HBU if improved, TEXT(L), 104, Land.HBUAsImproved</string>
+		<string>3,Present Use, TEXT(L), 102, Land.PresentUse</string>
+		<string>4,Zoning,TEXT(L),-2,Land.CurrentZoning</string>
+		<string>5,Change Date, DATE, , Land.ZoningChgDate</string>
+		<string>6,$/SqFt, FLOAT, , Land.BaseLandValSqFt</string>
+		<string>7,BaseLandVal, CURR(12), , Land.BaseLandVal</string>
+		<string>8,% BLV, PERCENT, , Land.PcntBaseLandValImpacted</string>
+		<string>9,Val Date, DATE, , Land.BaseLandValDate</string>
+		<string>10,Tax Year, INT(4), , Land.BaseLandValTaxYr</string>
+		<string>11,Lot Sqft, INT(12), , Land.SqFtLot</string>
+		<string>12,Dry Sq Ft, INT(12), , Land.SqFtLotDry</string>
+		<string>13,Submerge Sq Ft, INT(12), , Land.SqFtLotSubmerged</string>
+		<string>14,% Unusable, PERCENT, , Land.PcntUnusable</string>
+		<string>15,Unbuildable, BOOL, , Land.Unbuildable</string>
+		<string>16,Restrict Sz/Shp, BOOL, , Land.RestrictiveSzShape</string>
+		<string>17,Water System, TEXT(L), 56, Land.WaterSystem</string>
+		<string>18,Sewer System, TEXT(L), 57, Land.SewerSystem</string>
+		<string>19,Road Access, TEXT(L), 55, Land.Access</string>
+		<string>20,Parking, TEXT(L), 92, Land.InadequateParking</string>
+		<string>21,Surface, TEXT(L), 60, Land.Topography</string>
+		<string>23,UpdatedBy, TEXT, , Land.UpdatedBy</string>
+		<string>24,UpdateDate, DATE,, Land.UpdateDate</string>
+	</array>
+	<key>TabLandViews</key>
+	<array>
+		<string>51,Rainier, TEXT(L), 115, XLAND.MtRainier</string>
+		<string>52,Olympics, TEXT(L), 115, XLAND.Olympics</string>
+		<string>53,Cascades, TEXT(L), 115, XLAND.Cascades</string>
+		<string>54,Territorial, TEXT(L), 115, XLAND.Territorial</string>
+		<string>55,Seattle, TEXT(L), 115, XLAND.SeattleSkyline</string>
+		<string>56,Sound, TEXT(L), 58, XLAND.PugetSound</string>
+		<string>57,Lk Wash, TEXT(L), 58, XLAND.LakeWashington</string>
+		<string>58,Lk Samm, TEXT(L), 58, XLAND.LakeSammamish</string>
+		<string>59,Lk/Rvr/Crk, TEXT(L), 115, XLAND.SmallLakeRiverCreek</string>
+		<string>60,Other, TEXT(L), 115, XLAND.OtherView</string>
+		<string>61,Location, TEXT(L), 50, XLAND.WfntLocation</string>
+		<string>62,Bank, TEXT(L), 52, XLAND.WfntBank</string>
+		<string>63,Footage, INT(12), , XLAND.WfntFootage</string>
+		<string>64,Depth Fctr, INT(12), , XLAND.LotDepthFactor</string>
+		<string>65,Tide/Shore, TEXT(L), 54, XLAND.TidelandShoreland</string>
+		<string>66,Restricted, TEXT(L), 53, XLAND.WfntRestrictedAccess</string>
+		<string>67,Access Rights, BOOL, , XLAND.WfntAccessRights</string>
+		<string>68,Proximity Influence, BOOL, , XLAND.WfntProximityInfluence</string>
+		<string>69,Poor Quality, BOOL, , XLAND.WfntPoorQuality</string>
+	</array>
+	<key>TabLandNuisance</key>
+	<array>
+		<string>71,Topography, TEXT(L),95, Land.Topography</string>
+		<string>72,Traffic Noise, TEXT(L), 95, XLand.TrafficNoise</string>
+		<string>73,Airport Noise, TEXT(L),95, XLand.AirportNoise</string>
+		<string>74,Power Lines, BOOL, , XLand.PowerLines</string>
+		<string>75,Other Nuisances, BOOL, , XLand.OtherNuisances</string>
+		<string>76,Water, BOOL, , XLand.WaterProblems</string>
+		<string>77,Transportation Concurrency, BOOL, , XLand.TransportationConcurrency</string>
+		<string>78,Other, BOOL, , XLand.OtherProblems</string>
+	</array>
+	<key>TabLandDesignations</key>
+	<array>
+		<string>81,Historic Site, TEXT(L), 67, XLand.HistoricSite</string>
+		<string>82,Current Use Designation, TEXT(L), 16, XLand.CurrentUseDesignation</string>
+		<string>83,Nbr Bldg Sites, INT(4), , XLand.NbrBldgSites</string>
+		<string>84,Adj Golf Fairway, BOOL, , XLand.AdjacentGolfFairway</string>
+		<string>85,Adj Green Belt, BOOL, , XLand.AdjacentGreenbelt</string>
+		<string>86,Other, BOOL, , XLand.OtherDesignation</string>
+		<string>87,Deed Restrictions, BOOL, , XLand.DeedRestrictions</string>
+		<string>88,Dev Rights Purchased, BOOL, , XLand.DevelopmentRightsPurchased</string>
+		<string>89,Easements, BOOL, , XLand.Easements</string>
+		<string>90,Native Growth Prot Esmt, BOOL, , XLand.NativeGrowthProtEsmt</string>
+		<string>91,DNR Lease, BOOL, , XLand.DNRLease</string>
+	</array>
+	<key>TabLandEnvironment</key>
+	<array>
+		<string>1,GridTabLandEnvironment, GRID, 35, Land.rEnvRes, 35</string>
+	</array>
+	<key>GridTabLandEnvironment</key>
+	<array>
+		<string>1,Environmental Type, TEXT(L), 999, EnvRes.AttributeId, 234</string>
+		<string>2,Info Source, TEXT(L), 101, Envres.LUSourceItem, 203</string>
+		<string>3,Del. Study, BOOL,,EnvRes.DelineationStudy,80</string>
+		<string>4,% Affected, PERCENT,, EnvRes.PcntAffected, 80</string>
+		<string>5,UpdBy,TEXT,,EnvRes.UpdatedBy, 68</string>
+		<string>6,UpdDt,DATE,,Envres.UpdateDate, 74</string>
+	</array>
+
+    <key>DialogBoxEnvironmentalController</key>
+	<array>
+		<string>1,Environmental Type, TEXT(L), 999, EnvRes.AttributeId</string>
+		<string>2,Info Source, TEXT(L), 101, Envres.LUSourceItem</string>
+		<string>3,Del. Study, BOOL,,EnvRes.DelineationStudy</string>
+		<string>4,% Affected, PERCENT,, EnvRes.PcntAffected</string>
+		<string>5,UpdBy,TEXT,,EnvRes.UpdatedBy</string>
+		<string>6,UpdDt,DATE,,Envres.UpdateDate</string>
+	</array>    
+	<key>TabBuildingGrid</key>
+	<array>
+		<string>1,GridTabBuilding, GRID, 40, not.used, 100</string>
+	</array>
+	<key>GridTabBuilding</key>
+	<array>
+        <string>1,Picture, IMG, , ResBldg.rMediaBldg, 120</string>
+		<string>2,Bldg, INT(2), , ResBldg.BldgNbr,40</string>
+		<string>3,Address, INT(6), , ResBldg.StreetNbr,75</string>
+		<string>4,Street, TEXT, , ResBldg.Street,120</string>
+		<string>5,Zip Code, INT(5), , ResBldg.ZipCode,60</string>
+		<string>6,Stories, Float, , ResBldg.Stories,50</string>
+		<string>7,Grade, TEXT(L), 82, ResBldg.BldgGrade,100</string>
+		<string>8,Updated By, TEXT(4), , ResBldg.UpdatedBy,80</string>
+		<string>9,Update Date, DATE, , ResBldg.UpdateDate,90</string>
+	</array>
+	<key>TabBuildingDetail</key>
+	<array>
+		<string>1,Bldg, INT(2), , ResBldg.BldgNbr</string>
+		<string>2,Address, NUM(5), , ResBldg.StreetNbr</string>
+		<string>3,Prefix, TEXT(L), 38, ResBldg.NbrFraction</string>
+		<string>4,Street, TEXT(L), -1, ResBldg.StreetId</string>
+		<string>5,Unit Description, TEXT, , ResBldg.UnitDesc</string>
+		<string>6,Zip Code, INT(5), , ResBldg.ZipCode</string>
+		<string>7,YrBuilt, INT(4), , ResBldg.YrBuilt</string>
+		<string>8,YrRen, INT(4), , ResBldg.YrRenovated</string>
+		<string>9,Stories, FLOAT, , ResBldg.Stories</string>
+		<string>10,Units, NUM, , ResBldg.NbrLivingUnits</string>
+		<string>11,Grade, TEXT(L), 82, ResBldg.BldgGrade</string>
+		<string>12,Var, NUM, , ResBldg.BldgGradeVar</string>
+		<string>13,Condition, TEXT(L), 83, ResBldg.Condition</string>
+		<string>14,Bsmt Grade, TEXT(L), 84, ResBldg.FinBasementGrade</string>
+		<string>15,1st Flr, INT(6), , ResBldg.SqFt1stFloor</string>
+		<string>16,Half Flr, INT(6), , ResBldg.SqFtHalfFloor</string>
+		<string>17,2nd Flr, INT(6), , ResBldg.SqFt2ndFloor</string>
+		<string>18,Upper Flr, INT(6), , ResBldg.SqFtUpperFloor</string>
+		<string>19,Fin Bsmt, INT(6), , ResBldg.SqFtFinBasement</string>
+		<string>20,Tot Liv, INT(6), , ResBldg.SqFtTotLiving</string>
+		<string>21,Unf Half, INT(6), , ResBldg.SqFtUnFinHalf</string>
+		<string>22,Unf Ful, INT(6), , ResBldg.SqFtUnFinFull</string>
+		<string>23,Tot Bsmt, INT(6), , ResBldg.SqFtTotBasement</string>
+		<string>24,Bsmt Gar, INT(4), , ResBldg.SqFtGarageBasement</string>
+		<string>25,Att Gar, INT(4), , ResBldg.SqFtGarageAttached</string>
+		<string>26,BedRm, INT(2), , ResBldg.Bedrooms</string>
+		<string>27,Full Baths, INT(2), , ResBldg.BathFullCount</string>
+		<string>28,¾ Baths, INT(2), , ResBldg.Bath3qtrCount</string>
+		<string>29,½ Baths, INT(2), , ResBldg.BathHalfCount</string>
+		<string>30,Heat Source, TEXT(L), 84, ResBldg.HeatSource</string>
+		<string>31,Heat System, TEXT(L), 108, ResBldg.HeatSystem</string>
+		<string>32,Deck, INT(4), , ResBldg.SqFtDeck</string>
+		<string>33,Open Porch, INT(6), , ResBldg.SqFtOpenPorch</string>
+		<string>34,Closed Porch, INT(6), , ResBldg.SqFtEnclosedPorch</string>
+		<string>35,Brick/Stone, INT(4), , ResBldg.BrickStone</string>
+		<string>36,Single Fp, INT(2), , ResBldg.FpSingleStory</string>
+		<string>37,Multi Fp, INT(2), , ResBldg.FpMultiStory</string>
+		<string>38,Fr Std Fp, INT(2), , ResBldg.FpFreeStanding</string>
+		<string>39,Addl Fp, INT(2), , ResBldg.FpAdditional</string>
+		<string>40,Addl Cost, CURR, , ResBldg.AddnlCost</string>
+		<string>41,Obsolnce, INT(3), , ResBldg.Obsolescence</string>
+		<string>42,Net Cond, PERCENT, , ResBldg.PcntNetCondition</string>
+		<string>43,%Comp, PERCENT, , ResBldg.PcntComplete</string>
+		<string>44,Daylight Bsmt, BOOL, , ResBldg.DaylightBasement</string>
+		<string>45,View Util, BOOL, , ResBldg.ViewUtilization</string>
+		<string>46,UpdBy, TEXT(4), , ResBldg.UpdatedBy</string>
+		<string>47,UpdDt, DATE, , ResBldg.UpdateDate</string>
+	</array>
+    <key>TabAccyGrid</key>
+	<array>
+		<string>1,GridTabAccy, GRID, 40, not.used, 100</string>
+	</array>
+	<key>GridTabAccy</key>
+	<array>
+        <string>11,Picture, IMG, , Accy.rMediaAccy, 120</string>
+        <string>1,Type, TEXT(L), 27, Accy.AccyType,120</string>
+        <string>2,Description, TEXTL, , Accy.AccyDescr,200</string>
+        <string>3,Size, INT, , Accy.Size, 60</string>
+        <string>4,Grade, TEXT(L), 82, Accy.Grade,120</string>
+        <string>5,EffYr, INT, , Accy.EffYr,60</string>
+        <string>6,%, PERCENT, , Accy.PcntNetCondition,50</string>
+        <string>7,Value, CURR, , Accy.AccyValue,100</string>
+        <string>8,Dated, DATE, , Accy.DateValued,80</string>
+        <string>9,UpdBy, TEXT(4), , Accy.UpdatedBy,80</string>
+        <string>10,UpdDt, DATE, , Accy.UpdateDate,90</string>
+
+	</array>
+
+    <key>TabAccyDetail</key>
+	<array>
+        <string>1,Type, TEXT(L), 27, Accy.AccyType,120</string>
+        <string>2,Description, TEXTL, , Accy.AccyDescr,200</string>
+        <string>3,Size, INT, , Accy.Size, 60</string>
+        <string>4,Grade, TEXT(L), 82, Accy.Grade,120</string>
+        <string>5,EffYr, INT, , Accy.EffYr,60</string>
+        <string>6,%, PERCENT, , Accy.PcntNetCondition,40</string>
+        <string>7,Value, CURR, , Accy.AccyValue,100</string>
+        <string>8,Dated, DATE, , Accy.DateValued,80</string>
+        <string>9,UpdBy, TEXT(4), , Accy.UpdatedBy,80</string>
+        <string>10,UpdDt, DATE, , Accy.UpdateDate,90</string>
+	</array>
+    <key>TabMobileDetail</key>
+    <array>
+        <string>12,MobileHomeId, INT(2) , , MHAccount.MobileHomeId</string>
+        <string>2,TaxAccNbr, INT(10), , MHAccount.TaxAcctNbr</string>
+        <string>3,RealPropId, INT(10), , MHAccount.RealPropId</string>
+        <string>4,TaxPayerName, TEXT, , MHAccount.TaxPayerName</string>
+        <string>5,BldgNbr, INT(2) , , MHAccount.BldgNbr</string>
+        <string>6,AcctStatus, TEXT(L), 230, MHAccount.AcctStatus</string>
+        <string>7,MhType, TEXT(L), 229, MHAccount.MhType</string>
+        <string>8,TaxExempt, BOOL , , MHAccount.TxExempt</string>
+        <string>9,Phone, STR, , MHAccount.Phone</string>
+        <string>10,UpdatedBy, STR(4), , MHAccount.UpdatedBy</string>
+        <string>11,UpdatedDate, DATE, , MHAccount.LastInspectionDate</string>
+        <string>13,Length, INT(4), , MHCharacteristic.Length</string>
+        <string>14,Width, INT(4), , MHCharacteristic.Width</string>
+        <string>15,LivingArea, INT(4), , MHCharacteristic.LivingArea</string>
+        <string>16,Class, TEXT(L), 227, MHCharacteristic.Class_</string>
+        <string>17,Condition, TEXT(L), 226, MHCharacteristic.Condition</string>
+        <string>18,Size, TEXT(L), 238, MHCharacteristic.Size</string>
+        <string>19,YrBuilt, INT(4), , MHCharacteristic.YrBuilt</string>
+        <string>20,RmAdd, INT(2), , MHCharacteristic.RoomAddSqft</string>
+        <string>21,TipOut, INT(4), , MHCharacteristic.TipOutArea</string>
+        <string>22,MakeModel, STR, , MHCharacteristic.MakeModel</string>
+        <string>23,SerialNbrVin, STR, , MHCharacteristic.SerialNbrVin</string>
+        <string>24,PcntNetCond, INT(3), , MHCharacteristic.PcntNetCondition</string>
+        <string>25,Park Name, TEXT(L), 998, MHLocation.ParkId</string>
+        <string>26,AddrUsage, TEXT(L), 237, MHLocation.AddrUsage</string>
+        <string>27,SpNo, INT(5), , MHLocation.SpaceNbr</string>
+        <string>28,StNo, INT(5), , MHLocation.StreetNbr</string>
+        <string>29,Fract, TEXT(L),38, MHLocation.NbrFraction</string>
+        <string>30,Prefix, TEXT(L), 20, MHLocation.DirPrefix</string>
+        <string>31,Street, TEXT(50), , MHLocation.StreetName</string>
+        <string>32,Type, TEXT(L), 21, MHLocation.StreetType</string>
+        <string>33,Suffix, TEXT(L), 20, MHLocation.DirSuffix</string>
+        <string>34,City, TEXT(25), , MHLocation.City</string>
+    </array>
+    <key>TabMobileGrid</key>
+	<array>
+		<string>1,GridTabMobile, GRID, 40, not.used, 100</string>
+	</array>
+	<key>GridTabMobile</key>
+	<array>
+        <string>2,Picture, IMG, , MHAccount.rMediaMobile, 120</string>
+        <string>3,TaxPayerName, TEXT, , MHAccount.TaxPayerName,120</string>
+        <string>5,Bldg Nbr, INT(2) , , MHAccount.BldgNbr,60</string>
+        <string>6,Acct Status, TEXT(L), 230, MHAccount.AcctStatus,120</string>
+        <string>7,MH Type, TEXT(L), 229, MHAccount.MhType,80</string>
+        <string>9,Phone, STR, , MHAccount.Phone,100</string>
+	</array>
+    <key>TabPermitsDetail</key>
+    <array>
+        <string>1,PermitNumber, TEXT, , Permit.PermitNbr</string>
+        <string>2,Permit Type , TEXT(L), 165, Permit.PermitType</string>
+        <string>3,Issued By, TEXT, , Permit.IssuingJurisdiction</string>
+        <string>4,Issued Date, DATE, , Permit.IssueDate</string>
+        <string>5,PERMIT VAL, CUR, , Permit.PermitVal</string>
+        <string>6,PERMIT STATUS, TEXT(L), 164, Permit.PermitStatus</string>
+        <string>7,% Comp, PERCENT, , Permit.PcntComplete</string>
+        <string>8,Reviewed By, TEXT(4), , Permit.ReviewedBy</string>
+        <string>9,Reviewed Date, DATE, , Permit.ReviewedDate</string>
+        <string>10,Permit Description, TEXTL, , Permit.PermitDescr</string>
+        <string>11,WebLink, TEXT, , Permit.WebLink</string>
+        <string>12,EPlan, URL, , Permit.EPlan </string>   
+    </array>
+    <key>TabPermitsGrid</key>
+    <array>
+        <string>1,GridTabPermits, GRID, 40, not.used, 40</string>
+    </array>
+    <key>GridTabPermits</key>
+    <array>
+        <string>1,Permit Number, TEXT, , Permit.PermitNbr, 160</string>
+        <string>2,Permit Type, TEXT(L), 165 , Permit.PermitType, 160</string>
+        <string>4,Issued Date, DATE, , Permit.IssueDate, 80</string>
+        <string>5,PERMIT VAL, CUR, , Permit.PermitVal,120</string>
+        <string>6,PERMIT STATUS, TEXT(L), 164, Permit.PermitStatus,140</string>
+        <string>7,% Comp, PERCENT, , Permit.PcntComplete,80</string>
+        <string>8,Reviewed By, TEXT(4), , Permit.ReviewedBy,80</string>
+        <string>9,Reviewed Date, DATE, , Permit.ReviewedDate,80</string>
+        <string>10,Permit Description, TEXT, , Permit.PermitDescr,200</string>
+    </array>
+    <!--=================================================================== HISTORY SALE =================-->
+    <key>TabSaleGrid</key>
+    <array>
+        <string>1,GridTabSale, GRID, 40, not.used, 40</string>
+    </array>
+    <key>GridTabSale</key>
+    <array>
+        <string>2,Sale Date, DATE, , Sale.SaleDate, 100</string>
+        <string>3,Sale Price, CURR, , Sale.SalePrice, 120</string>
+        <string>4,ENbr, INT(10), , Sale.ExciseTaxNbr, 120</string>
+        <string>5,Sale Instrument, TEXT, , Sale.Instrument, 160</string>
+        <string>6,Sales Reason, TEXT, , Sale.SaleReason, 140</string>
+    </array>
+    <!-- Sale details -->
+    <key>TabSaleDetail</key>
+    <array>
+        <string>2,ENbr, INT(10), , Sale.ExciseTaxNbr</string>
+        <string>3,Sale Date, DATE, , Sale.SaleDate</string>
+        <string>4,Sale Price, CURR, , Sale.SalePrice</string>
+        <string>5,Recording Nbr, NUM(20), , Sale.RERecordingNbr</string>
+        <string>6,Nbr Parcels, INT(2), , Sale.PropCnt</string>
+        <string>7,Sales Reason, TEXT, , Sale.SaleReason</string>
+        <string>8,Sale Instrument, TEXT, , Sale.Instrument</string>
+        <string>9,Property Type, TEXT, , Sale.PropertyType</string>
+        <string>10,Principal Use, TEXT, , Sale.PrincipalUse</string>
+        <string>11,Seller Name, TEXT, , Sale.SellerName</string>
+        <string>12,Seller Address, TEXT, , Sale.SellerAddr</string>
+        <string>13,Buyer Name, TEXT, , Sale.BuyerName</string>
+        <string>14,Buyer Address, TEXT, , Sale.BuyerAddr</string>
+        <string>15,Property Class, TEXT(L), 4, Sale.PropertyClass</string>
+        <string>16,NonRep, INT(4), , Sale.NonRepComp1</string>
+        <string>17,Enbrs, INT(4), , Sale.NonRepComp2</string>
+        <string>18,Proc State, TEXT, , Sale.SaleProcess</string>
+        <string>19,Identified by, TEXT(4), , Sale.IdentifiedBy</string>
+        <string>20,Identified date, DATE, , Sale.IdentifiedDate</string>
+        <string>21,Verify By, TEXT(4), , Sale.VYVerifiedBy</string>
+        <string>22,Verify By Date, DATE, , Sale.VYVerifDate</string>
+        <string>23,At Market, TEXT(L), 285, Sale.VYVerifiedAtMarket</string>
+        <string>24,Verification Level, TEXT(L), 9, Sale.VerificationLevel</string>
+        <string>25,Forest, BOOL, , Sale.AFForestLand</string>
+        <string>26,Historic, BOOL, , Sale.AFHistoricProperty</string>
+        <string>27,Current Use, BOOL, , Sale.AFCurrentUseLand</string>
+        <string>28,Updated, TEXT(4), , Sale.UpdatedBy</string>
+        <string>29,Updated Date, DATE, , Sale.UpdateDate</string>
+        <string>30,NonProfit Use, BOOL,, Sale.AFNonProfitUse</string>
+        <!-- Object definition: <class name>.<XIB name>. It is usually the same name -->
+        <string>31,List of Notes, OBJECT,, SaleNotes.SaleNotes </string>
+        <string>32,Warnings, OBJECT,, SaleWarnings.SaleWarnings </string>
+        <string>33,GridSaleParcels, GRID, 35,SaleParcels.SaleParcels,40</string>
+    </array>
+    <!------------------------------- Sale Notes ------------>
+    <key>SaleNotes</key>
+    <array>
+        <string>1,GridSaleNotes, GRID, 35, not.used, 40</string>
+    </array>
+    <key>GridSaleNotes</key>
+    <array>
+        <string>1, Note, TEXTL,,NoteInstance.note, 435</string>
+    </array>
+    <key>DialogBoxNote</key>
+	<array>
+        <string>1, Note, TEXTL,,NoteInstance.note</string>
+	</array>
+    <!------------------------------- Sale Warnings ------>
+    <key>SaleWarnings</key>
+    <array>
+        <string>1,GridSaleWarnings, GRID, 35, not.used, 40</string>
+    </array>
+    <key>GridSaleWarnings</key>
+    <array>
+        <string>1, Warning, TEXT(L),7,SaleWarning.warning, 202</string>
+    </array>
+    <key>DialogBoxSaleWarning</key>
+	<array>
+        <string>1, Note, TEX(L),7,SaleWarning.warning</string>
+	</array>  
+    <!------------------------------- Sale Parcels ------>
+    <key>TabSaleParcels</key>
+    <array>
+        <string>1,GridSaleParcels, GRID, 35, not.used, 40</string>
+    </array>
+    <key>GridSaleParcels</key>
+    <array>
+        <string>1, Parcel, TEXT,,SaleParcels.parcel, 202</string>
+    </array>
+    <!--=================================================================== HISTORY REVIEW =================-->
+    <key>TabReviewsDetail</key>
+    <array>
+        <string>1,Tax Year, YEAR, , Review.BillYr</string>
+        <string>2,Review Nbr, TEXT, , Review.AppealNbr</string>
+        <string>3,Review Type, TEXT(L), 123, Review.ReviewType</string> <!-- or 140 -->
+        <string>4,Source, TEXT, , Review.ReviewSource</string>
+        <string>5,Taxpayer Name, TEXT, , Review.Taxpayername</string>
+        <string>6,Agent, TEXT, , Review.Agent</string>
+        <string>7,Related Appeal Nbr, INT, , Review.RelatedAppealNbr</string>
+        <string>8,Resp Appr, TEXT(4), , Review.RespAppr</string>
+        <string>9,Hearing Date, DATE, , Review.HearingDate</string>
+        <string>10,Location, TEXT, , Review.HearingLoc</string>
+        <string>11,Add’l Info, TEXT, , Review.HearingInfo</string> 
+        <string>12,Review, TEXT(L), 72, Review.ReviewType</string>
+        <string>13,Assessor, TEXT, , Review.StatusAssessor</string>
+        <string>14,Stip, TEXT, , Review.StatusStipulation</string>
+        <string>15,Board, TEXT, , Review.StatusBoard</string>
+        <string>16,Action, TEXT, , Review.HearingResult</string>
+        <string>17,Date, DATE, , Review.OrderDate</string>
+        <string>35,GridTabReviewTracking, GRID, 35, not.used, 36</string>
+        <string>40,List of Notes, OBJECT,, ReviewSaleNotes.ReviewSaleNotes</string>
+    </array>
+    <key>TabReviewsGrid</key>
+    <array>
+        <string>1,GridTabReviews, GRID, 40, not.used, 40</string>
+    </array>
+    <key>GridTabReviews</key>
+    <array>
+        <string>1,Tax Year, YEAR, ,Review.BillYr,60</string>
+        <string>2,Review Nbr, TEXT,,Review.AppealNbr,100</string>
+        <string>3,Review Type, TEXT(L), 123, Review.ReviewType,120</string>
+        <string>4,Source, TEXT, , Review.ReviewSource,120</string>
+        <string>5,Appealed Value, CURR,,Review.AppealedValue,100</string>
+        <string>6,Hearing Date, DATE,, Review.HearingDate,80</string>
+        <string>7,Settlement, CURR,,Review.SettlementValue,100</string>
+        <string>8,Decision,TEXT,,Review.HearingResult,150</string>
+        <string>9,Status, TEXT(L),122, Review.StatusAssmtReview,120</string> <!-- or 139 -->
+        <string>10,Status Assessor, TEXT,,Review.StatusAssessor,120</string>
+        <string>11,Status Stipulation,TEXT,,Review.StatusStipulation,120</string>
+        <string>12,Status Board, TEXT,, Review.StatusBoard,120</string>
+        <string>13,TaxPayerName, TEXT,,Review.Taxpayername,140</string>
+        <string>14,Agent,TEXT,,Review.Agent,120</string>
+        <string>15,Res Appr,TEXT,,Review.RespAppr,80</string>
+        <string>16,Order Date, DATE,,Review.OrderDate,80</string>
+    </array>
+    <key>GridTabReviewTracking</key>
+    <array>
+        <string>1,Entry Type, TEXT, , ReviewJrnl.EntryType,100</string>
+        <string>2,Entry Date, DATE, , ReviewJrnl.EntryDate,80</string>
+        <string>3,Link, URL, , ReviewJrnl.eDocLink,140</string>
+        <string>4,Src, TEXT, , ReviewJrnl.SourcePerson,90</string>
+        <string>5,Trgt, TEXT, , ReviewJrnl.TargetPerson,90</string>
+        <string>6,Val Type, TEXT(L),1 , ReviewJrnl.ValuationType,120</string>
+        <string>7,Land Val, CURR, , ReviewJrnl.ApprLandVal,120</string>
+        <string>8,Imps Val, CURR, , ReviewJrnl.ApprImpsVal,120</string>
+        <string>9,Total Val, CURR, , ReviewJrnl.ApprTotalVal,130</string>
+        <string>10,Updated By, TEXT, , ReviewJrnl.UpdatedBy,140</string>
+        <string>11,Update Date, DATE, , ReviewJrnl.UpdateDate,140</string>
+    </array>
+    <key>ReviewSaleNotes</key>
+    <array>
+        <string>1,GridReviewSaleNotes, GRID, 35, not.used, 40</string>
+    </array>
+    <key>GridReviewSaleNotes</key>
+    <array>
+        <string>1, Note, TEXTL,,NoteInstance.note, 435</string>
+    </array>
+    <!--=================================================================== HISTORY VALUE =================-->
+    <key>TabValHistGrid</key>
+    <array>
+        <string>1,GridTabValHist, GRID, 40,not.used,32</string>
+    </array>
+    <key>GridTabValHist</key>
+    <array>
+        <string>1,Tax Yr, YEAR, , ValHist.BillYr</string>
+        <string>2,Omit Yr, YEAR, , ValHist.OmitYr</string>
+        <string>4,Appr Land, CURR, , ValHist.ApprLandVal</string>
+        <string>5,Appr Imps, CURR, , ValHist.ApprImpsVal</string>
+        <string>6,App Total, CURR, , ValHist.TotalApprVal</string>
+        <string>7,New Dollars, CURR, , ValHist.ApprImpIncrease</string>
+        <string>8,Land Val, CURR, , ValHist.LandVal</string>
+        <string>9,Imps Val, CURR, , ValHist.ImpsVal</string>
+        <string>10,Total Val, CURR, , ValHist.TotalVal</string>
+        <string>11,Stat, TEXT(2), , ValHist.TaxStatus</string>
+        <string>12,Levy, INT(4), , ValHist.LevyCode</string>
+        <string>13,Change Date, DATE, , ValHist.ChangeDate</string>
+        <string>14,Change DocId, TEXT, , ValHist.ChangeDocId</string>
+        <string>15,Reason, TEXT, , ValHist.Reason</string>
+    </array>
+    <key>TabValHistDetail</key>
+    <array>
+        <string>1,Tax Yr, YEAR, , ValHist.BillYr</string>
+    </array>
+    <!--=================================================================== HISTORY CHANGE =================-->
+    <key>TabChangesGrid</key>
+    <array>
+        <string>1,GridTabChangeHist,GRID,40,not.used,32</string>
+    </array>
+    <key>GridTabChangeHist</key>
+    <array>
+        <string>1,Type,TEXT,,ChngHist.Type,200</string>
+        <string>2,By,TEXT,,ChngHist.EventPerson,120</string>
+        <string>3,When,DATE,,ChngHist.EventDate,120</string>
+        <string>4,DocId,TEXT,,ChngHist.DocId,150</string>
+        <string>5,PropStatus,TEXT(L),208,ChngHist.PropStatus,120</string>
+        <string>6,Upddated By,TEXT,,ChngHist.UpdatedBy,120</string>
+        <string>7,Update Date,TEXT,,ChngHist.UpdateDate,120</string>
+    </array>
+    <!-- changes details -->
+    <key>TabChangesDetail</key>
+    <array>
+        <string>1,Type,TEXT,,ChngHist.Type,200</string>
+        <string>2,By,TEXT,,ChngHist.EventPerson,120</string>
+        <string>3,When,DATE,,ChngHist.EventDate,120</string>
+        <string>4,DocId,TEXT,,ChngHist.DocId,150</string>
+        <string>5,PropStatus,TEXT(L),208,ChngHist.PropStatus,120</string>
+        <!-- 35 has be to the same one in that case -->
+        <string>35,GridTabChangesDetail,GRID,35,not.used,32</string>
+    </array>
+    <!-- grid in the change details -->
+    <key>GridTabChangesDetail</key>
+    <array>
+        <string>1,Data,TEXT,,ChngHistDtl.Id,150</string>
+        <string>2,Data Item,TEXT,,ChngHistDtl.Attribute,200</string>
+        <string>3,Value,TEXT,,ChngHistDtl.AttributeValue,200</string>
+        <string>4,Upddated By,TEXT,,ChngHist.UpdatedBy,120</string>
+        <string>5,Update Date,DATE,,ChngHist.UpdateDate,120</string>
+    </array>
+    <!--=================================================================== Home Improvment Exemption =================-->
+    <key>TabHIExmptGrid</key>
+    <array>
+        <string>1,GridTabHIE,GRID,40,not.used,32</string>
+    </array>
+    <key>GridTabHIE</key>
+    <array>
+        <string>1,HIExemptID,INT,,HIExmpt.hIExemptId,100</string>
+        <string>3,Est Cost,CUR,,HIExmpt.estCost,120</string>
+        <string>4,App Signed,BOOL,,HIExmpt.AppSigned,80</string>
+        <string>5,Prior Exemption,BOOL,,HIExmpt.PriorExemption,80</string>
+        <string>6,New Construction,BOOL,,HIExmpt.NewConstr,80</string>
+        <string>7,Late Application,BOOL,,HIExmpt.LateApplication,80</string>
+        <string>8,Non Dwelling Unit,BOOL,,HIExmpt.NonDwellingUnit,80</string>
+        <string>9,Maint Or Replace,BOOL,,HIExmpt.MaintOrReplace,80</string>
+        <string>10,Multiple Dwellings,BOOL,,HIExmpt.MultipleDwellings,80</string>
+        <string>11,Personal Property,BOOL,,HIExmpt.PersonalProperty,80</string>
+        <string>12,App Mobile,BOOL,,HIExmpt.AppMobile,80</string>
+        <string>13,App Own Land,BOOL,,HIExmpt.AppOwnLand,80</string>
+        <string>14,Approved,BOOL,,HIExmpt.Approved,80</string>
+        <string>15,Destroye dProperty,BOOL,,HIExmpt.DestroyedProperty,80</string>
+        <string>16,First BillYr,YEAR,,HIExmpt.FirstBillYr,120</string>
+        <string>17,Last BillYr,YEAR,,HIExmpt.LastBillYr,120</string>
+        <string>18,Home Imp Val,CURR,,HIExmpt.HomeImpVal,120</string>
+        <string>19,Page Count,INT(4),,HIExmpt.PageCount,100</string>
+        <string>20,Updated By,STR(4),,HIExmpt.UpdatedBy,120</string>
+        <string>21,Update Date,DATE,,HIExmpt.UpdateDate,120</string>
+    </array>
+    <!-- Details -->
+    <key>TabHIExmptDetail</key>
+    <array>
+        <string>1,HIExemptID,INT,,HIExmpt.hIExemptId</string>
+        <string>3,Est Cost,CUR,,HIExmpt.EstCost</string>
+        <string>4,App Signed,BOOL,,HIExmpt.AppSigned</string>
+        <string>5,PriorExemption,BOOL,,HIExmpt.PriorExemption</string>
+        <string>6,NewConstr,BOOL,,HIExmpt.NewConstr</string>
+        <string>7,LateApplication,BOOL,,HIExmpt.LateApplication</string>
+        <string>8,NonDwellingUnit,BOOL,,HIExmpt.NonDwellingUnit</string>
+        <string>9,MaintOrReplace,BOOL,,HIExmpt.MaintOrReplace</string>
+        <string>10,MultipleDwellings,BOOL,,HIExmpt.MultipleDwellings</string>
+        <string>11,PersonalProperty,BOOL,,HIExmpt.PersonalProperty</string>
+        <string>12,AppMobile,BOOL,,HIExmpt.AppMobile</string>
+        <string>13,AppOwnLand,BOOL,,HIExmpt.AppOwnLand</string>
+        <string>15,DestroyedProperty,BOOL,,HIExmpt.DestroyedProperty</string>
+        <string>16,FirstBillYr,YEAR,,HIExmpt.FirstBillYr</string>
+        <string>17,LastBillYr,YEAR,,HIExmpt.LastBillYr</string>
+        <string>18,HomeImpVal,CURR,,HIExmpt.HomeImpVal</string>
+        <string>20,UpdatedBy,STR(4),,HIExmpt.UpdatedBy</string>
+        <string>21,UpdateDate,DATE,,HIExmpt.UpdateDate</string>
+        <string>22,NewDwelling,BOOL,,HIExmpt.newDwellingUnit</string>
+        <string>23,BldgId,INT,,HIExmpt.bldgId</string>
+        <string>24,PermitDistrictId,TEXT(L),997,HIExmpt.permitDistrictId</string>
+        <string>25,ValueDate,DATE,,HIExmpt.ValueDate</string>
+        <string>26,ValuedBy,TEXT,,HIExmpt.ValuedBy</string>
+        <string>27,receivedDate,DATE,,HIExmpt.receivedDate</string>
+        <string>28,UpdatedDate,DATE,,HIExmpt.updateDate</string>
+        <string>35,GridHIESaleNotes, GRID, 35, not.used, 40</string>
+    </array>
+    <key>GridHIESaleNotes</key>
+    <array>
+        <string>1, Note, TEXTL,,NoteInstance.note, 430</string>
+        <string>2, UID, TEXT,,NoteInstance.uID, 120</string>
+        <string>4, Updated By, TEXT,,NoteInstance.assmtEntityId, 100</string>
+        <string>3, Updated Date, DATE,,NoteInstance.updateDate, 100</string>
+    </array>
+    <!--=================================================================== INTEREST =================-->
+    <key>TabInterestGrid</key>
+    <array>
+        <string>1,GridInterestHist, GRID, 40,not.used,32</string>
+    </array>
+    <key>GridInterestHist</key>
+    <array>
+        <string>1,Parcel, TEXT, , UndividedInt.parcel</string>
+        <string>2,Interests, TEXT, , UndividedInt.interests</string>
+        <string>4,Prop Type, TEXT, , UndividedInt.propType</string>
+        <string>5,Appl Groups, TEXT, , Undivided.applgroup</string>
+    </array>
+    <key>TabInterestDetail</key>
+    <array>
+        <string>1,Tax Yr, TEXT, , UndividedInt.parcel</string>
+    </array>
+    <!--=================================================================== Notes =================-->
+    <key>TabNotesGrid</key>
+    <array>
+        <string>1,GridTabNotes, GRID, 40,not.used,70</string>
+    </array>
+    <key>GridTabNotes</key>
+    <array>
+        <string>1,Note, TEXT,,NoteInstance.Note,450</string>
+        <string>2,uID, TEXT, , NoteInstance.uID,120</string>
+        <string>4,Updated By, TEXT, , NoteInstance.assmtEntityId,100</string>
+        <string>5,Update Date, DATE, , NoteInstance.updateDate,100</string>
+    </array>
+    <key>TabNotesDetail</key>
+    <array>
+        <string>1,Note, TEXTL,,NoteInstance.Note</string>
+    </array>
+    <!--=================================================================== Tab Values =================-->
+    <key>TabValue</key>
+    <array>
+        <string>10,ValueTaxRoll, OBJECT, ,ValueTaxRoll.ValueTaxRoll</string>
+        <string>20,ValueAppraisal, OBJECT, ,ValueAppraisal.ValueAppraisal</string>
+        <string>30,ValueEstimate, OBJECT, ,ValueEstimate.ValueEstimate</string>
+    </array>
+    <!------------------------------- ValueTaxRoll ------------>
+    <key>ValueTaxRoll</key>
+    <array>
+        <string>1,GridValueTaxRoll, GRID, 35, not.used,25</string>
+    </array>
+    <key>GridValueTaxRoll</key>
+    <array>
+        <string>1, Acct Nbr, TEXT,,TaxRoll.acctNbr,100</string>
+        <string>2, Type, TEXT,,TaxRoll.receivableType,60</string>
+        <string>3, Tax Yr, NUM,, TaxRoll.billYr,80</string>
+        <string>3, Omit Yr, NUM,, TaxRoll.omitYr,80</string>
+        <string>4, Levy,TEXT,,TaxRoll.levyCode,80</string>
+        <string>5, Appr Land, CURR,,TaxRoll.apprLandVal,100</string>
+        <string>6, Appr Imps, CURR,,TaxRoll.apprImpsVal,100</string>
+        <string>7, Appr Tot, CURR,,TaxRoll.apprTotalVal,100</string>
+        <string>8, New Dollars, CURR,,TaxRoll.apprImpIncrease,100</string>
+        <string>9, Tax Land,NUM,,TaxRoll.landVal,100</string>
+        <string>10, Tax Imps, CURR,, TaxRoll.impsVal,100</string>
+        <string>11, Tax Total, CURR,, TaxRoll.totalVal,100</string>
+        <string>12, Stat, TEXT,, TaxRoll.taxStat,60</string>
+        <string>13, TVR, TEXT,, TaxRoll.taxValReason,60</string>
+        <string>14, Acct, TEXT,,TaxRoll.acctStat,60</string>
+        <string>15, Killed, TEXT,,TaxRoll.killed,60</string>
+    </array>
+    <!------------------------------- Appraisal History ------------>
+    <key>ValueAppraisal</key>
+    <array>
+        <string>1,GridValueAppraisal, GRID, 35, not.used,25</string>
+    </array>
+    <key>GridValueAppraisal</key>
+    <array>
+        <string>1, RM, TEXT,, ApplHist.revalOrMaint,60</string>
+        <string>2, Tax Yr, NUM,, ApplHist.rollYr, 80</string>
+        <string>3, Method, TEXT(L),135, ApplHist.selectMethod,120</string> <!-- or 48 ??? -->
+        <string>4, Reason, TEXT(L),134,ApplHist.selectReason,120</string>
+        <string>5, Land Val,CURR,,ApplHist.landVal,100</string>
+        <string>6, Imps Val,CURR,,ApplHist.impsVal,100</string>
+        <string>7, Total Val,CURR,,ApplHist.totalVal,100</string>
+        <string>8, Pcnt Chng,FLOAT,,ApplHist.pcntChng,80</string>
+        <string>9, New Dollars,CURR,,ApplHist.newConstrVal,120</string>
+        <string>10, Appr,TEXT,,ApplHist.selectAppr,80</string>
+        <string>11, Appr Date, DATE,,ApplHist.selectDate,80</string>
+        <string>12, Post,TEXT(L),109,ApplHist.mFInterfaceFlag,120</string>
+        <string>13, Post Date,DATE,, ApplHist.mFInterfaceDate,100</string>
+        <string>14, Has Note,BOOL,, ApplHist.hasNote,60</string>
+        <string>16, Post Code,INT,, ApplHist.postCode,70</string>
+    </array>
+    <!------------------------------- Value Estimates ------------>
+    <key>ValueEstimate</key>
+    <array>
+        <string>1,GridValueEstimate, GRID, 35, not.used,25</string>
+    </array>
+    <key>GridValueEstimate</key>
+    <array>
+        <string>1, Est Type,TEXT(L),46,ValEst.estType,140</string>
+        <string>3, Bldg,INT,,ValEst.bldgNbr,70</string>
+        <string>4, Tax Yr,NUM,,ValEst.rollYr,70</string>
+        <string>5, Land Val,CURR,,ValEst.landVal,100</string>
+        <string>6, Imps Val,CURR,,ValEst.impsVal,100</string>
+        <string>7, Total Val, CURR,,ValEst.totalVal,100</string>
+        <string>8, CalcDt, DATE,,ValEst.estDate,100</string>
+        <string>9, Killed, TEXT,,ValEst.killed,60</string>
+    </array>
+    <!-- ================================= Grid for the search result =============-->
+    <key>GridSearchResult</key>
+    <array>
+		<string>2, Address, NUM(5), , rHeader.streetNbr,80</string>
+		<string>4, Street , TEXT,, rHeader.street,120</string>
+		<string>5, Zip,TEXT(5),, rHeader.zipCode,100</string>
+		<string>5, City,TEXT,, rHeader.city,120</string>
+        <string>6, PT,TEXT,,realPropInfo.propType,50</string>
+        <string>7, Major,TEXT,, realPropInfo.major,80</string>
+        <string>8, Minor,TEXT,, realPropInfo.minor,60</string>
+        <string>9, Area,NUM,, rHeader.resArea,60</string>
+        <string>10, Sub,NUM,,rHeader.resSubArea,60</string>
+		<string>15,QSTR,TEXT(2),,rHeader.quarterSection,60</string>
+		<string>16,Section,NUM(2),,rHeader.section,60</string>
+		<string>17,Township,NUM(2),,rHeader.township,60</string>
+		<string>18,Range,NUM(2),,rHeader.range,60</string>
+		<string>19,Levy, NUM(4),,rHeader.levyCode,60</string>
+		<string>20,Block,NUM(4),,rHeader.platBlock,60</string>
+		<string>21,Lot,NUM(4),,rHeader.platLot,60</string>
+    </array>
+    <key>GridSearchResultWithName</key>
+    <array>
+        <string>1, Account by Don, TEXT,, rAccounts.acct,250</string>
+		<string>2, Address, NUM(5), , rHeader.streetNbr,80</string>
+		<string>4, Street , TEXT,, rHeader.street,120</string>
+		<string>5, Zip,TEXT(5),, rHeader.zipCode,100</string>
+		<string>5, City,TEXT,, rHeader.city,120</string>
+        <string>6, PT,TEXT,,realPropInfo.propType,50</string>
+        <string>7, Major,TEXT,, realPropInfo.major,80</string>
+        <string>8, Minor,TEXT,, realPropInfo.minor,60</string>
+        <string>9, Area,NUM,, rHeader.resArea,60</string>
+        <string>10, Sub,NUM,,rHeader.resSubArea,60</string>
+		<string>15,QSTR,TEXT(2),,rHeader.quarterSection,60</string>
+		<string>16,Section,NUM(2),,rHeader.section,60</string>
+		<string>17,Township,NUM(2),,rHeader.township,60</string>
+		<string>18,Range,NUM(2),,rHeader.range,60</string>
+		<string>19,Levy, NUM(4),,rHeader.levyCode,60</string>
+		<string>20,Block,NUM(4),,rHeader.platBlock,60</string>
+		<string>21,Lot,NUM(4),,rHeader.platLot,60</string>
+    </array>
+    <key>GridSearchResultWithBuilding</key>
+    <array>
+        <string>1, Account, TEXT,, rAccounts.acct,150</string>
+    </array>
+    <!-- ================================= Filter Menu in TabPicture =============-->
+    <key>MenuFilterTabPicture</key>
+    <array>
+        <string>All pictures;YES;1</string>
+        <string>Land Pictures;;2</string>
+        <string>Building Pictures;;3</string>
+        <string>Accessory Pictures;;4</string>
+        <string>Mobile Pictures;;5</string>
+        <string>Notes Pictures;;6</string>
+    </array>
+    <!-- ================================= List of zoom levels =============-->
+    <key>MenuZoomLevel</key>
+    <array>
+        <string>1:10,000;;10000</string>
+        <string>1:5,000;;5000</string>
+        <string>1:2,500;;2500</string>
+        <string>1:1000;;1000</string>
+        <string>1:500;;500</string>
+        <string>1:250;;250</string>
+    </array>
+    <!-- ================================= Legend =============-->
+    <key>MenuLegend</key>
+    <array>
+        <string>+Legend;;</string>
+        <string>Display Legend;;LegendOn</string>
+        <string>Detailed Mode;;Detailed</string>
+        <string>Compact Mode;;Compact</string>
+    </array>
+    <!-- ================================= Bookmark menu =============-->
+    <key>MenuBookmark</key>
+    <array>
+        <string>Add to bookmark;;bookmark</string>
+        <string>Add to daily route;;daily</string>
+    </array>
+    <!-- ================================= Web menu =============-->
+    <key>MenuWeb</key>
+    <array>
+        <string>+External Links;;</string>
+        <string>Finance;;</string>
+        <string>Recorders;;</string>
+        <string>ParcelViewer;;</string>
+        <string>eRealProperty;;</string>
+        <string>eSales;;</string>
+        <string>eMap;;</string>
+        <string>Area Report;;</string>
+        <string>IMap;;</string>
+    </array>  
+    <!-- ================================= Mesure =============-->
+    <key>MenuMesure</key>
+    <array>
+        <string>Mesure Area;;;Polygon</string>
+        <string>Mesure Distance;;;Polyline</string>
+    </array>
+    
+    
+    <!-- Definition for the presentation in the map -->
+    <key>TabMapDetails</key>
+    <array>
+        <string>Picture,MEDIA</string>
+        <string>Details,TabDdumetailsInMap</string>
+        <string>Land,TabLand</string>
+        <string>Views,TabLandViews</string>
+        <string>Nuisances,TabLandNuisance</string>
+        <string>Designation,TabLandDesignations</string>
+        <string>Building %d,TabBuildingDetail,resbldg,bldgNbr,asc</string>
+        <string>Accessory %d,TabAccyDetail,accy,dateValued,desc</string>
+        <string>Sales %d,GridTabSale,sale,saleDate,desc</string>
+    </array>
+</dict>
+</plist>

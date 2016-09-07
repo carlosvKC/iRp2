@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CADLayers>
+    <Layer name="Basement" width="1.0" color="{255,0,255,0}" dash="4.0, 2.0" />
+    <Layer name="First Flr" width="3.0" color="{255,0,0,0}" default="yes" />
+    <Layer name="Half Flr" width="1.0" color="{255,0,0,0}" dash="2.0, 8.0"  />
+    <Layer name="Second Flr" width="2.0" color="{255,0,0,0}" dash="20.0, 8.0" />
+    <Layer name="Third Flr" width="1.0" color="{255,0,0,0}" dash="1.0, 1.0" />
+    <Layer name="Unfin Half" width="1.0" color="{255,255,0,0}" />
+    <Layer name="Unfin Full" width="3.0" color="{255,0,0,0}" dash="50.0, 8.0" />
+    <Layer name="Attic" width="1.0" color="{255,0,0,0}" dash="50.0, 8.0" />
+    <Layer name="Bsmt Gar" width="1.0" color="{255,0,0,0}" />
+    <Layer name="Att Gar" width="1.0" color="{255,0,0,0}" />
+    <Layer name="Carport" width="1.0" color="{255,0,0,0}" dash="2.0, 4.0" />
+    <Layer name="Open Porch" width="2.0" color="{255,0,128,0}" dash="80.0, 8.0" />
+    <Layer name="Encl Porch" width="1.0" color="{255,255,0,0}" dash="4.0, 4.0" />
+    <Layer name="Deck" width="1.0" color="{255,255,0,0}" dash="35.0, 8.0, 2.0" />
+    <Layer name="Patio" width="2.0" color="{255,0,0,255}" dash="4.0, 2.0" />
+</CADLayers>

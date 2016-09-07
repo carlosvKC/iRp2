@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2057" systemVersion="13E28" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="BreakerConfig" representedClassName="BreakerConfig" syncable="YES">
+        <attribute name="color" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fill" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="label" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="rendererConfig" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="RendererConfig" inverseName="breakerConfig" inverseEntity="RendererConfig" syncable="YES"/>
+    </entity>
+    <entity name="Configuration" representedClassName="Configuration" syncable="YES">
+        <attribute name="checkAzureFile" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="currentArea" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="downloading" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="fullUserName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastCheckinAzureTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="lockingCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="menuAtBottom" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="rendererUpdateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="requiredAfter" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="simpleToken" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="syncImageOver3G" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="syncOver3G" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="tabToLog" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="useEffects" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="userLevel" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="ImageToDownload" representedClassName="ImageToDownload" syncable="YES">
+        <attribute name="entityGuid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="entityKind" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="errorMessage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fileName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mediaLoc" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="LastSynchronization" representedClassName="LastSynchronization" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="direction" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="MapLayerConfig" representedClassName="MapLayerConfig" syncable="YES">
+        <attribute name="area" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="bolColumnName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bold" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="clipping" optional="YES" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <attribute name="columnLabel" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="descriptionColumn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fillColor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fillStyle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fontFamily" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fontFamilyColumnName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="friendlyName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="geoColumnName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isParcel" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isPolygon" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isSID" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isStreet" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isVisible" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="isWtrBdy" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="italic" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="labelAngle" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="labelAngleColumnName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="labelColor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="labelColorColumnName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="labelFontSize" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="labelFontSizeColumnName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="layerName" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="lineColor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lineWidth" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="maxScale" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="minScale" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="removeLabelDuplicates" optional="YES" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <attribute name="scaleLabel" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="shapeType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="showAnnotationPolygons" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="showLabels" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="showShapes" optional="YES" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <attribute name="tableName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="titleColumn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uid" optional="YES" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES" isSyncIdentityProperty="YES">
+            <userInfo/>
+        </attribute>
+        <attribute name="updateDate" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <entity name="PieValues" representedClassName="PieValues" syncable="YES">
+        <attribute name="area" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="keyName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="RendererConfig" representedClassName="RendererConfig" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="breakerConfig" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="BreakerConfig" inverseName="rendererConfig" inverseEntity="BreakerConfig" syncable="YES"/>
+    </entity>
+    <entity name="SyncActualStep" representedClassName="SyncActualStep" syncable="YES">
+        <attribute name="actualStep" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="endDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="serverSyncDate" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="stagingGuid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <entity name="SyncEntity" representedClassName="SyncEntity" syncable="YES">
+        <attribute name="entityKind" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="jsonEntities" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="position" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="syncStatus" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="sync" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Synchronization" inverseName="entities" inverseEntity="Synchronization" syncable="YES"/>
+    </entity>
+    <entity name="Synchronization" representedClassName="Synchronization" syncable="YES">
+        <attribute name="pendingSyncToPrep" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="syncDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="syncDirection" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="syncStagingGUID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="totalRecordsToDownload" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="entities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SyncEntity" inverseName="sync" inverseEntity="SyncEntity" syncable="YES"/>
+    </entity>
+    <entity name="SyncValidationError" representedClassName="SyncValidationError" syncable="YES">
+        <attribute name="area" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="entityGuid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="entityKind" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="errorMsg" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="syncGuid" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="BreakerConfig" positionX="0" positionY="0" width="128" height="120"/>
+        <element name="Configuration" positionX="-2" positionY="294" width="128" height="300"/>
+        <element name="ImageToDownload" positionX="-470" positionY="351" width="128" height="120"/>
+        <element name="LastSynchronization" positionX="-153" positionY="321" width="128" height="75"/>
+        <element name="MapLayerConfig" positionX="144" positionY="-126" width="128" height="645"/>
+        <element name="PieValues" positionX="-153" positionY="207" width="128" height="90"/>
+        <element name="RendererConfig" positionX="-173" positionY="-18" width="128" height="75"/>
+        <element name="SyncActualStep" positionX="-468" positionY="198" width="128" height="120"/>
+        <element name="SyncEntity" positionX="-297" positionY="270" width="128" height="120"/>
+        <element name="Synchronization" positionX="-315" positionY="45" width="128" height="135"/>
+        <element name="SyncValidationError" positionX="-468" positionY="18" width="128" height="135"/>
+    </elements>
+</model>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>DataServiceTestURL</key>
+	<string>https://ingress2.kingcounty.gov/iRealPropertyProxy/iRealPropertyProxy.svc</string>
+	<key>DataServiceProductionURL</key>
+	<string>https://info.kingcounty.gov/Assessor/iRealPropertyProxy/iRealPropertyProxy.svc</string>
+	<key>Need Inspections</key>
+	<string>select count(*) from zRealPropInfo r inner join ZInspection i using (z_pk) inner join ZParcelAssignment pa using (z_pk ) where pa.ZAssignedTo LIKE $USER and pa.ZAssmtYr= $YEAR</string>
+	<key>Completed Land Inspection</key>
+	<string>        select count(*) from zRealPropInfo 
+		r inner join ZInspection i using (z_pk) 
+		inner join ZParcelAssignment pa using (z_pk ) 
+		where i.ZInspectionTypeItemId = 1
+		and pa.ZAssignedTo LIKE $USER 
+		and pa.ZAssmtYr= $YEAR	</string>
+	<key>Completed Imps Inspection</key>
+	<string>	select count(*) from zRealPropInfo 
+		r inner join ZInspection i using (z_pk) 
+		inner join ZParcelAssignment pa using (z_pk ) 
+		where i.ZInspectionTypeItemId = 2
+		and pa.ZAssignedTo LIKE $USER 
+		and pa.ZAssmtYr= $YEAR
+</string>
+	<key>Completed Both Inspection</key>
+	<string>	select count(*) from zRealPropInfo 
+		r inner join ZInspection i using (z_pk) 
+		inner join ZParcelAssignment pa using (z_pk ) 
+		where i.ZInspectionTypeItemId = 3
+		and pa.ZAssignedTo LIKE $USER 
+		and pa.ZAssmtYr= $YEAR    
+</string>
+	<key>Verified Sales Count</key>
+	<string>
+        select count(*) 
+        from ZSale s
+        where ZSalePrice &gt; 0 and ZVYVerifiedAtMarket &gt; 0 and ZVYVerifDate &gt; $VERIFDATE
+        and ZSaleDate &gt; $SALEDATE 
+        and exists (select * from ZRealPropInfo r inner join ZSaleParcel sp on r.ZRealPropId = sp.ZRealPropId where sp.ZSaleId = s.ZSaleId and r.ZAssignedUser LIKE $USER)
+    </string>
+	<key>Unverified Sales Count</key>
+	<string>
+        select count(*)  
+        from ZSale s
+        where ZSalePrice &gt; 0 and ZVYVerifiedAtMarket = 0
+        and ZSaleDate &gt; $SALEDATE 
+        and exists (select * from ZRealPropInfo r inner join ZSaleParcel sp on r.ZRealPropId = sp.ZRealPropId where sp.ZSaleId = s.ZSaleId and r.ZAssignedUser LIKE $USER)
+    </string>
+	<key>Incomplete New House Permits</key>
+	<string>
+        Select count(*) from ZPermit p inner join ZRealPropInfo r on p.ZRealPropInfo = r.Z_PK where ZPermitStatus = 1 and ZPermitType = 1 and r.ZAssignedUser LIKE $USER
+    </string>
+	<key>Incomplete Remodel Permits</key>
+	<string>
+        Select  count(*) from ZPermit p inner join ZRealPropInfo r on p.ZRealPropInfo = r.Z_PK  where ZPermitStatus = 1 and ZPermitType = 3  and r.ZAssignedUser LIKE $USER
+    </string>
+	<key>Incomplete Segregations/New Plats</key>
+	<string>
+        Select count(*) from ZChngHist c inner join ZRealPropInfo r on c.ZRealPropInfo = r.Z_PK  where ZType in (&apos;Seg Merge&apos;,&apos;New Plat&apos;) and (ZPropStatus = 0 or ZPropStatus = 2) and r.ZAssignedUser LIKE $USER
+    </string>
+	<key>Incomplete Other Maintenance</key>
+	<string>
+        select
+          (select count(*) from ZPermit p inner join ZRealPropInfo r on p.ZRealPropInfo = r.Z_PK  where ZPermitStatus = 1 and ZPermitType IN (2,4,5,6,7) and r.ZAssignedUser LIKE $USER)
+        + (select count(*) from ZChngHist c inner join ZRealPropInfo r on c.ZRealPropInfo = r.Z_PK  where ZType in (&apos;New Parcel&apos;,&apos;Unkill&apos;,&apos;Transfer&apos;) and (ZPropStatus = 0 or ZPropStatus = 2) and r.ZAssignedUser LIKE $USER)
+        + (select count(*) from ZReview rv inner join ZRealPropInfo r on rv.ZRealPropInfo = r.Z_PK where ZReviewType &gt;= 4 and ZStatusAssmtReview &lt; 9 and r.ZAssignedUser LIKE $USER) 
+    </string>
+	<key>Complete New House Permits</key>
+	<string>
+        select count(*)  from ZPermit p inner join ZRealPropInfo r on p.ZRealPropInfo = r.Z_PK where ZPermitStatus &gt; 1 and ZPermitType = 1  and ZReviewedDate &gt; $STARTTIME and r.ZAssignedUser LIKE $USER
+    </string>
+	<key>Complete Remodel Permits</key>
+	<string>select count(*) from ZPermit p inner join ZRealPropInfo r on p.ZRealPropInfo = r.Z_PK  where ZPermitStatus &gt; 1 and ZPermitType = 3  and ZReviewedDate &gt; $STARTTIME and r.ZAssignedUser LIKE $USER
+    </string>
+	<key>Complete Segregations New Plats</key>
+	<string>
+        Select count(*) from ZChngHist c inner join ZRealPropInfo r on c.ZRealPropInfo = r.Z_PK  where ZType in (&apos;Seg Merge&apos;,&apos;New Plat&apos;) and (ZPropStatus = 1 or ZPropStatus = 3)  and c.ZUpdateDate &gt; $STARTTIME and r.ZAssignedUser LIKE $USER
+    </string>
+	<key>Complete Other Maintenance</key>
+	<string>
+        select
+        (select count(*) from ZPermit p inner join ZRealPropInfo r on p.ZRealPropInfo = r.Z_PK  where ZPermitStatus &gt; 1 and ZPermitType IN (2,4,5,6,7) and p.ZUpdateDate &gt; $STARTTIME and r.ZAssignedUser LIKE $USER)
+      + (select count(*) from ZChngHist c inner join ZRealPropInfo r on c.ZRealPropInfo = r.Z_PK  where ZType in (&apos;New Parcel&apos;,&apos;Unkill&apos;,&apos;Transfer&apos;) and  (ZPropStatus = 1 or ZPropStatus = 3)  and c.ZUpdateDate &gt;= $STARTTIME and r.ZAssignedUser LIKE $USER)
+     + (select count(*) from ZReview rv inner join ZRealPropInfo r on rv.ZRealPropInfo = r.Z_PK where ZReviewType &gt;= 4 and ZStatusAssmtReview = 9 and rv.ZUpdateDate &gt; $STARTTIME  and r.ZAssignedUser LIKE $USER) 
+    </string>
+	<key>Complete Other Maintenance-2</key>
+	<string>
+        select 0
+    </string>
+	<key>User Total Count</key>
+	<string>select count(*) from ZRealPropInfo r inner join ZParcelAssignment i on i.Z_PK = r.ZParcelAssignment where ZAssignedto LIKE $USER and i.ZAssmtYr= $YEAR</string>
+	<key>BlobServiceTestURL</key>
+	<string>https://ingress2.kingcounty.gov/iRealPropertyProxy/blobservice.ashx</string>
+	<key>BlobServiceProductionURL</key>
+	<string>https://info.kingcounty.gov/Assessor/iRealPropertyProxy/blobservice.ashx</string>
+</dict>
+</plist>

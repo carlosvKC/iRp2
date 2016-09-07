@@ -1,0 +1,1802 @@
+<iRealProperty>
+	<Structure>
+		<entity name="RealPropInfo" root="yes">
+			<property name="complexId" type="INT" />
+			<property name="killed" type="TEXT" />
+			<property name="landId" type="INT" />
+			<property name="major" type="TEXT" editable="no"/>
+			<property name="minor" type="TEXT" editable="no" />
+			<property name="parcelNbr" type="TEXT" />
+			<property name="propType" type="TEXT" />
+			<property name="realPropId" type="INT"  uniqueid="yes" />
+			<property name="addrId" type="INT"  uniqueid="yes" />
+			<property name="applGroup" type="TEXT" />
+			<property name="changeSource" type="TEXT" />
+			<property name="city" type="TEXT" />
+			<property name="folio" type="TEXT" />
+			<property name="geoArea" type="INT" />
+			<property name="geoNbrhd" type="INT" />
+			<property name="legalDesc" type="TEXTL" />
+			<property name="levyCode" type="NUM" />
+			<property name="nbrFraction" type="TEXT" /> <!-- type="LOOKUP" lookup="38" -->
+			<property name="neighborhood" type="INT" />
+			<property name="noteId" type="INT" />
+			<property name="parcel" type="TEXT" />
+			<property name="platBlock" type="NUM"  />
+			<property name="platLot" type="NUM" />
+			<property name="propName" type="TEXT"/>
+			<property name="propType" type="TEXT"/>
+			<property name="quarterSection" type="TEXT"  />
+			<property name="range" type="INT"  />
+			<property name="resArea" type="NUM" />
+			<property name="resSubArea" type="NUM"/>
+			<property name="section" type="INT" />
+			<property name="specArea" type="INT" />
+			<property name="specNbrhd" type="INT"/>
+			<property name="street" type="TEXT" />
+			<property name="streetId" type="LOOKUP" lookup="-1" />
+			<property name="streetNbr" type="NUM" />
+			<property name="township" type="INT" />
+			<property name="unitDescr" type="TEXT" />
+			<property name="zipCode" type="NUM" />
+			<link name="Inspection" target="Inspection" />
+			<link name="Account" target="Account" />
+			<link name="Land" target="Land" />
+			<link name="Xland" target="Xland" />
+			<link name="Accy" target="Accy" />
+			<link name="ApplHist" target="ApplHist" />
+			<link name="ChngHist" target="ChngHist" />
+			<link name="HIExmpt" target="HIExmpt" />
+			<link name="MHAccount" target="MHAccount" />
+			<link name="Note" target="Note" />
+			<link name="Permit" target="Permit" />
+			<link name="Review" target="Review" />
+			<link name="Sale" target="Sale" />
+			<link name="TaxRoll" target="TaxRoll" />
+			<link name="UndividedInt" target="UndividedInt" />
+			<link name="ValEst" target="ValEst" />
+			<link name="ValHist" target="ValHist" />
+		</entity>
+		<entity name="Account" root="no">
+			<property name="acct" type="TEXT" />
+			<property name="realPropId" type="INT"  uniqueid="yes" />
+			<backlink name="RealPropInfo" target="RealPropInfo" />
+		</entity>
+        
+		<entity name="Inspection" root="no">
+			<property name="assmtYr" type="INT" />
+			<property name="completedBy" type="TEXT" />
+			<property name="completedDate" type="DATE" />
+			<property name="inspectionId" type="INT"  uniqueid="yes" />
+			<property name="inspectionTypeId" type="INT" />
+			<property name="inspectionTypeItemId" type="INT" />
+			<property name="realPropId" type="INT" />
+			<backlink name="RealPropInfo" target="RealPropInfo" />
+		</entity>
+		<entity name="Land" root="no">
+			<property name="access" type="LOOKUP" lookup="55" />
+			<property name="baseLandVal" type="CURR" />
+			<property name="baseLandValDate" type="DATE"  editable="no"/>
+			<property name="baseLandValSqFt" type="FLOAT" editable="no"/>
+			<property name="baseLandValTaxYr" type="INT"   editable="no"/>
+			<property name="baseLandValUnit" type="INT" />
+			<property name="currentZoning" type="LOOKUP" lookup="-2"  />
+			<property name="hBUAsIfVacant" type="LOOKUP" lookup="121" />
+			<property name="hBUAsImproved" type="LOOKUP" lookup="104" />
+			<property name="inadequateParking" type="LOOKUP" lookup="92" />
+			<property name="landId" type="INT"  uniqueid="yes" />
+			<property name="pcntBaseLandValImpacted" type="INT" />
+			<property name="pcntUnusable" type="PERCENT" />
+			<property name="presentUse" type="LOOKUP" lookup="102" />
+			<property name="realPropId" type="INT" />
+			<property name="restrictiveSzShape" type="BOOL" />
+			<property name="sewerSystem" type="LOOKUP" lookup="57" />
+			<property name="sqFtLot" type="INT"/>
+			<property name="sqFtLotDry" type="INT" />
+			<property name="sqFtLotSubmerged" type="INT"  />
+			<property name="streetSurface" type="LOOKUP" lookup="60" />
+			<property name="topography" type="LOOKUP" lookup="93" />
+			<property name="unbuildable" type="BOOL" />
+			<property name="updateDate" type="DATE" />
+			<property name="updatedBy" type="TEXT" />
+			<property name="waterSystem" type="LOOKUP" lookup="56" />
+			<property name="zoningChgDate" type="DATE" />
+			<backlink name="RealPropInfo" target="RealPropInfo" />
+			<link name="CurrentZoning" target="CurrentZoning" />
+			<link name="EnvRes" target="EnvRes" />
+			<link name="MediaLand" target="MediaLand" />
+			<link name="ResBldg" target="ResBldg" />
+		</entity>
+		<entity name="CurrentZoning" root="no">
+			<property name="landId" type="INT" />
+			<property name="zoneDescription" type="TEXT" />
+			<property name="zoneId" type="INT"  uniqueid="yes" />
+			<backlink name="Land" target="Land" />
+		</entity>
+		<entity name="EnvRes" root="no"> issue
+			<property name="attributeId" type="LOOKUP" lookup="999" />
+			<property name="delineationStudy" type="BOOL" />
+			<property name="lUSourceItem" type="LOOKUP" lookup="101" />
+			<property name="landId" type="INT" uniqueid="yes" />
+			<property name="pcntAffected" type="PERCENT" />
+            <property name="valPct" type="PERCENT" />
+			<property name="updateDate" type="DATE" />
+			<property name="updatedBy" type="TEXT" />
+			<backlink name="Land" target="Land" />
+		</entity>
+		<entity name="MediaLand" root="no">
+			<property name="active" type="INT" />
+			<property name="desc" type="TEXTL" />
+			<property name="imageType" type="INT" />
+			<property name="landId" type="INT" />
+			<property name="mediaDate" type="DATE" />
+			<property name="mediaId" type="INT"  uniqueid="yes" />
+			<property name="mediaLoc" type="TEXT" />
+			<property name="mediaType" type="INT" />
+			<property name="order" type="INT" />
+			<property name="postToWeb" type="INT" />
+			<property name="primary" type="INT" />
+			<property name="realPropId" type="INT" />
+			<property name="thumbnail" type="INT" />
+			<property name="updateDate" type="DATE" />
+			<property name="updatedBy" type="TEXT" />
+			<property name="year" type="YEAR" />
+			<backlink name="Land" target="Land" />
+		</entity>
+		<entity name="ResBldg" root="no">
+			<property name="addnlCost" type="CURR" />
+			<property name="addrId" type="INT" />
+			<property name="bath3qtrCount" type="INT" />
+			<property name="bathFullCount" type="INT" />
+			<property name="bathHalfCount" type="INT" />
+			<property name="bedrooms" type="INT" />
+			<property name="bldgGrade" type="LOOKUP" lookup="82" />
+			<property name="bldgGradeVar" type="INT" />
+			<property name="bldgId" type="INT"  uniqueid="yes" />
+			<property name="bldgNbr" type="INT" />
+			<property name="brickStone" type="INT" />
+			<property name="condition" type="LOOKUP" lookup="83" />
+			<property name="daylightBasement" type="BOOL" />
+			<property name="finBasementGrade" type="LOOKUP" lookup="82" />
+			<property name="fpAdditional" type="INT" />
+			<property name="fpFreeStanding" type="INT" />
+			<property name="fpMultiStory" type="INT" />
+			<property name="fpSingleStory" type="INT" />
+			<property name="heatSource" type="LOOKUP" lookup="84" />
+			<property name="heatSystem" type="LOOKUP" lookup="108" />
+			<property name="landId" type="INT" />
+			<property name="nbrFraction" type="TEXT" /> <!-- type="LOOKUP" lookup="38" -->
+			<property name="nbrLivingUnits" type="INT" />
+			<property name="obsolescence" type="INT" />
+			<property name="pcntComplete" type="INT" />
+			<property name="pcntNetCondition" type="INT" />
+			<property name="realPropId" type="INT" />
+			<property name="sqFt1stFloor" type="INT" />
+			<property name="sqFt2ndFloor" type="INT" />
+			<property name="sqFtDeck" type="INT" />
+			<property name="sqFtEnclosedPorch" type="INT" />
+			<property name="sqFtFinBasement" type="INT" />
+			<property name="sqFtGarageAttached" type="INT" />
+			<property name="sqFtGarageBasement" type="INT" />
+			<property name="sqFtHalfFloor" type="INT" />
+			<property name="sqFtOpenPorch" type="INT" />
+			<property name="sqFtTotBasement" type="INT" />
+			<property name="sqFtTotLiving" type="INT" />
+			<property name="sqFtUnFinFull" type="INT" />
+			<property name="sqFtUnFinHalf" type="INT" />
+			<property name="sqFtUpperFloor" type="INT" />
+			<property name="stories" type="FLOAT" />
+			<property name="street" type="TEXT" />
+			<property name="streetId" type="LOOKUP" lookup="-1" />
+			<property name="streetNbr" type="NUM" />
+			<property name="unitDesc" type="TEXT" />
+			<property name="updateDate" type="DATE" />
+			<property name="updatedBy" type="TEXT" />
+			<property name="viewUtilization" type="BOOL" />
+			<property name="yrBuilt" type="INT" />
+			<property name="yrRenovated" type="INT" />
+			<property name="zipCode" type="NUM" />
+			<backlink name="Land" target="Land" />
+			<link name="MediaBldg" target="MediaBldg" />
+		</entity>
+		<entity name="MediaBldg" root="no">
+			<property name="active" type="INT" />
+			<property name="bldgId" type="INT" />
+			<property name="desc" type="TEXT" />
+			<property name="imageType" type="INT" />
+			<property name="mediaDate" type="DATE" />
+			<property name="mediaId" type="INT"  uniqueid="yes" />
+			<property name="mediaLoc" type="TEXT" />
+			<property name="mediaType" type="INT" />
+			<property name="order" type="INT" />
+			<property name="postToWeb" type="INT" />
+			<property name="primary" type="INT" />
+			<property name="realPropId" type="INT" />
+			<property name="thumbnail" type="INT" />
+			<property name="updateDate" type="DATE" />
+			<property name="updatedBy" type="TEXT" />
+			<property name="year" type="YEAR" />
+			<backlink name="ResBldg" target="ResBldg" />
+		</entity>
+		<entity name="XLand" root="no">
+			<property name="adjacentGolfFairway" type="BOOL" />
+			<property name="adjacentGreenbelt" type="BOOL" />
+            <property name="adjacGolfdollars" type="CURR" />
+            <property name="adjacGolfvalpct" type="PERCENT" />
+            <property name="adjacGreenbeltvaldollars" type="CURR" />
+            <property name="adjacGreenbeltvalpct" type="PERCENT" />
+            <property name="airportNoise"  type="INT" />
+            <property name="airportValdollars" type="CURR" />
+            <property name="airportValpct" type="PERCENT" />
+			<property name="cascades" type="LOOKUP" lookup="115" />
+			<property name="currentUseDesignation" type="LOOKUP" lookup="16" />
+			<property name="deedRestrictions" type="BOOL" />
+            <property name="deedRestrictvalpct" type="PERCENT" />
+			<property name="developmentRightsPurchased" type="BOOL" />
+            <property name="devRightsvalpct" type="PERCENT" />
+			<property name="dNRLease" type="BOOL" />
+            <property name="dnrLeasevalpct" type="PERCENT" />
+			<property name="easements" type="BOOL" />
+            <property name="easementsValpct" type="PERCENT" />
+            <property name="economicUnit" type="LOOKUP" lookup="346" />
+            <property name="economicUnitname" type="TEXT" />
+            <property name="economicUnitparcellist" type="TEXT" />
+            <property name="excessLand" type="LOOKUP" lookup="93" />
+			<property name="historicSite" type="LOOKUP" lookup="67" />
+			<property name="lakeSammamish" type="LOOKUP" lookup="58" />
+			<property name="lakeWashington" type="LOOKUP" lookup="58" />
+			<property name="landId" type="INT"  uniqueid="yes" />
+			<property name="lotDepthFactor" type="INT" />
+			<property name="mtRainier" type="LOOKUP" lookup="115" />
+			<property name="nativeGrowthProtEsmt" type="BOOL" />
+			<property name="nbrBldgSites" type="INT" />
+			<property name="olympics" type="LOOKUP" lookup="115" />
+			<property name="otherDesignation" type="BOOL" />
+            <property name="otherDesigvalpct" type="PERCENT" />
+            <property name="nativeGrowthValpct" type="PERCENT" />
+			<property name="otherNuisances" type="BOOL" />
+            <property name="otherNuisvalpct" type="PERCENT" />
+			<property name="otherProblems" type="BOOL" />
+            <property name="otherProblemsvalpct" type="PERCENT" />
+			<property name="otherView" type="LOOKUP" lookup="115" />
+			<property name="powerLines" type="BOOL" />
+            <property name="powerLinesvalpct" type="PERCENT" />
+			<property name="pugetSound" type="LOOKUP" lookup="58" />
+			<property name="realPropId" type="INT" />
+            <property name="roadAccessvalpct" type="PERCENT" />
+			<property name="seattleSkyline" type="LOOKUP" lookup="115" />
+			<property name="smallLakeRiverCreek" type="LOOKUP" lookup="115" />
+            <property name="splitZoning" type="LOOKUP" lookup="93" />
+			<property name="territorial" type="LOOKUP" lookup="115" />
+			<property name="tidelandShoreland" type="LOOKUP" lookup="54" />
+            <property name="topoValpct" type="PERCENT" />
+			<property name="trafficNoise" type="LOOKUP" lookup="95" />
+            <property name="trafficValdollars" type="CURR" />
+            <property name="trafficValpct" type="PERCENT" />
+			<property name="transportationConcurrency" type="BOOL" />
+			<property name="waterProblems" type="BOOL" />
+            <property name="waterProblemsvalpct" type="PERCENT" />
+            <property name="wetlandValpct" type="PERCENT" />
+			<property name="wfntAccessRights" type="BOOL" />
+			<property name="wfntBank" type="LOOKUP" lookup="52" />
+			<property name="wfntFootage" type="INT" />
+			<property name="wfntLocation" type="LOOKUP" lookup="50" />
+			<property name="wfntPoorQuality" type="BOOL" />
+			<property name="wfntProximityInfluence" type="BOOL" />
+			<property name="wfntRestrictedAccess" type="LOOKUP" lookup="53" />
+			<backlink name="RealPropInfo" target="RealPropInfo" />
+		</entity>
+		<entity name="Accy" root="no">
+			<property name="accyDescr" type="TEXTL" />
+			<property name="accyType" type="LOOKUP" lookup="27" />
+			<property name="accyValue" type="CURR" />
+			<property name="bldgId" type="INT" />
+			<property name="dateValued" type="DATE" />
+			<property name="effYr" type="INT" />
+			<property name="grade" type="LOOKUP" lookup="82" />
+			<property name="landId" type="INT" uniqueid="yes"/>
+			<property name="lineNbr" type="INT" />
+			<property name="nbrThisType" type="INT" />
+			<property name="pcntNetCondition" type="PERCENT" />
+			<property name="realPropId" type="INT" />
+			<property name="size" type="INT" />
+			<property name="unitOfMeasure" type="INT" />
+			<property name="updateDate" type="DATE" />
+			<property name="updatedBy" type="TEXT" />
+			<backlink name="RealPropInfo" target="RealPropInfo" />
+			<link name="MediaAccy" target="MediaAccy" />
+		</entity>
+		<entity name="MediaAccy" root="no">
+			<property name="landId" type="INT" />
+			<property name="active" type="BOOL" />
+			<property name="desc" type="TEXTL" />
+			<property name="imageType" type="INT" />
+			<property name="lineNbr" type="INT" />
+			<property name="mediaDate" type="DATE" />
+			<property name="mediaId" type="INT" uniqueid="yes" />
+			<property name="mediaLoc" type="TEXT" />
+			<property name="mediaType" type="INT" />
+			<property name="order" type="INT" />
+			<property name="postToWeb" type="BOOL" />
+			<property name="primary" type="BOOL" />
+			<property name="realPropId" type="INT" />
+			<property name="thumbnail" type="INT" />
+			<property name="updateDate" type="DATE" />
+			<property name="updatedBy" type="TEXT" />
+			<property name="year" type="YEAR" />
+			<backlink name="Accy" target="Accy" />
+		</entity>
+		<entity name="ApplHist" root="no">
+			<property name="hasNote" type="BOOL" />
+			<property name="impsVal" type="CURR" />
+			<property name="landVal" type="CURR" />
+			<property name="mFInterfaceDate" type="DATE" />
+			<property name="mFInterfaceFlag" type="LOOKUP" lookup="109" />
+			<property name="msgId" type="INT" />
+			<property name="newConstrVal" type="CURR" />
+			<property name="pcntChng" type="FLOAT" />
+			<property name="postCode" type="INT" />
+			<property name="realPropId" type="INT" />
+			<property name="revalOrMaint" type="TEXT" />
+			<property name="rollYr" type="NUM" />
+			<property name="selectAppr" type="TEXT" />
+			<property name="selectDate" type="DATE" />
+			<property name="selectMethod" type="LOOKUP" lookup="135" />
+			<property name="selectReason" type="LOOKUP" lookup="134" />
+			<property name="totalVal" type="CURR" />
+			<backlink name="RealPropInfo" target="RealPropInfo" />
+		</entity>
+		<entity name="ChngHist" root="no">
+			<property name="chngId" type="INT"  uniqueid="yes" />
+			<property name="docId" type="TEXT" />
+			<property name="eventDate" type="DATE" />
+			<property name="eventId" type="INT" />
+			<property name="eventPerson" type="TEXT" />
+			<property name="pageCount" type="INT" />
+			<property name="propStatus" type="LOOKUP" lookup="208" />
+			<property name="realPropId" type="INT" />
+			<property name="recId" type="INT" />
+			<property name="type" type="TEXT" />
+			<property name="typeItemId" type="INT" />
+			<property name="unit" type="TEXT" />
+			<property name="updateDate" type="DATE" />
+			<property name="updatedBy" type="TEXT" />
+			<backlink name="RealPropInfo" target="RealPropInfo" />
+			<link name="ChngHistDtl" target="ChngHistDtl" />
+		</entity>
+		<entity name="ChngHistDtl" root="no">
+			<property name="tableId" type="INT" />
+			<property name="tableInstanceId" type="INT" />
+			<property name="instanceNbr" type="INT" />
+			<property name="instanceSubNbr" type="INT" />
+			<property name="attribute" type="TEXT" />
+			<property name="attributeId" type="INT" />
+			<property name="attributeValue" type="TEXT" />
+			<property name="eventId" type="INT" />
+			<property name="id" type="TEXT" />
+			<property name="realPropId" type="INT" />
+			<property name="updateDate" type="TEXT" />
+			<property name="updatedBy" type="TEXT" />
+			<backlink name="ChngHist" target="ChngHist" />
+		</entity>
+		<entity name="HIExmpt" root="no">
+			<property name="appMobile" type="BOOL" />
+			<property name="appOwnLand" type="BOOL" />
+			<property name="appSigned" type="BOOL" />
+			<property name="approved" type="BOOL" />
+			<property name="approvedBy" type="TEXT" />
+			<property name="approvedDate" type="DATE" />
+			<property name="bldgId" type="INT" />
+			<property name="destroyedProperty" type="BOOL" />
+			<property name="estCompletionDate" type="DATE" />
+			<property name="estCost" type="CURR" />
+			<property name="firstBillYr" type="YEAR" />
+			<property name="hIExemptId" type="INT"  uniqueid="yes" />
+			<property name="homeImpVal" type="CURR" />
+			<property name="landId" type="INT" />
+			<property name="lastBillYr" type="YEAR" />
+			<property name="lateApplication" type="BOOL" />
+			<property name="maintOrReplace" type="BOOL" />
+			<property name="multipleDwellings" type="BOOL" />
+			<property name="newConstr" type="BOOL" />
+			<property name="newDwellingUnit" type="BOOL" />
+			<property name="nonDwellingUnit" type="BOOL" />
+			<property name="noteId" type="INT" />
+			<property name="pageCount" type="INT" />
+			<property name="permitDistrictId" type="LOOKUP" lookup="997" />
+			<property name="personalProperty" type="BOOL" />
+			<property name="priorExemption" type="BOOL" />
+			<property name="realPropId" type="INT" />
+			<property name="recId" type="INT" />
+			<property name="receivedDate" type="DATE" />
+			<property name="updateDate" type="DATE" />
+			<property name="updatedBy" type="TEXT" />
+			<property name="valueDate" type="DATE" />
+			<property name="valuedBy" type="TEXT" />
+			<backlink name="RealPropInfo" target="RealPropInfo" />
+		</entity>
+		<entity name="MHAccount" root="no">
+			<property name="acctStatus" type="LOOKUP" lookup="230" />
+			<property name="bldgNbr" type="INT" />
+			<property name="imageButton" type="TEXT" />
+			<property name="lastInspectionDate" type="DATE" />
+			<property name="mhType" type="LOOKUP" lookup="229" />
+			<property name="mobileHomeId" type="INT" uniqueid="yes"/>
+			<property name="phone" type="TEXT" />
+			<property name="realPropId" type="INT" />
+			<property name="taxAcctNbr" type="INT" />
+			<property name="taxPayerName" type="TEXT" />
+			<property name="txExempt" type="BOOL" />
+			<property name="updateDate" type="DATE" />
+			<property name="updatedBy" type="TEXT" />
+			<link name="MHCharacteristic" target="MHCharacteristic" />
+			<link name="MHLocation" target="MHLocation" />
+			<backlink name="RealPropInfo" target="RealPropInfo" />
+			<link name="MediaMobile" target="MediaMobile" />
+		</entity>
+		<entity name="MHCharacteristic" root="no">
+			<property name="class_" type="LOOKUP" lookup="227" />
+			<property name="condition" type="LOOKUP" lookup="226" />
+			<property name="length" type="INT" />
+			<property name="livingArea" type="INT" />
+			<property name="makeModel" type="TEXT" />
+			<property name="mhType" type="INT" />
+			<property name="mobileHomeId" type="INT" uniqueid="yes"/>
+			<property name="pcntNetCondition" type="PERCENT" />
+			<property name="realPropId" type="INT" />
+			<property name="roomAddSqft" type="INT" />
+			<property name="serialNbrVin" type="TEXT" />
+			<property name="size" type="LOOKUP" lookup="238" />
+			<property name="tipOutArea" type="INT" />
+			<property name="updateDate" type="DATE" />
+			<property name="updatedBy" type="TEXT" />
+			<property name="width" type="INT" />
+			<property name="yrBuilt" type="INT" />
+			<backlink name="MHAccount" target="MHAccount" />
+		</entity>
+		<entity name="MHLocation" root="no">
+			<property name="addrUsage" type="LOOKUP" lookup="237" />
+			<property name="city" type="TEXT" />
+			<property name="dirPrefix" type="TEXT" />
+			<property name="dirSuffix" type="TEXT" />
+			<property name="mobileHomeId" type="INT" uniqueid="yes"/>
+			<property name="nbrFraction" type="TEXT"/> <!-- type="LOOKUP" lookup="38" -->
+			<property name="parkId" type="LOOKUP" lookup="-3" />
+			<property name="realPropId" type="INT" />
+			<property name="spaceNbr" type="NUM" />
+			<property name="streetName" type="TEXT" />
+			<property name="streetNbr" type="TEXT" />
+			<property name="streetType" type="TEXT" />
+			<property name="updateDate" type="DATE" />
+			<property name="updatedBy" type="TEXT" />
+			<backlink name="MHAccount" target="MHAccount" />
+		</entity>
+		<entity name="MediaMobile" root="no">
+			<property name="active" type="INT" />
+			<property name="desc" type="TEXTL" />
+			<property name="imageType" type="INT" />
+			<property name="mediaDate" type="DATE" />
+			<property name="mediaId" type="INT" uniqueid="yes"/>
+			<property name="mediaLoc" type="TEXT" />
+			<property name="mediaType" type="INT" />
+			<property name="mobileHomeId" type="INT" />
+			<property name="order" type="INT" />
+			<property name="postToWeb" type="INT" />
+			<property name="primary" type="INT" />
+			<property name="realPropId" type="INT" />
+			<property name="thumbnail" type="INT" />
+			<property name="updateDate" type="DATE" />
+			<property name="updatedBy" type="TEXT" />
+			<property name="year" type="YEAR" />
+			<backlink name="MHAccount" target="MHAccount" />
+		</entity>
+		<entity name="NoteInstance" root="no">
+			<property name="assmtEntityId" type="TEXT" uniqueid="yes"/>
+			<property name="key" type="INT" />
+			<property name="note" type="TEXTL" />
+			<property name="noteId" type="INT" />
+			<property name="noteInstance" type="INT" uniqueid="yes"/>
+			<property name="realPropId" type="INT" />
+			<property name="src" type="TEXT" />
+			<property name="uID" type="TEXT" />
+			<property name="unit" type="TEXT" />
+			<property name="updateDate" type="DATE" />
+			<property name="updatedBy" type="TEXT" />
+			<link name="MediaNote" target="MediaNote" />
+		</entity>
+		<entity name="NoteSale" root="no">
+			<property name="assmtEntityId" type="TEXT" uniqueid="yes"/>
+			<property name="key" type="INT" />
+			<property name="note" type="TEXTL" />
+			<property name="noteId" type="INT" />
+			<property name="noteInstance" type="INT" uniqueid="yes"/>
+			<property name="realPropId" type="INT" />
+			<property name="src" type="TEXT" />
+			<property name="uID" type="TEXT" />
+			<property name="unit" type="TEXT" />
+			<property name="updateDate" type="DATE" />
+			<property name="updatedBy" type="TEXT" />
+			<link name="MediaNote" target="MediaNote" />
+			<backlink name="sale" target="sale" />
+		</entity>
+		<entity name="NoteReview" root="no">
+			<property name="assmtEntityId" type="TEXT" uniqueid="yes"/>
+			<property name="key" type="INT" />
+			<property name="note" type="TEXTL" />
+			<property name="noteId" type="INT" />
+			<property name="noteInstance" type="INT" uniqueid="yes"/>
+			<property name="realPropId" type="INT" />
+			<property name="src" type="TEXT" />
+			<property name="uID" type="TEXT" />
+			<property name="unit" type="TEXT" />
+			<property name="updateDate" type="DATE" />
+			<property name="updatedBy" type="TEXT" />
+			<link name="MediaNote" target="MediaNote" />
+			<backlink name="review" target="review" />
+		</entity>
+		<entity name="NoteHIExmpt" root="no">
+			<property name="assmtEntityId" type="TEXT" uniqueid="yes"/>
+			<property name="key" type="INT" />
+			<property name="note" type="TEXTL" />
+			<property name="noteId" type="INT" />
+			<property name="noteInstance" type="INT" uniqueid="yes"/>
+			<property name="realPropId" type="INT" />
+			<property name="src" type="TEXT" />
+			<property name="uID" type="TEXT" />
+			<property name="unit" type="TEXT" />
+			<property name="updateDate" type="DATE" />
+			<property name="updatedBy" type="TEXT" />
+			<link name="MediaNote" target="MediaNote" />
+			<backlink name="HIExmpt" target="hIExmpt" />
+		</entity>
+		<entity name="NoteRealPropInfo" root="no">
+			<property name="assmtEntityId" type="TEXT" uniqueid="yes"/>
+			<property name="key" type="INT" />
+			<property name="note" type="TEXTL" />
+			<property name="noteId" type="INT" />
+			<property name="noteInstance" type="INT" uniqueid="yes"/>
+			<property name="realPropId" type="INT" />
+			<property name="src" type="TEXT" />
+			<property name="uID" type="TEXT" />
+			<property name="unit" type="TEXT" />
+			<property name="updateDate" type="DATE" />
+			<property name="updatedBy" type="TEXT" />
+			<link name="MediaNote" target="MediaNote" />
+			<backlink name="RealPropInfo" target="realPropInfo" />
+		</entity>
+		<entity name="MediaNote" root="no">
+			<property name="active" type="INT" />
+			<property name="desc" type="TEXTL" />
+			<property name="imageType" type="INT" />
+			<property name="instanceId" type="INT" />
+			<property name="mediaDate" type="DATE" />
+			<property name="mediaId" type="INT" uniqueid="yes"/>
+			<property name="mediaLoc" type="TEXT" />
+			<property name="mediaType" type="INT" />
+			<property name="noteId" type="INT" />
+			<property name="order" type="INT" />
+			<property name="postToWeb" type="INT" />
+			<property name="primary" type="INT" />
+			<property name="thumbnail" type="INT" />
+			<property name="updateDate" type="DATE" />
+			<property name="updatedBy" type="TEXT" />
+			<property name="year" type="YEAR" />
+			<backlink name="NoteInstance" target="NoteInstance" />
+		</entity>
+		<entity name="Permit" root="no">
+			<property name="ePlan" type="URL" />
+			<property name="hasEPlan" type="INT" />
+			<property name="issueDate" type="DATE" />
+			<property name="issuingJurisdiction" type="TEXT" />
+			<property name="pcntComplete" type="PERCENT" />
+			<property name="permitDescr" type="TEXTL" />
+			<property name="permitNbr" type="TEXT" />
+			<property name="permitStatus" type="LOOKUP" lookup="164" />
+			<property name="permitType" type="LOOKUP" lookup="165" />
+			<property name="permitTypeDesc" type="TEXT" />
+			<property name="permitVal" type="CURR" />
+			<property name="realPropId" type="INT" />
+			<property name="reviewedBy" type="TEXT" />
+			<property name="reviewedDate" type="DATE" />
+			<property name="unit" type="TEXT" />
+			<property name="webLink" type="TEXT" />
+			<backlink name="RealPropInfo" target="RealPropInfo" />
+			<link name="PermitDtl" target="PermitDtl" />
+		</entity>
+		<entity name="PermitDtl" root="no">
+			<property name="issueDate" type="DATE" />
+			<property name="itemValue" type="TEXT" />
+			<property name="permitItem" type="INT" />
+			<property name="permitNbr" type="TEXT" />
+			<property name="realPropId" type="INT" />
+			<backlink name="Permit" target="Permit" />
+		</entity>
+		<entity name="Review" root="no">
+			<property name="agent" type="TEXT" />
+			<property name="appealNbr" type="TEXT" />
+			<property name="appealedValue" type="CURR" />
+			<property name="assmtReviewId" type="INT" />
+			<property name="billYr" type="YEAR" />
+			<property name="hearingDate" type="DATE" />
+			<property name="hearingInfo" type="TEXT" />
+			<property name="hearingLoc" type="TEXT" />
+			<property name="hearingResult" type="TEXT" />
+			<property name="noteId" type="INT" />
+			<property name="orderDate" type="DATE" />
+			<property name="realPropId" type="INT" />
+			<property name="relatedAppealNbr" type="INT" />
+			<property name="respAppr" type="TEXT" />
+			<property name="reviewSource" type="TEXT" />
+			<property name="reviewType" type="LOOKUP" lookup="123" />
+			<property name="settlementValue" type="CURR" />
+			<property name="statusAssessor" type="TEXT" />
+			<property name="statusAssmtReview" type="LOOKUP" lookup="122" />
+			<property name="statusBoard" type="TEXT" />
+			<property name="statusStipulation" type="TEXT" />
+			<property name="taxpayername" type="TEXT" />
+			<property name="unit" type="TEXT" />
+			<backlink name="RealPropInfo" target="RealPropInfo" />
+			<link name="ReviewJrnl" target="ReviewJrnl" />
+		</entity>
+		<entity name="ReviewJrnl" root="no">
+			<property name="apprImpsVal" type="CURR" />
+			<property name="apprLandVal" type="CURR" />
+			<property name="apprTotalVal" type="CURR" />
+			<property name="assmtReviewId" type="INT" />
+			<property name="eDocLink" type="URL" />
+			<property name="entryDate" type="DATE" />
+			<property name="entryType" type="TEXT" />
+			<property name="entryTypeItemId" type="INT" />
+			<property name="journalId" type="INT" uniqueid="yes"/>
+			<property name="sourcePerson" type="TEXT" />
+			<property name="targetPerson" type="TEXT" />
+			<property name="updateDate" type="DATE" />
+			<property name="updatedBy" type="TEXT" />
+			<property name="valuationType" type="LOOKUP" lookup="1" />
+			<backlink name="Review" target="Review" />
+		</entity>
+		<entity name="Sale" root="no">
+			<property name="aFCurrentUseLand" type="BOOL" />
+			<property name="aFForestLand" type="BOOL" />
+			<property name="aFHistoricProperty" type="BOOL" />
+			<property name="aFNonProfitUse" type="BOOL" />
+			<property name="buyerAddr" type="TEXT" />
+			<property name="buyerName" type="TEXT" />
+			<property name="exciseTaxNbr" type="INT" />
+			<property name="identifiedBy" type="TEXT" />
+			<property name="identifiedDate" type="DATE" />
+			<property name="instrument" type="TEXT" />
+			<property name="nonRepComp1" type="INT" />
+			<property name="nonRepComp2" type="INT" />
+			<property name="noteId" type="INT" />
+			<property name="principalUse" type="TEXT" />
+			<property name="propCnt" type="INT" />
+			<property name="propertyClass" type="LOOKUP" lookup="4" />
+			<property name="propertyType" type="TEXT" />
+			<property name="rERecordingNbr" type="NUM" />
+			<property name="realPropId" type="INT" />
+			<property name="saleDate" type="DATE" />
+			<property name="saleId" type="INT" uniqueid="yes"/>
+			<property name="salePrice" type="CURR" />
+			<property name="saleProcess" type="TEXT" />
+			<property name="saleReason" type="TEXT" />
+			<property name="sellerAddr" type="TEXT" />
+			<property name="sellerName" type="TEXT" />
+			<property name="updateDate" type="DATE" />
+			<property name="updatedBy" type="TEXT" />
+			<property name="vYVerifDate" type="DATE" />
+			<property name="vYVerifiedAtMarket" type="LOOKUP" lookup="11" />
+			<property name="vYVerifiedBy" type="TEXT" />
+			<property name="verificationLevel" type="LOOKUP" lookup="9" />
+			<backlink name="RealPropInfo" target="RealPropInfo" />
+			<link name="SaleParcels" target="SaleParcels" />
+			<link name="SaleWarning" target="SaleWarning" />
+		</entity>
+		<entity name="SaleParcels" root="no">
+			<property name="parcel" type="TEXT" />
+			<property name="realPropId" type="INT" />
+			<property name="saleId" type="INT" />
+			<backlink name="Sale" target="Sale" />
+		</entity>
+		<entity name="SaleWarning" root="no">
+			<property name="realPropId" type="INT" />
+			<property name="saleId" type="INT" />
+			<property name="updateDate" type="DATE" />
+			<property name="updatedBy" type="TEXT" />
+			<property name="warning" type="LOOKUP" lookup="7" />
+			<backlink name="Sale" target="Sale" />
+		</entity>
+		<entity name="TaxRoll" root="no">
+			<property name="acctNbr" type="TEXT" />
+			<property name="acctStat" type="TEXT" />
+			<property name="apprImpIncrease" type="CURR" />
+			<property name="apprImpsVal" type="CURR" />
+			<property name="apprLandVal" type="CURR" />
+			<property name="apprTotalVal" type="CURR" />
+			<property name="billYr" type="NUM" />
+			<property name="impsVal" type="CURR" />
+			<property name="killed" type="TEXT" />
+			<property name="landVal" type="NUM" />
+			<property name="levyCode" type="TEXT" />
+			<property name="omitYr" type="NUM" />
+			<property name="realPropId" type="INT" />
+			<property name="receivableType" type="TEXT" />
+			<property name="taxStat" type="TEXT" />
+			<property name="taxValReason" type="TEXT" />
+			<property name="totalVal" type="CURR" />
+			<backlink name="RealPropInfo" target="RealPropInfo" />
+		</entity>
+		<entity name="UndividedInt" root="no">
+			<property name="applgroup" type="TEXT" />
+			<property name="intParcel" type="TEXT" />
+			<property name="interests" type="TEXT" />
+			<property name="parcel" type="TEXT" />
+			<property name="proptype" type="TEXT" />
+			<property name="realPropId" type="INT" />
+			<backlink name="RealPropInfo" target="RealPropInfo" />
+		</entity>
+		<entity name="ValEst" root="no">
+			<property name="landId" type="INT" />
+			<property name="bldgId" type="INT" />
+			<property name="bldgNbr" type="INT" />
+			<property name="estDate" type="DATE" />
+			<property name="estType" type="LOOKUP" lookup="46" />
+			<property name="impsVal" type="CURR" />
+			<property name="killed" type="TEXT" />
+			<property name="landVal" type="CURR" />
+			<property name="realPropId" type="INT" />
+			<property name="rollYr" type="NUM" />
+			<property name="totalVal" type="CURR" />
+			<property name="versionNbr" type="TEXT" />
+			<backlink name="RealPropInfo" target="RealPropInfo" />
+		</entity>
+		<entity name="ValHist" root="no">
+			<property name="apprImpIncrease" type="CURR" />
+			<property name="apprImpsVal" type="CURR" />
+			<property name="apprLandVal" type="CURR" />
+			<property name="billYr" type="YEAR" />
+			<property name="changeDate" type="DATE" />
+			<property name="changeDocId" type="TEXT" />
+			<property name="impsVal" type="CURR" />
+			<property name="killed" type="TEXT" />
+			<property name="landVal" type="CURR" />
+			<property name="levyCode" type="INT" />
+			<property name="omitYr" type="YEAR" />
+			<property name="realPropId" type="INT" />
+			<property name="reason" type="TEXT" />
+			<property name="splitCode" type="TEXT" />
+			<property name="taxStatus" type="TEXT" />
+			<property name="taxValReason" type="TEXT" />
+			<property name="totalApprVal" type="CURR" />
+			<property name="totalVal" type="CURR" />
+			<property name="unit" type="TEXT" />
+			<property name="valHistId" type="INT" uniqueid="yes" />
+			<backlink name="RealPropInfo" target="RealPropInfo" />
+		</entity>
+		<entity name="IRNote" root="no">
+			<property name="type" type="TEXT" />
+			<property name="parcelNbr" type="TEXT" />
+			<property name="updateDate" type="DATE" />
+			<property name="note" type="TEXT" />
+		</entity>
+	</Structure>
+    
+    <!-- ================================================== RealPropInfo ================================================== -->
+	<ScreenDefinition name="TabDetails" object="RealPropInfo">
+		
+        <!--		One difference between this and bldg and accy info is the latter use upper cases, but neither of the following attempted variations work.   -->
+		<validation predicate="$neighborhood &gt; 999" message="Nbh (neighborhood) cannot be > 999"/>
+        
+		
+		<item tag="1" label="Parcel" path="parcelNbr"   editable="no"/>
+		<item tag="2" label="Address" path="streetNbr"   editable="no" />
+		<item tag="3" label="Fraction" path="nbrFraction" editable="no"/>
+		<item tag="4" label="Street " path="streetId" editable="no" />
+		<item tag="5" label="Zip Code" path="zipCode"    editable="no"/>
+		<item tag="6" label="Acct" path="account.acct"  editable="no" />
+		<item tag="7" label="City" path="city"  editable="no"/>
+		<item tag="8" label="Property Name" path="propName" />
+		<item tag="9" label="Type" path="propType"   editable="no"/>
+		<item tag="10" label="Resp" path="applGroup"   editable="no"/>
+		<item tag="11" label="Area" path="resArea"   editable="no"/>
+		<item tag="12" label="Sub" path="resSubArea"   editable="no"/>
+		<item tag="13" label="Nbh" path="neighborhood"/>
+		<item tag="14" label="Folio" path="folio"   editable="no"/>
+		<item tag="15" label="QSTR " path="quarterSection"   editable="no"/>
+		<item tag="16" label="Section" path="section"   editable="no"/>
+		<item tag="17" label="Township" path="township"   editable="no"/>
+		<item tag="18" label="Range" path="range"   editable="no"/>
+		<item tag="19" label="Levy" path="levyCode"   editable="no"/>
+		<item tag="20" label="Block" path="platBlock"   editable="no"/>
+		<item tag="21" label="Lot" path="platLot"   editable="no"/>
+		<item tag="22" label="Chng" path="changeSource"   editable="no"/>
+		<item tag="23" label="Legal Desc" path="legalDesc"   editable="no"/>
+        <!--	<item tag="24" label="Land" path="(null)" />
+         <item tag="25" label="Imps" path="(null)" />
+         <item tag="26" label="Both" path="(null)" />  -->
+	</ScreenDefinition>
+    <!-- ================================================== TabLand ================================================== -->
+	<ScreenDefinition name="TabLand" object="Land">
+        <!--		<TODO validation predicate="$Unbuildable &gt;0 AND $BldgNbr&gt;0 " message="Land cannot be flagged unbuildable if there is a house" />-->
+		<item tag="1" label="HBU if Vacant" path="HBUAsIfVacant" />
+		<item tag="2" label="HBU if improved" path="HBUAsImproved" />
+		<item tag="3" label="Present Use" path="PresentUse" />
+		<item tag="4" label="Zoning" path="CurrentZoning"   editable="no"/>
+		<item tag="5" label="Change Date" path="ZoningChgDate"   editable="no"/>
+		<item tag="6" label="$/SqFt" path="BaseLandValSqFt" editable="no"/>
+		<item tag="7" label="BaseLandVal" path="BaseLandVal" />
+		<item tag="8" label="% BLV" path="PcntBaseLandValImpacted" />
+		<item tag="9" label="Val Date" path="BaseLandValDate" editable="no"/>
+		<item tag="10" label="Tax Year" path="BaseLandValTaxYr" editable="no"/>
+		<item tag="11" label="Lot Sqft" path="SqFtLot"   editable="no"/>
+		<item tag="12" label="Dry Sq Ft" path="SqFtLotDry"   editable="no"/>
+		<item tag="13" label="Submerge Sq Ft" path="SqFtLotSubmerged"   editable="no"/>
+		<item tag="14" label="% Unusable" path="PcntUnusable" />
+		<item tag="15" label="Unbuildable" path="Unbuildable" />
+		<item tag="16" label="Restrict Sz/Shp" path="RestrictiveSzShape" />
+		<item tag="17" label="Water System" path="WaterSystem" />
+		<item tag="18" label="Sewer System" path="SewerSystem" />
+		<item tag="19" label="Road Access" path="Access" />
+		<item tag="20" label="Parking" path="InadequateParking" />
+		<item tag="21" label="Surface" path="streetSurface" />
+		<item tag="23" label="UpdatedBy" path="UpdatedBy"  editable="no"/>
+		<item tag="24" label="UpdateDate" path="UpdateDate"  editable="no"/>
+	</ScreenDefinition>
+    
+    <!-- TabLandViews -->
+	<ScreenDefinition name="TabLandViews" object="xland">
+		
+		<validation predicate="($WfntFootage + $WfntBank + $WfntLocation &gt; 0) AND ($WfntFootage = 0 OR $WfntBank=0 OR $WfntLocation=0) "  message="Wfnt Ft, Bank, and Loc must all be filled in or all empty"/>
+		
+		<item tag="51" label="Rainier" path="MtRainier" />
+		<item tag="52" label="Olympics" path="Olympics" />
+		<item tag="53" label="Cascades" path="Cascades" />
+		<item tag="54" label="Territorial" path="Territorial" />
+		<item tag="55" label="Seattle" path="SeattleSkyline" />
+		<item tag="56" label="Sound" path="PugetSound" />
+		<item tag="57" label="Lk Wash" path="LakeWashington" />
+		<item tag="58" label="Lk Samm" path="LakeSammamish" />
+		<item tag="59" label="Lk/Rvr/Crk" path="SmallLakeRiverCreek" />
+		<item tag="60" label="Other" path="OtherView" />
+		<item tag="61" label="Location" path="WfntLocation" />
+		<item tag="62" label="Bank" path="WfntBank" />
+		<item tag="63" label="Footage" path="WfntFootage" />
+		<item tag="64" label="Depth Fctr" path="LotDepthFactor" />
+		<item tag="65" label="Tide/Shore" path="TidelandShoreland" />
+		<item tag="66" label="Restricted" path="WfntRestrictedAccess" />
+		<item tag="67" label="Access Rights" path="WfntAccessRights" />
+		<item tag="68" label="Proximity Influence" path="WfntProximityInfluence" />
+		<item tag="69" label="Poor Quality" path="WfntPoorQuality" />
+	</ScreenDefinition>
+    <!-- TabLandNuisance -->
+	<ScreenDefinition name="TabLandNuisance" object="xland">
+		<item tag="71" label="Topography" path="realPropInfo.Land.topography" />
+		<item tag="72" label="Traffic Noise" path="TrafficNoise" />
+		<item tag="73" label="Airport Noise" path="AirportNoise" />
+		<item tag="74" label="Power Lines" path="PowerLines" />
+		<item tag="75" label="Other Nuisances" path="OtherNuisances" />
+        <item tag="76" label="Water" path="WaterProblems" />
+		<item tag="77" label="Transportation Concurrency" path="TransportationConcurrency" />
+		<item tag="78" label="Other" path="OtherProblems" />
+        <item tag="79" label="Value Pct" path="powerLinesvalpct" />
+        <item tag="80" label="Value Pct" path="otherNuisvalpct" />
+        <item tag="81" label="Value Pct" path="roadAccessvalpct" />
+		<item tag="82" label="Dollar$" path="trafficValdollars" />
+		<item tag="83" label="Dollar $" path="airportValdollars" />
+        <item tag="84" label="Value Pct" path="topoValpct" />
+        <item tag="85" label="Value Pct" path="trafficValpct" />
+        <item tag="86" label="Value Pct" path="airportValpct" />
+        <item tag="87" label="Value Pct" path="waterProblemsvalpct" />
+        <item tag="88" label="Value Pct" path="otherProblemsvalpct" />
+	</ScreenDefinition>
+    
+    <!-- TabLandDesignations -->
+	<ScreenDefinition name="TabLandDesignations" object="xland">
+		<item tag="91" label="Adj Golf Fairway" path="AdjacentGolfFairway" />
+		<item tag="92" label="Adj Green Belt" path="AdjacentGreenbelt" />
+		<item tag="93" label="Other" path="OtherDesignation" />
+		<item tag="94" label="Historic Site" path="HistoricSite" />
+		<item tag="95" label="Current Use Designation" path="CurrentUseDesignation"  editable="no"/>
+		<item tag="96" label="Nbr Bldg Sites" path="NbrBldgSites" />
+        <item tag="97" label="Value Pct" path="adjacGolfvalpct" />
+        <item tag="98" label="Value Pct" path="adjacGreenbeltvalpct" />
+        <item tag="99" label="Value Pct" path="otherDesigvalpct" />
+        <item tag="100" label="Dollar $" path="adjacGolfdollars" />
+        <item tag="101" label="Dollar $" path="adjacGreenbeltvaldollars" />        
+        <item tag="102" label="Dev Rights" path="DevelopmentRightsPurchased" />
+		<item tag="103" label="Easements" path="Easements" />
+		<item tag="104" label="Native Growth Prot Esmt" path="NativeGrowthProtEsmt" />
+		<item tag="105" label="DNR Lease" path="DNRLease" />
+        <item tag="106" label="Deed Restrictions" path="DeedRestrictions" />
+        <item tag="107" label="Value Pct" path="devRightsvalpct" />
+        <item tag="108" label="Value Pct" path="easementsValpct" />
+        <item tag="109" label="Value Pct" path="nativeGrowthValpct" />
+        <item tag="110" label="Value Pct" path="dnrLeasevalpct" />
+        <item tag="111" label="Value Pct" path="deedRestrictvalpct" />
+        <item tag="112" label="Economic Unit" path="economicUnit" />
+        <item tag="113" label="Economic Unit Name" path="economicUnitname"/>
+        <item tag="114" label="Economic Unit List" path="economicUnitparcellist" editable="no"/>
+        <item tag="115" label="Excess Land" path="excessLand" />
+		<item tag="116" label="Split Zoning" path="splitZoning" />
+
+    
+    </ScreenDefinition>
+    
+    <!-- TabLandEnvironment -->
+	<ScreenDefinition name="TabLandEnvironment" object="Land">
+		<!-- We need this info to check if there is data associated -->
+		<item tag="1" grid="GridTabLandEnvironment" path="envRes"/>
+	</ScreenDefinition>
+    
+    <!-- EnvRes Grid -->
+	<GridDefinition name="GridTabLandEnvironment" tag="35" height="30" object="envRes" auto="yes" editable="level1">
+		<col label="Environmental Type" width="219" path="AttributeId" />   <!-- W234-->
+		<col label="Info Source" width="168" path="LUSourceItem" />         <!-- W203-->
+		<col label="Del. Study" width="70" path="DelineationStudy" />       <!-- W80-->
+		<col label="% Affected" width="80" path="PcntAffected" />           <!-- W80-->
+        <col label="Value %" width="60" path="valPct" />
+		<col label="UpdBy" width="58" path="UpdatedBy"  editable="no"/>     <!-- W68-->
+		<col label="UpdDt" width="74" path="UpdateDate"  editable="no"/>    <!-- W74-->
+	</GridDefinition>
+    
+    <!-- EnvRes Dialog box -->
+	<ScreenDefinition name="DialogBoxEnvironmentalController" object="envRes" >
+		<validation predicate="$AttributeId=0" message="Environmental type can't be empty" />
+		<item tag="1" label="Environmental Type" path="attributeId" />
+		<item tag="2" label="Info Source" path="lUSourceItem" />
+		<item tag="3" label="Del. Study" path="delineationStudy" />
+		<item tag="4" label="% Affected" path="pcntAffected" />
+        <item tag="7" label="Value %" path="valPct" />
+		<item tag="5" label="UpdBy" path="UpdatedBy" editable="no" />
+		<item tag="6" label="UpdDt" path="UpdateDate"  editable="no"/>
+	</ScreenDefinition>
+    
+    
+    
+    <!-- ================================================== ResBldg ================================================== -->
+    <!-- ResBldg -->
+	<ScreenDefinition name="TabBuildingDetail" object="ResBldg">
+		
+		<validation predicate="$YrBuilt &lt; 1900" message="Year built less than 1900" warning="yes"/>
+		
+		<validation predicate="$YrBuilt &gt; 2012" message="Year built cannot be later than current year"/>!--TODO at later phase: Use a current year variable rather than hardcode-->
+		<validation predicate="$YrRenovated &gt; 2012" message="Year Renovated cannot be later than current year"/>!--TODO at later phase: Use a current year variable rather than hardcode-->
+		<validation predicate="$Stories &gt;=2 AND $SqFt2ndFloor=0" message="2nd Flr aea can't be empty if > 1.5 Stry"/>
+		<validation predicate="$Stories &gt; 2.5 AND $SqFtUpperFloor=0" message="Upper Flr aea can't be empty if > 2.5 Stry"/>
+ 		<validation predicate="$Stories &lt; 3.0 AND $SqFtUpperFloor>0" message="Stories cannot be less than 3 if Upper Flr area exists"/>
+		<validation predicate="($Stories = 1.5 OR $Stories = 2.5 OR $Stories = 3.5 OR $Stories = 4.5) AND $SqFtHalfFloor=0" message="Half Flr can't be empty if Stories end in .5"/>
+        
+		<validation predicate="$SqFt1stFloor + $SqFt2ndFloor + $SqFtHalfFloor + $SqFtFinBasement - $SqFtUnFinFull - $SqFtUnFinHalf &lt; 0" message="Total Living Area (finished) cannot be less than 0" />
+        
+		<validation predicate="$SqFt2ndFloor &gt; 0 AND $Stories &lt; 2" message="Stories cannot be less than 2 if 2nd Flr area exists" />
+		<validation predicate="$SqFtHalfFloor &gt; 0 AND $Stories != 1.5 AND $Stories != 2.5 AND $Stories != 3.5 AND $Stories != 4.5" message="Stories must end in .5 if Half Flr area exists" />
+        
+		<validation predicate="$SqFtUnFinFull &gt;0 AND $SqFt1stFloor + $SqFt2ndFloor = 0" message="Full Flr can't be empty if there is unfin full"/>
+		<validation predicate="$SqFtUnFinHalf &gt;0 AND $SqFtHalfFloor=0" message="Half Flr can't be empty if there is unfin half"/>
+		
+		<validation predicate="$SqFtTotBasement=0 AND $DaylightBasement=1" message="Bsmt Area can't be zero if Daylight Basement = Y"/>
+		<validation predicate="$SqFtFinBasement &gt;$SqFtTotBasement" message="Fin Basement Area > Tot Basement Area"/>
+		<validation predicate="($FinBasementGrade &gt;0 AND $SqFtFinBasement=0)  OR ($FinBasementGrade=0 AND $SqFtFinBasement &gt; 0)"   message="Fin Bsmt Area and Bsmt Grade must agree"/>
+		<validation predicate="($HeatSource &gt;0 AND $HeatSystem=0)  OR ($HeatSource=0 AND $HeatSystem &gt; 0)"   message="Heat Source and Heat System must agree"/>
+		<validation predicate="$PcntNetCondition &gt;0 AND $Obsolescence &gt; 0"   message="Net Condition and Obsolescence cannot both be non-zero"/>
+		<validation predicate="$Obsolescence &lt;0 AND $Obsolescence &gt; 100"   message="Obsolescence must be between 0 and 100"/>
+		<validation predicate="$PcntNetCondition &lt;0 AND $PcntNetCondition &gt; 100"   message="PcntNetCondition must be between 0 and 100"/>
+		<validation predicate="$PcntComplete &lt;0 AND $PcntComplete &gt; 100"   message="PcntComplete must be between 0 and 100"/>
+		<validation predicate="$YrBuilt &gt;$YrRenovated AND $YrRenovated &gt; 0" message="YrBuilt > YrRenovated"/>
+		<validation predicate="$SqFtFinBasement + $SqFtGarageBasement &gt; $SqFtTotBasement" message="Fin + Gar Basement Area Exceeds Tot Basement Area"/>
+		<validation predicate="$BldgGrade != 13 AND $BldgGradeVar !=0" message="Grade Variation can only apply to 13 or above"/>
+		
+		<validation predicate="$FpSingleStory + $FpMultiStory = 0 AND $FpAdditional &gt; 0" message="Addl Fp requires existence of Single Story or Multi Story Fireplace"/>
+		
+		<validation predicate="$BrickStone &gt; 100" message="Percent Brick cannot exceed 100" />
+		<validation predicate="$Obsolescence &gt; 100" message="Percent Obsolescence cannot exceed 100" />
+		<validation predicate="$PcntNetCondition &gt; 100" message="Percent Net Condition cannot exceed 100" />
+		<validation predicate="$PcntComplete &gt; 100" message="Percent Complete cannot exceed 100" />
+        
+		
+        <!--		TODO at later phase:  when adding a building to vac land make sure that land unbuldable is not flagged-->
+		<item tag="1" label="Bldg" path="BldgNbr" required="yes" />
+		<item tag="2" label="Address" path="StreetNbr" length="5" required="yes" />
+		<item tag="313" label="Prefix" path="NbrFraction" />
+		<item tag="4" label="Street" path="StreetId"  required="yes" />
+		<item tag="5" label="Unit Description" path="UnitDesc" />
+		<item tag="6" label="Zip Code" path="ZipCode" length="5" />
+		<item tag="7" label="YrBuilt" path="YrBuilt" required="yes" />
+		<item tag="8" label="YrRen" path="YrRenovated" />
+		<item tag="9" label="Stories" path="Stories"  required="yes" />
+		<item tag="10" label="Units" path="NbrLivingUnits"  required="yes" />
+		<item tag="11" label="Grade" path="BldgGrade"  required="yes"  />
+		<item tag="12" label="Var" path="BldgGradeVar" />
+		<item tag="13" label="Condition" path="Condition"  required="yes" />
+		<item tag="14" label="Bsmt Grade" path="FinBasementGrade" />
+		<item tag="15" label="1st Flr" path="SqFt1stFloor"  required="yes" />
+		<item tag="16" label="Half Flr" path="SqFtHalfFloor" />
+		<item tag="17" label="2nd Flr" path="SqFt2ndFloor" />
+		<item tag="18" label="Upper Flr" path="SqFtUpperFloor" />
+		<item tag="19" label="Fin Bsmt" path="SqFtFinBasement" />
+		<item tag="20" label="Tot Liv" path="SqFtTotLiving" />
+		<item tag="21" label="Unf Half" path="SqFtUnFinHalf" />
+		<item tag="22" label="Unf Ful" path="SqFtUnFinFull" />
+		<item tag="23" label="Tot Bsmt" path="SqFtTotBasement" />
+		<item tag="24" label="Bsmt Gar" path="SqFtGarageBasement" />
+		<item tag="25" label="Att Gar" path="SqFtGarageAttached" />
+		<item tag="26" label="BedRm" path="Bedrooms" />
+		<item tag="27" label="Full Baths" path="BathFullCount" />
+		<item tag="28" label="¾ Baths" path="Bath3qtrCount" />
+		<item tag="29" label="½ Baths" path="BathHalfCount" />
+		<item tag="30" label="Heat Source" path="HeatSource" />
+		<item tag="31" label="Heat System" path="HeatSystem" />
+		<item tag="32" label="Deck" path="SqFtDeck" />
+		<item tag="33" label="Open Porch" path="SqFtOpenPorch" />
+		<item tag="34" label="Closed Porch" path="SqFtEnclosedPorch" />
+		<item tag="35" label="Brick/Stone" path="BrickStone" />
+		<item tag="36" label="Single Fp" path="FpSingleStory" />
+		<item tag="37" label="Multi Fp" path="FpMultiStory" />
+		<item tag="38" label="Fr Std Fp" path="FpFreeStanding" />
+		<item tag="39" label="Addl Fp" path="FpAdditional" />
+		<item tag="40" label="Addl Cost" path="AddnlCost" />
+		<item tag="41" label="Obsolnce" path="Obsolescence" />
+		<item tag="42" label="Net Cond" path="PcntNetCondition" />
+		<item tag="43" label="%Comp" path="PcntComplete" />
+		<item tag="44" label="Daylight Bsmt" path="DaylightBasement"/>
+		<item tag="45" label="View Util" path="ViewUtilization"/>
+		<item tag="46" label="UpdBy" path="UpdatedBy" editable="no"/>
+		<item tag="47" label="UpdDt" path="UpdateDate" editable="no"/>
+	</ScreenDefinition>
+    
+	<ScreenDefinition name="TabBuildingGrid" >
+		<item tag="1" grid="GridTabBuilding"/>
+	</ScreenDefinition>
+    
+	<GridDefinition name="GridTabBuilding" tag="40" height="100" object="ResBldg" auto="yes" editable="level2">
+		<col label="Picture" width="120" path="MediaBldg" media="yes" />
+		<col label="Bldg" width="40" path="BldgNbr" />
+		<col label="Address" width="75" path="StreetNbr" />
+		<col label="Street" width="120" path="Street" />
+		<col label="Zip Code" width="60" path="ZipCode" />
+		<col label="Stories" width="50" path="Stories" />
+		<col label="Grade" width="100" path="BldgGrade" />
+		<col label="Updated By" width="80" path="UpdatedBy"  editable="no"/>
+		<col label="Update Date" width="90" path="UpdateDate"  editable="no"/>
+	</GridDefinition>
+    
+    <!-- ================================================== Accessory ================================================== -->
+ 	<ScreenDefinition name="TabAccyDetail" object="Accy">
+        
+        
+        
+		<validation predicate="$AccyType = 1 AND $Grade = 0" message="Det Gar must have Grade"/>
+		<validation predicate="$AccyType = 8 AND $AccyValue= 0" message="Misc Accy must have a flat value"/>
+		<validation predicate="$AccyType = 13 AND $AccyValue = 0" message="Flat value imp must have a flat value"/>
+        
+		<validation predicate="$AccyType != 1 AND $AccyType != 8 AND $Grade &gt; 0" message="This Accy Type cannot have Grade"/>
+		
+		<validation predicate="$AccyType = 1 AND $_Size = 0" message="Det Gar must have Size"/>
+		<validation predicate="$AccyType = 2 AND $_Size = 0" message="Carport must have Size"/>
+		<validation predicate="$AccyType = 3 AND $_Size = 0" message="Paving must have Size"/>
+		<validation predicate="$AccyType = 6 AND $_Size = 0 " message="Pool must have Size"/>
+		<validation predicate="$AccyType = 7 AND $_Size = 0" message="Pool must have Size"/>
+        
+		<validation predicate="$AccyType = 1 AND $EffYr = 0 AND $PcntNetCondition = 0" message="Det Gar must have Eff Yr or Net Condition"/>
+		<validation predicate="$AccyType = 2 AND $EffYr = 0 AND $PcntNetCondition = 0" message="Carport must have Eff Yr or Net Condition"/>
+		<validation predicate="$AccyType = 6 AND $EffYr = 0 AND $PcntNetCondition = 0" message="Pool must have Eff Yr or Net Condition"/>
+		<validation predicate="$AccyType = 7 AND $EffYr = 0 AND $PcntNetCondition = 0" message="Pool must have Eff Yr or Net Condition"/>
+		
+		<validation predicate="$EffYr &gt; 2012" message="Effective Year cannot be later than current year"/>!--TODO at later phase: Use a current year variable rather than hardcode-->
+        
+        <!--		TODO  Grade not allowed if type not 1 or 8 -->
+        <!--		TODO  Accy must have a bldg nbr if bldg exists (hmmm, not sure if this is a good rule)-->
+		<item tag="1" label="Type" path="AccyType" />
+		<item tag="2" label="Description" path="AccyDescr" />
+		<item tag="3" label="Size" path="Size" />
+		<item tag="4" label="Grade" path="Grade" />
+		<item tag="5" label="EffYr" path="EffYr" />
+		<item tag="6" label="%" path="PcntNetCondition" />
+		<item tag="7" label="Value" path="AccyValue" />
+		<item tag="8" label="Dated" path="DateValued" />
+		<item tag="9" label="UpdBy" path="UpdatedBy"  editable="no"/>
+		<item tag="10" label="UpdDt" path="UpdateDate"  editable="no"/>
+	</ScreenDefinition>
+    
+ 	<ScreenDefinition name="TabAccyGrid" >
+		<item tag="1" grid="GridTabAccy"  />
+	</ScreenDefinition>
+	
+	<GridDefinition name="GridTabAccy" tag="40" height="100" object="Accy" auto="yes"  editable="level1">
+		<col label="Picture" width="120" path="MediaAccy" media="yes" />
+		<col label="Type" width="120" path="AccyType" />
+		<col label="Description" width="200" path="AccyDescr" />
+		<col label="Size" width="60" path="Size" />
+		<col label="Grade" width="120" path="Grade" />
+		<col label="EffYr" width="60" path="EffYr" />
+		<col label="%" width="50" path="PcntNetCondition" />
+		<col label="Value" width="100" path="AccyValue" />
+		<col label="Dated" width="80" path="DateValued" />
+		<col label="UpdBy" width="80" path="UpdatedBy"  editable="no"/>
+		<col label="UpdDt" width="90" path="UpdateDate"  editable="no"/>
+	</GridDefinition>
+    
+    
+    
+    <!-- ================================================== Mobile Home ================================================ -->
+    <!-- MHAccount --> <!-- WARNING!!!!! MUST CHANGE THIS IN DON!!!!! -->
+	<ScreenDefinition name="TabMobileDetail" object="RealPropInfo">
+		<item tag="2050" embedded="MobileAccount" />
+		<item tag="2051" embedded="MobileCharacteristic" />
+		<item tag="2052" embedded="MobileLocation" />
+	</ScreenDefinition>
+    
+	<ScreenDefinition name="MobileAccount" object="MHAccount" >
+		<item tag="12" label="MobileHomeId" path="MobileHomeId"  editable="no"   />
+		<item tag="2" label="TaxAccNbr" path="TaxAcctNbr"   editable="no"/>
+		<item tag="3" label="RealPropId" path="RealPropId"   editable="no"/>
+		<item tag="4" label="TaxPayerName" path="TaxPayerName"  editable="no" />
+		<item tag="5" label="BldgNbr" path="BldgNbr" />
+		<item tag="6" label="AcctStatus" path="AcctStatus"  required="yes" />
+		<item tag="7" label="MhType" path="MhType"  required="yes" />
+		<item tag="8" label="TaxExempt" path="TxExempt"  editable="no" />
+		<item tag="9" label="Phone" path="Phone"   editable="no"/>
+		<item tag="10" label="UpdatedBy" path="UpdatedBy"  editable="no"/>
+		<item tag="11" label="UpdatedDate" path="LastInspectionDate"  editable="no" />
+	</ScreenDefinition>
+	
+	<ScreenDefinition name="MobileCharacteristic" object="MHCharacteristic">
+		
+		<validation predicate="$YrBuilt &gt; 2012" message="Year built cannot be later than current year"/>!--TODO at later phase: Use a current year variable rather than hardcode-->
+        
+        <validation predicate="$Condition=0 AND $PcntNetCondition=0"  message="Condition or PcntNetCond is required"/>
+        
+		
+		<item tag="13" label="Length" path="Length" required="yes" />
+		<item tag="14" label="Width" path="Width" required="yes" />
+		<item tag="15" label="LivingArea" path="LivingArea" required="yes" />
+		<item tag="16" label="Class" path="Class_" required="yes" />
+		<item tag="17" label="Condition" path="Condition"/>
+		<item tag="18" label="Size" path="Size" required="yes" />
+		<item tag="19" label="YrBuilt" path="YrBuilt" required="yes" />
+		<item tag="20" label="RmAdd" path="RoomAddSqft" />
+		<item tag="21" label="TipOut" path="TipOutArea" />
+		<item tag="22" label="MakeModel" path="MakeModel" />
+		<item tag="23" label="SerialNbrVin" path="SerialNbrVin" />
+		<item tag="24" label="PcntNetCond" path="PcntNetCondition" />
+	</ScreenDefinition>
+	
+	<ScreenDefinition name="MobileLocation" object="MHLocation"  editable="yes">
+		<item tag="25" label="Park Name" path="ParkId"   editable="yes"/>
+		<item tag="26" label="AddrUsage" path="AddrUsage"  required="yes" />
+		<item tag="27" label="SpNo" path="SpaceNbr"  editable="yes" />
+		<item tag="28" label="StNo" path="StreetNbr"  editable="yes" />
+		<item tag="29" label="Fract" path="NbrFraction"  editable="yes" />
+		<item tag="30" label="Prefix" path="DirPrefix"  editable="yes" />
+		<item tag="31" label="Street" path="StreetName"  editable="yes" />
+		<item tag="32" label="Type" path="StreetType"  editable="yes" />
+		<item tag="33" label="Suffix" path="DirSuffix"  editable="yes" />
+		<item tag="34" label="City" path="City"  editable="yes" />
+	</ScreenDefinition>
+    
+ 	<ScreenDefinition name="TabMobileGrid" >
+		<item tag="1" grid="GridTabMobile"  />
+	</ScreenDefinition>
+   	<GridDefinition name="GridTabMobile" tag="40" height="100" object="MHAccount" auto="yes"  editable="level1">
+		<col label="Picture" width="120" path="MediaMobile" media="yes"/>
+		<col label="TaxPayerName" width="120" path="TaxPayerName" />
+		<col label="Bldg Nbr" width="60" path="BldgNbr" />
+		<col label="Acct Status" width="120" path="AcctStatus" />
+		<col label="MH Type" width="80" path="MhType" />
+	</GridDefinition>
+    
+    <!-- ================================================== Permit ================================================ -->
+    <!-- Permit Detail -->
+	<ScreenDefinition name="TabPermitsDetail" object="Permit">
+		
+		<validation predicate="$PermitStatus &gt; 1 AND $PcntComplete  &gt;  0 AND $PcntComplete &lt; 100" message="PERMIT STATUS and % Comp have conflicting data"/>
+        
+		<item tag="1" label="PermitNumber" path="PermitNbr"   editable="no"/>
+		<item tag="2" label="Permit Type " path="PermitType"   editable="no"/>
+		<item tag="3" label="Issued By" path="IssuingJurisdiction"   editable="no"/>
+		<item tag="4" label="Issued Date" path="IssueDate"   editable="no"/>
+		<item tag="5" label="PERMIT VAL" path="PermitVal" editable="no" />
+		<item tag="6" label="PERMIT STATUS" path="PermitStatus" />
+		<item tag="7" label="% Comp" path="PcntComplete" />
+		<item tag="8" label="Reviewed By" path="ReviewedBy"  editable="no" />
+		<item tag="9" label="Reviewed Date" path="ReviewedDate"  editable="no"/>
+		<item tag="10" label="Permit Description" path="PermitDescr"  editable="no"/>
+		<item tag="11" label="WebLink" path="WebLink" />
+		<item tag="12" label="EPlan" path="EPlan" />
+		<item tag="20" grid="GridPermitDetail" path="PermitDtl"/>
+	</ScreenDefinition>
+	
+	<ScreenDefinition name="TabPermitsGrid" >
+		<item tag="1" grid="GridTabPermits"  />
+	</ScreenDefinition>
+    
+	<!-- Permit Grid -->
+	<GridDefinition name="GridTabPermits" tag="40" height="30" object="Permit" auto="yes" editable="level1">
+		<col label="Permit Number" width="160" path="PermitNbr" />
+		<col label="Permit Type" width="160" path="PermitType" />
+		<col label="Issued Date" width="80" path="IssueDate" />
+		<col label="PERMIT VAL" width="120" path="PermitVal" />
+		<col label="PERMIT STATUS" width="140" path="PermitStatus" />
+		<col label="% Comp" width="80" path="PcntComplete" />
+		<col label="Reviewed By" width="80" path="ReviewedBy"  editable="no"/>
+		<col label="Reviewed Date" width="80" path="ReviewedDate"  editable="no"/>
+		<col label="Permit Description" width="200" path="PermitDescr" />
+	</GridDefinition>
+    
+	<!-- Permit Grid Detail -->
+	<GridDefinition name="GridPermitDetail" tag="40" height="30" object="permitDtl" auto="yes" editable="level1">
+		<col label="Issue Date" width="160" path="issueDate" />
+		<col label="Item Value" width="80" path="itemValue" />
+		<col label="Permit Item" width="170" path="permitItem" />
+		<col label="Permit Number" width="120" path="permitNbr" />
+	</GridDefinition>
+	
+    <!-- ================================================== Sale ================================================ -->
+ 	<ScreenDefinition name="TabSaleGrid" >
+		<item tag="1" grid="GridTabSale"  />
+	</ScreenDefinition>
+  	<GridDefinition name="GridTabSale" tag="40" height="30" object="Sale" auto="yes" editable="level1">
+		<col label="Sale Date" width="100" path="SaleDate"  editable="no"/>
+		<col label="Sale Price" width="120" path="SalePrice"  editable="no"/>
+		<col label="ENbr" width="120" path="ExciseTaxNbr"  editable="no"/>
+		<col label="Sale Instrument" width="160" path="Instrument"  editable="no"/>
+		<col label="Sales Reason" width="140" path="SaleReason"  editable="no"/>
+	</GridDefinition>
+    <!-- Sale -->
+	<ScreenDefinition name="TabSaleDetail" object="Sale">
+		<item tag="2" label="ENbr" path="ExciseTaxNbr"  editable="no"/>
+		<item tag="3" label="Sale Date" path="SaleDate"  editable="no"/>
+		<item tag="4" label="Sale Price" path="SalePrice"  editable="no"/>
+		<item tag="5" label="Recording Nbr" path="RERecordingNbr"  editable="no"/>
+		<item tag="6" label="Nbr Parcels" path="PropCnt"  editable="no"/>
+		<item tag="7" label="Sales Reason" path="SaleReason"  editable="no"/>
+		<item tag="8" label="Sale Instrument" path="Instrument"  editable="no"/>
+		<item tag="9" label="Property Type" path="PropertyType"  editable="no"/>
+		<item tag="10" label="Principal Use" path="PrincipalUse"  editable="no"/>
+		<item tag="11" label="Seller Name" path="SellerName"  editable="no"/>
+		<item tag="12" label="Seller Address" path="SellerAddr"  editable="no"/>
+		<item tag="13" label="Buyer Name" path="BuyerName"  editable="no"/>
+		<item tag="14" label="Buyer Address" path="BuyerAddr"  editable="no"/>
+		<item tag="15" label="Property Class" path="PropertyClass" />
+		<item tag="16" label="NonRep" path="NonRepComp1" />
+		<item tag="17" label="Enbrs" path="NonRepComp2" />
+		<item tag="18" label="Proc State" path="SaleProcess"  editable="no"/>
+		<item tag="19" label="Identified by" path="IdentifiedBy"  editable="no"/>
+		<item tag="20" label="Identified date" path="IdentifiedDate"  editable="no"/>
+		<item tag="21" label="Verify By" path="VYVerifiedBy"   editable="no"/>
+		<item tag="22" label="Verify By Date" path="VYVerifDate"   editable="no"/>
+		<item tag="23" label="At Market" path="VYVerifiedAtMarket" />
+		<item tag="24" label="Verification Level" path="VerificationLevel" />
+		<item tag="25" label="Forest" path="AFForestLand" editable="no" />
+		<item tag="26" label="Historic" path="AFHistoricProperty" editable="no" />
+		<item tag="27" label="Current Use" path="AFCurrentUseLand" editable="no" />
+		<item tag="28" label="Updated" path="UpdatedBy"  editable="no"/>
+		<item tag="29" label="Updated Date" path="UpdateDate"  editable="no"/>
+		<item tag="30" label="NonProfit Use" path="AFNonProfitUse" editable="no" />
+		<item tag="31" embedded="SaleNotes" />
+		<item tag="32" embedded="SaleWarnings" />
+		<item tag="33" embedded="TabSaleParcels" />
+		<item tag="34" embedded="Button" method="updateUserName:" />
+	</ScreenDefinition>
+    
+	<!-- Grid Sale Notes -->
+ 	<ScreenDefinition name="SaleNotes" >
+		<item tag="1" grid="GridSaleNotes"  />
+	</ScreenDefinition>
+	<GridDefinition name="GridSaleNotes" tag="35" height="30" object="NoteSale" auto="yes" editable="level1">
+		<col label="Note" width="435" path="note" />
+	</GridDefinition>
+	<ScreenDefinition name="DialogBoxNote" object="NoteSale">
+		<item tag="1" label="Note" path="note" />
+	</ScreenDefinition>
+	
+	<!-- Sale warnings -->
+ 	<ScreenDefinition name="SaleWarnings" >
+		<item tag="1" grid="GridSaleWarnings"  />
+	</ScreenDefinition>
+	<GridDefinition name="GridSaleWarnings" tag="35" height="30" object="SaleWarning" auto="yes"  sort="Warning"  editable="level1">
+		<col label="Warning" width="202" path="warning" />
+	</GridDefinition>
+ 	<ScreenDefinition name="DialogBoxSaleWarning" object="SaleWarning" sort="Warning" >
+		<item tag="1" label="Warning" path="warning" sort="Warning" />
+	</ScreenDefinition>
+	
+	<!-- Sale Parcels -->
+ 	<ScreenDefinition name="TabSaleParcels" >
+		<item tag="1" grid="GridSaleParcels"  />
+	</ScreenDefinition>
+	<GridDefinition name="GridSaleParcels" tag="35" height="30" object="SaleParcels" auto="yes" editable="level1">
+		<col label="Parcel" width="100" path="parcel" />
+	</GridDefinition>
+    <!-- ==================================================  ValHist ================================================ -->
+   	<ScreenDefinition name="TabValHistDetail" object="ValHist">
+		<item tag="1" label="Tax Yr" path="BillYr" />
+	</ScreenDefinition>
+	<ScreenDefinition name="TabValHistGrid" >
+		<item tag="1" grid="GridTabValHist"  />
+	</ScreenDefinition>
+	<GridDefinition name="GridTabValHist" tag="40" height="30" object="ValHist" auto="yes" editable="level1" sort="Tax Yr" ascending="no">
+		<col label="Tax Yr" width="0" path="BillYr" />
+		<col label="Omit Yr" width="0" path="OmitYr" />
+		<col label="Appr Land" width="0" path="ApprLandVal" />
+		<col label="Appr Imps" width="0" path="ApprImpsVal" />
+		<col label="App Total" width="0" path="TotalApprVal" />
+		<col label="New Dollars" width="0" path="ApprImpIncrease" />
+		<col label="Land Val" width="0" path="LandVal" />
+		<col label="Imps Val" width="0" path="ImpsVal" />
+		<col label="Total Val" width="0" path="TotalVal" />
+		<col label="Stat" width="0" path="TaxStatus" />
+		<col label="Levy" width="0" path="LevyCode" />
+		<col label="Change Date" width="0" path="ChangeDate" />
+		<col label="Change DocId" width="0" path="ChangeDocId" />
+		<col label="Reason" width="0" path="Reason" />
+	</GridDefinition>
+    <!-- ==================================================  Review ================================================ -->
+	<ScreenDefinition name="TabReviewsGrid" >
+		<item tag="1" grid="GridTabReviews"  />
+	</ScreenDefinition>
+	<GridDefinition name="GridTabReviews" tag="40" height="30" object="Review" auto="yes"  editable="level1">
+		<col label="Tax Year" width="60" path="BillYr" editable="no" />
+		<col label="Review Nbr" width="100" path="AppealNbr"  editable="no"/>
+		<col label="Review Type" width="120" path="ReviewType" editable="no" />
+		<col label="Source" width="120" path="ReviewSource"  editable="no"/>
+		<col label="Appealed Value" width="100" path="AppealedValue"  editable="no"/>
+		<col label="Hearing Date" width="80" path="HearingDate"  editable="no"/>
+		<col label="Settlement" width="100" path="SettlementValue" editable="no" />
+		<col label="Decision" width="150" path="HearingResult"  editable="no"/>
+		<col label="Status" width="120" path="StatusAssmtReview"  editable="no"/>
+		<col label="Status Assessor" width="120" path="StatusAssessor"  editable="no"/>
+		<col label="Status Stipulation" width="120" path="StatusStipulation"  editable="no"/>
+		<col label="Status Board" width="120" path="StatusBoard" editable="no" />
+		<col label="TaxPayerName" width="140" path="Taxpayername"  editable="no"/>
+		<col label="Agent" width="120" path="Agent"  editable="no"/>
+		<col label="Res Appr" width="80" path="RespAppr"  editable="no"/>
+		<col label="Order Date" width="80" path="OrderDate"  editable="no"/>
+	</GridDefinition>
+	
+	<ScreenDefinition name="TabReviewsDetail" object="Review" editable="no">
+		<item tag="1" label="Tax Year" path="BillYr"  editable="no"/>
+		<item tag="2" label="Review Nbr" path="AppealNbr"  editable="no"/>
+		<item tag="3" label="Review Type" path="ReviewType"  editable="no"/>
+		<item tag="4" label="Source" path="ReviewSource"  editable="no"/>
+		<item tag="5" label="Taxpayer Name" path="Taxpayername" editable="no" />
+		<item tag="6" label="Agent" path="Agent"  editable="no"/>
+		<item tag="7" label="Related Appeal Nbr" path="RelatedAppealNbr" editable="no" />
+		<item tag="8" label="Resp Appr" path="RespAppr"  editable="no"/>
+		<item tag="9" label="Hearing Date" path="HearingDate"  editable="no"/>
+		<item tag="10" label="Location" path="HearingLoc"  editable="no"/>
+		<item tag="11" label="Add’l Info" path="HearingInfo"  editable="no"/>
+		<item tag="12" label="Review" path="ReviewType"  editable="no"/>
+		<item tag="13" label="Assessor" path="StatusAssessor"  editable="no"/>
+		<item tag="14" label="Stip" path="StatusStipulation"  editable="no"/>
+		<item tag="15" label="Board" path="StatusBoard"  editable="no"/>
+		<item tag="16" label="Action" path="HearingResult"  editable="no"/>
+		<item tag="17" label="Date" path="OrderDate"  editable="no"/>
+		<item tag="20" embedded="ReviewTracking"  />
+		<item tag="21" embedded="ReviewNotes" />
+	</ScreenDefinition>
+	
+	<!-- Review Notes -->
+   	<ScreenDefinition name="ReviewNotes" >
+		<item tag="1" grid="GridReviewNotes"  />
+	</ScreenDefinition>
+ 	<GridDefinition name="GridReviewNotes" tag="35" height="30" object="NoteReview" auto="yes" editable="level1">
+		<col label="Note" width="700" path="note" />
+	</GridDefinition>
+    
+	<!-- ReviewJrnl -->
+   	<ScreenDefinition name="ReviewTracking" >
+		<item tag="1" grid="GridTabReviewTracking"/>
+	</ScreenDefinition>
+ 	<GridDefinition name="GridTabReviewTracking" tag="35" height="30" object="ReviewJrnl" auto="yes" editable="no">
+		<col label="Entry Type" width="100" path="EntryType" />
+		<col label="Entry Date" width="80" path="EntryDate" />
+		<col label="Link" width="140" path="eDocLink" />
+		<col label="Src" width="90" path="SourcePerson" />
+		<col label="Trgt" width="90" path="TargetPerson" />
+		<col label="Val Type" width="120" path="ValuationType" />
+		<col label="Land Val" width="120" path="ApprLandVal" />
+		<col label="Imps Val" width="120" path="ApprImpsVal" />
+		<col label="Total Val" width="130" path="ApprTotalVal" />
+		<col label="Updated By" width="140" path="UpdatedBy"  editable="no"/>
+		<col label="Update Date" width="140" path="UpdateDate"  editable="no"/>
+	</GridDefinition>
+    <!-- ================================================== Change  ================================================ -->
+  	<ScreenDefinition name="TabChangesGrid" >
+		<item tag="1" grid="GridTabChangeHist"  />
+	</ScreenDefinition>
+    
+	<GridDefinition name="GridTabChangeHist" tag="40" height="30" object="ChngHist" auto="yes"  >
+		<col label="Type" width="200" path="Type"  editable="no" />
+		<col label="By" width="120" path="EventPerson"  editable="no" />
+		<col label="When" width="120" path="EventDate"  editable="no" />
+		<col label="DocId" width="150" path="DocId"  editable="no" />
+		<col label="PropStatus" width="120" path="PropStatus" />
+		<col label="Upddated By" width="120" path="UpdatedBy"  editable="no"/>
+		<col label="Update Date" width="120" path="UpdateDate"  editable="no"/>
+	</GridDefinition>
+	
+	<ScreenDefinition name="TabChangesDetail" object="ChngHist">
+		
+        <!--	<validation predicate="($Type != 'Seg Merge' and $Type != 'New Plat' and $Type != 'Transfer' and $Type != 'Unkill') AND $PropStatus !=0" message="Cannot update Status for this event type"/>	-->
+		<validation predicate="$Type = 'Char Update'  AND $PropStatus =3" message="Cannot update Status for this event type"/>
+		<item tag="1" label="Type" path="Type"   editable="no"/>
+		<item tag="2" label="By" path="EventPerson"  editable="no" />
+		<item tag="3" label="When" path="EventDate"   editable="no"/>
+		<item tag="4" label="DocId" path="DocId"   editable="no"/>
+		<item tag="5" label="PropStatus" path="PropStatus" />'
+		<item tag="35" grid="GridTabChangesDetail"/>
+	</ScreenDefinition>
+	
+	<GridDefinition name="GridTabChangesDetail" tag="35" height="30" object="ChngHistDtl" auto="yes">
+		<col label="Id" width="150" path="Id" />
+		<col label="Attribute" width="200" path="Attribute" />
+		<col label="Value" width="200" path="AttributeValue" />
+		<col label="Update Date" width="120" path="UpdateDate"  editable="no"/>
+		<col label="Upddated By" width="120" path="UpdatedBy"  editable="no"/>
+	</GridDefinition>
+    <!-- ==================================================  TabHIExmptGrid ================================================ -->
+ 	<GridDefinition name="GridTabHIE" tag="40" height="30" object="HIExmpt" auto="yes">
+		<col label="HIExemptID" width="100" path="hIExemptId" />
+		<col label="Est Cost" width="120" path="estCost" />
+		<col label="App Signed" width="80" path="AppSigned" />
+		<col label="Prior Exemption" width="80" path="PriorExemption" />
+		<col label="New Construction" width="80" path="NewConstr" />
+		<col label="Late Application" width="80" path="LateApplication" />
+		<col label="Non Dwelling Unit" width="80" path="NonDwellingUnit" />
+		<col label="Maint Or Replace" width="80" path="MaintOrReplace" />
+		<col label="Multiple Dwellings" width="80" path="MultipleDwellings" />
+		<col label="Personal Property" width="80" path="PersonalProperty" />
+		<col label="App Mobile" width="80" path="AppMobile" />
+		<col label="App Own Land" width="80" path="AppOwnLand" />
+		<col label="Approved" width="80" path="Approved" />
+		<col label="Destroyed Property" width="80" path="DestroyedProperty" />
+		<col label="First BillYr" width="120" path="FirstBillYr" />
+		<col label="Last BillYr" width="120" path="LastBillYr" />
+		<col label="Home Imp Val" width="120" path="HomeImpVal" />
+		<col label="Page Count" width="100" path="PageCount" />
+		<col label="Updated By" width="120" path="UpdatedBy"  editable="no"/>
+		<col label="Update Date" width="120" path="UpdateDate"  editable="no"/>
+	</GridDefinition>
+    
+    <ScreenDefinition name="TabHIExmptGrid" >
+		<item tag="1" grid="GridTabHIE"  />
+	</ScreenDefinition>
+	
+ 	<ScreenDefinition name="TabHIExmptDetail" object="HIExmpt">
+		<item tag="1" label="HIExemptID" path="hIExemptId" />
+		<item tag="3" label="Est Cost" path="EstCost" />
+		<item tag="4" label="App Signed" path="AppSigned" />
+		<item tag="5" label="PriorExemption" path="PriorExemption" />
+		<item tag="6" label="NewConstr" path="NewConstr" />
+		<item tag="7" label="LateApplication" path="LateApplication" />
+		<item tag="8" label="NonDwellingUnit" path="NonDwellingUnit" />
+		<item tag="9" label="MaintOrReplace" path="MaintOrReplace" />
+		<item tag="10" label="MultipleDwellings" path="MultipleDwellings" />
+		<item tag="11" label="PersonalProperty" path="PersonalProperty" />
+		<item tag="12" label="AppMobile" path="AppMobile" />
+		<item tag="13" label="AppOwnLand" path="AppOwnLand" />
+		<item tag="15" label="DestroyedProperty" path="DestroyedProperty" />
+		<item tag="16" label="FirstBillYr" path="FirstBillYr" />
+		<item tag="17" label="LastBillYr" path="LastBillYr" />
+		<item tag="18" label="HomeImpVal" path="HomeImpVal" />
+		<item tag="20" label="UpdatedBy" path="UpdatedBy"  editable="no"/>
+		<item tag="21" label="UpdateDate" path="UpdateDate"  editable="no"/>
+		<item tag="22" label="NewDwelling" path="newDwellingUnit" />
+		<item tag="23" label="BldgId" path="bldgId" />
+		<item tag="24" label="PermitDistrictId" path="permitDistrictId" />
+		<item tag="25" label="ValueDate" path="ValueDate" />
+		<item tag="26" label="ValuedBy" path="ValuedBy" />
+		<item tag="27" label="receivedDate" path="receivedDate" />
+		<item tag="28" label="UpdatedDate" path="updateDate"  editable="no"/>
+		<item tag="35" embedded="GridHIESaleNotes"  />
+	</ScreenDefinition>
+	
+    <ScreenDefinition name="GridHIESaleNotes" >
+		<item tag="1" grid="HIESaleNotes"  />
+	</ScreenDefinition>
+	
+ 	<GridDefinition name="HIESaleNotes" tag="35" height="30" object="NoteHIExmpt" auto="yes">
+		<col label="Note" width="430" path="note" />
+		<col label="UID" width="120" path="uID" />
+		<col label="Updated By" width="100" path="updatedBy"  editable="no"/>
+		<col label="Updated Date" width="100" path="updateDate"  editable="no"/>
+	</GridDefinition>
+    
+    <!-- ==================================================  Undivided Interest ================================================ -->
+ 	<ScreenDefinition name="TabInterestDetail" object="UndividedInt">
+		<item tag="1" label="Tax Yr" path="parcel" />
+	</ScreenDefinition>
+	
+	<ScreenDefinition name="TabInterestGrid" >
+		<item tag="1" grid="GridInterestHist"  />
+	</ScreenDefinition>
+	
+	<GridDefinition name="GridInterestHist" tag="40" height="30" object="UndividedInt" auto="yes">
+		<col label="Parcel" width="0" path="parcel" />
+		<col label="Interests" width="0" path="interests" />
+		<col label="Prop Type" width="0" path="propType" />
+		<col label="Appl Groups" width="0" path="applgroup" />
+	</GridDefinition>
+	
+    <!-- ==================================================  Tab Value ================================================ -->
+ 	<ScreenDefinition name="TabValue" object="ValueTaxRoll">
+		<item tag="100" embedded="ValueTaxRoll" />
+		<item tag="200" embedded="ValueAppraisal" />
+		<item tag="300" embedded="ValueEstimate" />
+	</ScreenDefinition>
+ 	
+  	<ScreenDefinition name="ValueTaxRoll" >
+		<item tag="1" grid="GridValueTaxRoll"  />
+	</ScreenDefinition>
+	<GridDefinition name="GridValueTaxRoll" tag="35" height="30" object="TaxRoll" auto="yes">
+		<col label="Acct Nbr" width="100" path="acctNbr" />
+		<col label="Type" width="60" path="receivableType" />
+		<col label="Tax Yr" width="80" path="billYr" />
+		<col label="Omit Yr" width="80" path="omitYr" />
+		<col label="Levy" width="80" path="levyCode" />
+		<col label="Appr Land" width="100" path="apprLandVal" />
+		<col label="Appr Imps" width="100" path="apprImpsVal" />
+		<col label="Appr Tot" width="100" path="apprTotalVal" />
+		<col label="New Dollars" width="100" path="apprImpIncrease" />
+		<col label="Tax Land" width="100" path="landVal" />
+		<col label="Tax Imps" width="100" path="impsVal" />
+		<col label="Tax Total" width="100" path="totalVal" />
+		<col label="Stat" width="60" path="taxStat" />
+		<col label="TVR" width="60" path="taxValReason" />
+		<col label="Acct" width="60" path="acctStat" />
+	</GridDefinition>
+	
+	<ScreenDefinition name="ValueAppraisal" >
+		<item tag="1" grid="GridValueAppraisal"  />
+	</ScreenDefinition>
+	<GridDefinition name="GridValueAppraisal" tag="35" height="30" object="ApplHist" auto="yes">
+		<col label="RM" width="60" path="revalOrMaint" />
+		<col label="Tax Yr" width="80" path="rollYr" />
+		<col label="Method" width="120" path="selectMethod" />
+		<col label="Reason" width="120" path="selectReason" />
+		<col label="Land Val" width="100" path="landVal" />
+		<col label="Imps Val" width="100" path="impsVal" />
+		<col label="Total Val" width="100" path="totalVal" />
+		<col label="Pcnt Chng" width="80" path="pcntChng" />
+		<col label="New Dollars" width="120" path="newConstrVal" />
+		<col label="Appr" width="80" path="selectAppr" />
+		<col label="Appr Date" width="80" path="selectDate" />
+		<col label="Post" width="120" path="mFInterfaceFlag" />
+		<col label="Post Date" width="100" path="mFInterfaceDate" />
+		<col label="Has Note" width="60" path="hasNote" />
+	</GridDefinition>
+	
+	<ScreenDefinition name="ValueEstimate" >
+		<item tag="1" grid="GridValueEstimate"  />
+	</ScreenDefinition>
+ 	<GridDefinition name="GridValueEstimate" tag="35" height="30" object="ValEst" auto="yes">
+		<col label="Est Type" width="140" path="estType" />
+		<col label="Bldg" width="70" path="bldgNbr" />
+		<col label="Tax Yr" width="70" path="rollYr" />
+		<col label="Land Val" width="100" path="landVal" />
+		<col label="Imps Val" width="100" path="impsVal" />
+		<col label="Total Val" width="100" path="totalVal" />
+		<col label="CalcDt" width="100" path="estDate" />
+	</GridDefinition>
+	
+	<ScreenDefinition name="DialogBoxGetYear" object="getYear">
+	</ScreenDefinition>
+    <!-- ================================================== Notes ================================================ -->
+    
+	<ScreenDefinition name="TabNotesDetail" object="NoteInstance">
+		<item tag="1" label="Note" path="note" />
+		<item tag="2" label="Source" path="src"  editable="no"/>
+		<item tag="3" label="UpbdatedBy" path="updatedBy"  editable="no"/>
+		<item tag="4" label="updateSource" path="updateDate"  editable="no"/>
+        
+	</ScreenDefinition>
+    
+	<ScreenDefinition name="TabNotesGrid" >
+		<item tag="1" grid="GridTabNotes"  />
+	</ScreenDefinition>
+	
+ 	<GridDefinition name="GridTabNotes" tag="40" height="90" object="NoteInstance" auto="yes">
+		<col label="Note" width="450" path="Note" />
+		<col label="source" width="120" path="src"  editable="no"/>
+		<col label="Updated By" width="100" path="updatedBy"  editable="no"/>
+		<col label="Update Date" width="100" path="updateDate"  editable="no"/>
+	</GridDefinition>
+    <!-- ================================================== Bookmark Details ================================================ -->
+ 	<ScreenDefinition name="GridBookmark" >
+		<item tag="1" grid="GridBookmarks"  />
+	</ScreenDefinition>
+    
+ 	<GridDefinition name="GridBookmarks" tag="40" height="60" object="IRBookmark" auto="yes">
+		<col label="Date" width="100" path="addedDate" />
+		<col label="Property" width="120" path="{major}-{minor}" />
+		<col label="Reason" width="300" path="reason"/>
+	</GridDefinition>
+    <!-- ================================================== PictureDetails ================================================ -->
+    
+	<ScreenDefinition name="PictureDetails" object="MediaAccy">
+		<item tag="3" label="Caption" path="desc" />
+		<item tag="4" label="Primary" path="primary" />
+		<item tag="5" label="Post to web" path="postToWeb" />
+		<item tag="6" label="MediaDate" path="mediaDate" />
+		<item tag="7" label="order" path="order" />
+		<item tag="8" label="updatedBy" path="updatedBy"  editable="no"/>
+		<item tag="9" label="updateDate" path="updateDate"  editable="no"/>
+	</ScreenDefinition>
+    <!-- ================================================== Tab Details (Click in a map) ================================================ -->
+    
+	<MultiScreen name="TabDetailsInMap" >
+		<screen label="Details" screenDefinition="TabInfoDetails" path="" />
+		<screen label="Land" screenDefinition="TabLand" path="land"/>
+		<screen label="Land Views" screenDefinition="TabLandViews" path="xland"/>
+		<screen label="Land Nuisance" screenDefinition="TabLandNuisance" path="xland"/>
+		<screen label="Land Designations" screenDefinition="TabLandDesignations" path="xland" />
+		<screen label="Building" screenDefinition="TabBuildingDetail" path="land.resBldg" sort="bldgNbr" ascending="YES"/>
+		<screen label="Accessory" screenDefinition="TabAccyDetail" path="accy"/>
+		<screen label="Notes" screenDefinition="TabNotesDetail2" path="noteRealPropInfo" repeatHeader="NO" cellHeight="40" sort="updateDate" ascending="no"/>
+		<screen label="Mobile Account" screenDefinition="MobileAccount" path="mHAccount" />
+		<screen label="Mobile Characteristics" screenDefinition="MobileCharacteristic" path="mHAccount.mHCharacteristic" />
+		<screen label="Permits" screenDefinition="TabPermitsDetail" path="Permit" sort="issueDate" ascending="no"/>
+	</MultiScreen>
+	
+	<ScreenDefinition name="TabNotesDetail2" object="NoteInstance">
+		<item tag="1" label="" path="({updateDate}) {note}" height="40"/>
+	</ScreenDefinition>
+	
+ 	<ScreenDefinition name="TabMapDetail" object="RealPropInfo" >
+		<item tag="2" label="Parcel Number" path="{major}-{minor}  {streetNbr} {streetId}"  />
+        <!--	<item tag="24" label="Land" path="(null)" />
+         <item tag="25" label="Imps" path="(null)" /> -->
+	</ScreenDefinition>
+    <ScreenDefinition name="TabInfoDetails" object="RealPropInfo">
+		<item tag="5" label="Zip Code" path="zipCode" />
+		<item tag="6" label="Acct" path="account.acct" />
+		<item tag="7" label="Jurisdiction" path="city" />
+		<item tag="8" label="Property Name" path="propName" />
+		<item tag="9" label="Type/Resp" path="{propType}-{applGroup}" />
+		<item tag="11" label="Area" path="{resArea}-{resSubArea}-{neighborhood}" />
+		<item tag="14" label="QSTR" path="{quarterSection}-{section}-{township}-{range}" />
+		<item tag="15" label="Folio" path="folio" />
+		<item tag="19" label="Levy" path="levyCode" type="STR" /> <!-- Folio is always 4 digits -->
+		<item tag="20" label="Block" path="platBlock" />
+		<item tag="21" label="Lot" path="platLot" />
+		<item tag="23" label="Legal Desc" path="legalDesc" />
+        <!--	<item tag="24" label="Land" path="(null)" />
+         <item tag="25" label="Imps" path="(null)" />
+         <item tag="26" label="Both" path="(null)" />  -->
+	</ScreenDefinition>
+    
+    <!-- ================================= Display the list of grid based  =============-->
+	<ScreenDefinition name="ParcelList" >
+		<item tag="1" grid="GridSelectedParcelsFromMap"  />
+	</ScreenDefinition>
+	<GridDefinition name="GridSelectedParcelsFromMap" tag="40" height="30" object="RealPropInfo" auto="yes">
+	    <col label="landId" width="80" path="landId" />
+	    <col label="Account" width="80" path="Account.acct" />
+	    <col label="Address" width="80" path="streetNbr" />
+	    <col label="Street " width="120" path="street" />
+	    <col label="Zip" width="100" path="zipCode" />
+	    <col label="City" width="120" path="city" />
+	    <col label="PT" width="50" path="propType" />
+	    <col label="Major" width="80" path="major" />
+	    <col label="Minor" width="60" path="minor" />
+	    <col label="Area" width="60" path="resArea" />
+	    <col label="Sub" width="60" path="resSubArea" />
+	    <col label="QSTR" width="60" path="quarterSection" />
+	    <col label="Section" width="60" path="section" />
+	    <col label="Township" width="60" path="township" />
+	    <col label="Range" width="60" path="range" />
+	    <col label="Levy" width="60" path="levyCode" />
+	    <col label="Block" width="60" path="platBlock" />
+	    <col label="Lot" width="60" path="platLot" />
+	</GridDefinition>
+    
+    <!-- ================================= Note display  =============-->
+	<ScreenDefinition name="TabNotesController" >
+		<item tag="1" grid="GridPersonalNotes"  />
+	</ScreenDefinition>
+	<GridDefinition name="GridPersonalNotes" tag="35" height="90" object="IRNote" auto="yes">
+	    <col label="Parcel Nbr" width="100" path="parcelNbr" />
+	    <col label="Update Date" width="100" path="updateDate"  editable="no"/>
+	    <col label="Note" width="533" path="note" />
+	</GridDefinition>
+    
+    
+    <!-- ================================= Measure =============-->
+    <MenuDefinition name="MenuMesure">
+        <menu label="Measure Area" param="Polygon" />
+        <menu label="Measure Distance" param="Polyline" />
+    </MenuDefinition>
+    <!-- ================================= Web menu =============-->
+    <MenuDefinition name="MenuWeb">
+        <menu label="Finance " param="" />
+        <menu label="Recorders" param="" />
+        <menu label="ParcelViewer" param=""  />
+        <menu label="eRealProperty" param=""  />
+        <menu label="eSales" param="" />
+        <menu label="eMap" param="" />
+        <menu label="Area Report" param=""  />
+        <menu label="IMap" param=""  />
+    </MenuDefinition>
+    <!-- ================================= Filter Menu in TabPicture =============-->
+    <MenuDefinition name="MenuFilterTabPicture">
+        <menu label="All pictures" checked="yes" param="1" />
+        <menu label="Land Pictures" param="2" />
+        <menu label="Building Pictures" param="3" />
+        <menu label="Accessory Pictures" param="4" />
+        <menu label="Mobile Pictures" param="5" />
+        <menu label="Notes Pictures" param="6" />
+    </MenuDefinition>
+    <!-- ================================= Legend =============-->
+    <MenuDefinition name="MenuLegend">
+        <menu label="Display Legend" param="LegendOn" />
+        <menu label="Detailed Mode" param="Detailed" />
+        <menu label="Compact Mode" param="Compact" />
+    </MenuDefinition>
+    <!-- ================================= Bookmark menu =============-->
+    <MenuDefinition name="MenuBookmark">
+        <menu label="Call owner" param="b1" />
+        <menu label="Get Plans" param="b2" />
+        <menu label="Finish Drawing" param="b3" />
+        <menu label="Check Website" param="b4" />
+        <menu label="Set Appointment" param="b5" />
+        <menu label="Incomplete New Building Data" param="b6" />
+        <menu label="Wait for callback" param="b7" />
+        <menu label="See note" param="b8" />
+        <menu label="Do not synchronize" param="nosync" />
+        <menu label="Other..." param="other" />
+    </MenuDefinition>
+    <!-- ================================= Zoom menu =============-->
+    <MenuDefinition name="MenuZoomLevel">
+        <menu label="1:40,000" param="40000" />
+        <menu label="1:30,000" param="30000" />
+        <menu label="1:20,000" param="20000" />
+        <menu label="1:15,000" param="15000" />
+        <menu label="1:10,000" param="10000" />
+        <menu label="1:8,000" param="8000" />
+        <menu label="1:4,000" param="4000" />
+        <menu label="1:2,000" param="2000" />
+        <menu label="1:1,000" param="1000" />
+        <menu label="1:500" param="500" />
+    </MenuDefinition>
+    <!-- ================================= Create note menu =============-->
+    
+    <MenuDefinition name="MenuCreateNotes">
+        <menu label="Compose Notes" param="bookmark" />
+        <menu label="Add to daily route" param="daily" />
+    </MenuDefinition>
+    <!-- ================================= /////  Options ///// =============-->
+    
+	<Options name="settings" label="Settings">
+		<section label="General">
+			<option label="iRealProperty Help" param="help" />
+			<option label="Version" param="version" />
+			<option label="Signature" param="signature" />
+			<option label="Menubar at Bottom" param="menubar"/>
+			<option label="Open to Search Tab" param="openToSearch"/>
+			<option label="Disk Usage" param="disk"/>
+		</section>
+		<section label="Area Management">
+			<option label="Change Area" param="changearea"/>
+			<option label="Manage Areas" param="managearea"/>
+			<option label="Update Area Files" param="updatefile" />
+		</section>
+		<section label="Synchronization">
+			<option label="Allow Sync over 3G" param="sync3g"/>
+			<option label="Download Changes Now" param="syncnow"/>
+		</section>
+		<section label="Settings">
+			<option label="Reset Layers" param="resetlayers" />
+			<option label="Reset Renderers" param="resetrenderers" />
+		</section>
+        
+		<section label="Security" footer="Required passcode when switching to another app">
+			<option label="Change Code" param="changecode" />
+			<option label="Logout" param="logout" />
+		</section>
+	</Options>
+    
+	
+	
+	
+</iRealProperty>
